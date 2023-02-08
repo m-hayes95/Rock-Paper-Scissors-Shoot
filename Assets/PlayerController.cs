@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     //public bool isTile;
@@ -30,26 +31,36 @@ public class PlayerController : MonoBehaviour
             Debug.Log("hit the" + hit.collider.gameObject.name);
         }
 
-        //move up
-        if (Input.GetKeyDown("w"))
+        if (hit.collider != null)
         {
-            //Debug.Log("We are moving");
-            transform.Translate(0, 0, 1);
+            //move up
+            if (Input.GetKeyDown("w"))
+            {
+                //Debug.Log("We are moving");
+                transform.Translate(0, 0, 1);
+                transform.Rotate(0, -180, 0);
+            }
+            //move left
+            if (Input.GetKeyDown("a"))
+            {
+                transform.Translate(-1, 0, 0);
+                transform.Rotate(0, -90, 0);
+            }
+            //move right
+            if (Input.GetKeyDown("d"))
+            {
+                transform.Translate(1, 0, 0);
+                transform.Rotate(0, 90, 0);
+            }
+            //move down
+            if (Input.GetKeyDown("s"))
+            {
+                transform.Translate(0, 0, -1);
+                
+            }
+           
+
         }
-        //move left
-        if (Input.GetKeyDown("a"))
-        {
-            transform.Translate(-1, 0, 0);
-        }
-        //move right
-        if (Input.GetKeyDown("d"))
-        {
-            transform.Translate(1, 0, 0);
-        }
-        //move down
-        if (Input.GetKeyDown("s"))
-        {
-            transform.Translate(0, 0, -1);
-        }
+        
     }
 }
