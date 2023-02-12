@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Rock Tile LayerMask
+  - Paper Tile LayerMask
+  - Scissors Tile LayerMask
+  - Special Tile LayerMask
   - 
   - 
   - 

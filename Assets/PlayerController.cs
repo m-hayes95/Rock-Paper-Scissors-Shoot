@@ -5,62 +5,51 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //public bool isTile;
-    // Start is called before the first frame update
-    void Start()
+    //ref to prefab layer mask - For Capsule Cast
+    [SerializeField] private LayerMask rockTileLayerMask;
+    [SerializeField] private float playerSpeed = 7f;
+
+    private void Update()
     {
+        //only moving on a 2 axis so Vector 3 is not required.
+        Vector2 inputVector = new Vector2(0,0);
+        //player inputs
+        if (Input.GetKey(KeyCode.W))
+        {
+            inputVector.y = +1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            inputVector.y = -1;
+        }
+        /*if (Input.GetKey(KeyCode.D))
+        {
+            inputVector.x = +1;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            inputVector.x = -1;
+        }*/
+
+        //Debug.Log(inputVector);
+
+        //translate the Vector 2 input into vector 3 input.
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+        //transform.position += moveDir * playerSpeed * Time.deltaTime;
         
+        //Create a capsuale cast around the player object that checks for tile layer masks on objects it collides with.
+        float playerHeight = 2f;
+        float playerRadius = 0.3f;
+        float moveDistance = 2f;
+        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance, rockTileLayerMask);
+        Debug.Log(canMove);
+        Color color = Color.yellow;
+        Debug.DrawLine(transform.position, transform.position + Vector3.up * playerHeight, color, 0.5f);
+        if (!canMove)
+        {
+            transform.position += moveDir * playerSpeed * Time.deltaTime;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //raycast hit to check if player can move
-        Vector3 fwd = transform.TransformDirection(new Vector3(0, -1,1));
-        //use forward vector from a game object in front of Player. Then rotate the object to the correct orientaion.
 
-        //draw a debug line for ray cast
-        Debug.DrawRay(transform.position, fwd, Color.magenta);
-
-        //saving ray cast hit data
-        RaycastHit hit;
-
-        //raycast out, check if something is hit
-        if (Physics.Raycast(transform.position, fwd, out hit))
-        {
-            Debug.Log("hit the" + hit.collider.gameObject.name);
-        }
-
-        if (hit.collider != null)
-        {
-            //move up
-            if (Input.GetKeyDown("w"))
-            {
-                //Debug.Log("We are moving");
-                transform.Translate(0, 0, 1);
-                transform.Rotate(0, -180, 0);
-            }
-            //move left
-            if (Input.GetKeyDown("a"))
-            {
-                transform.Translate(-1, 0, 0);
-                transform.Rotate(0, -90, 0);
-            }
-            //move right
-            if (Input.GetKeyDown("d"))
-            {
-                transform.Translate(1, 0, 0);
-                transform.Rotate(0, 90, 0);
-            }
-            //move down
-            if (Input.GetKeyDown("s"))
-            {
-                transform.Translate(0, 0, -1);
-                
-            }
-           
-
-        }
-        
-    }
 }
