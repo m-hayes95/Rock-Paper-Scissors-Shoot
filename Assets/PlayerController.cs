@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         //Create a capsuale cast around the player object that checks for tile layer masks on objects it collides with.
         float playerHeight = 2f;
         float playerRadius = 0.3f;
-        float moveDistance = 2f;
+        float moveDistance = 4f;
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance, rockTileLayerMask);
         Debug.Log(canMove);
         Color color = Color.yellow;
