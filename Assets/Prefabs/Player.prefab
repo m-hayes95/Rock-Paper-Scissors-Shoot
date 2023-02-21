@@ -207,7 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31eab93d50f8bc24586d357c754e8904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2918767104412040898}
+  playerBattlePodium: {fileID: 596749468671349057, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
 --- !u!1 &2918767104412040898
 GameObject:
   m_ObjectHideFlags: 0
