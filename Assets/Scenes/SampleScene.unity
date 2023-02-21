@@ -3056,6 +3056,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
+      propertyPath: rockTileLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
+      propertyPath: paperTileLayerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
+      propertyPath: specialTileLayerMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
+      propertyPath: scissorsTileLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
       propertyPath: m_RootOrder
       value: 3
