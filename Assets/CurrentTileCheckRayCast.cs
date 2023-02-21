@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrentTileCheckRayCast : MonoBehaviour
 {
     //bool check for current tile
-    [SerializeField] private bool rockTile = false, paperTile = false, scissorsTile = false, specialTile = false;
+    public bool rockTile = false, paperTile = false, scissorsTile = false, specialTile = false;
     //Layer mask ref for tiles
     [SerializeField] private LayerMask rockTileLayerMask, paperTileLayerMask, scissorsTileLayerMask, specialTileLayerMask;
 

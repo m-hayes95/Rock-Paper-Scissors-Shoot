@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 6825772357966559233}
   - component: {fileID: 7958098894333119864}
   - component: {fileID: 6488957455055590876}
-  - component: {fileID: 36900169661704556}
   m_Layer: 0
   m_Name: CurrentTileCheck
   m_TagString: Untagged
@@ -181,34 +180,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &36900169661704556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868363415792878932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e06ca646da7904cbcc7e31025d3c58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rockTile: 0
-  paperTile: 0
-  scissorsTile: 0
-  specialTile: 0
-  rockTileLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  paperTileLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  scissorsTileLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  specialTileLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1 &1014853574525574336
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2918767104412040896}
   - component: {fileID: 7133880126867797561}
+  - component: {fileID: 822657117298488649}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -358,6 +330,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65e245479d4c73478a7a6dffb913684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &822657117298488649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918767104412040898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e06ca646da7904cbcc7e31025d3c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockTile: 0
+  paperTile: 0
+  scissorsTile: 0
+  specialTile: 0
+  rockTileLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  paperTileLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  scissorsTileLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  specialTileLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &2918767105577960589
 GameObject:
   m_ObjectHideFlags: 0
