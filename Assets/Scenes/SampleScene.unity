@@ -679,8 +679,8 @@ GameObject:
   - component: {fileID: 422025842}
   - component: {fileID: 422025841}
   m_Layer: 0
-  m_Name: Player Podium
-  m_TagString: Untagged
+  m_Name: Enemy Podium
+  m_TagString: EnemyBattleTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2333,8 +2333,8 @@ GameObject:
   - component: {fileID: 1636263155}
   - component: {fileID: 1636263154}
   m_Layer: 0
-  m_Name: Middle Section
-  m_TagString: Untagged
+  m_Name: Middle Tile
+  m_TagString: PreBattleTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2431,7 +2431,7 @@ GameObject:
   - component: {fileID: 1667316901}
   m_Layer: 0
   m_Name: Enemy Podium
-  m_TagString: Untagged
+  m_TagString: PlayerBattleTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2990,11 +2990,11 @@ Transform:
   - {fileID: 1317225829}
   - {fileID: 35085459}
   - {fileID: 1928263666}
+  - {fileID: 1566901698}
   - {fileID: 157972354}
   - {fileID: 2085891784}
   - {fileID: 829814599}
   - {fileID: 684357300}
-  - {fileID: 1566901698}
   - {fileID: 1802814221}
   - {fileID: 531677919}
   m_Father: {fileID: 0}
@@ -3199,7 +3199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.03
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3207,7 +3207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
       propertyPath: m_LocalRotation.w
