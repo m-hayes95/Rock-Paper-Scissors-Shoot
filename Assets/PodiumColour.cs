@@ -9,8 +9,10 @@ public class PodiumColour : MonoBehaviour
     public GameObject playerTileCheck;
 
     [SerializeField] private Material rockMat, paperMat, scissorsMat, specialMat;
-    [SerializeField] private bool rock, paper, scissors, special;
+    //[SerializeField] private bool rock, paper, scissors, special;
     private Renderer r;
+    //ref to tile manager script
+    private TileManager tileManager;
 
     private void Start()
     {
@@ -22,50 +24,33 @@ public class PodiumColour : MonoBehaviour
     private void Update()
     {
         //player on rock tile set to correct mat
-        if (playerTileCheck.GetComponent<CurrentTileCheckRayCast>().rockTile == true)
+        if (tileManager.rock == true)
         {
             //Set the tile to rock materail
             Debug.Log("player on rock");
-            rock = true;
             r.material = rockMat;
-        }
-        else
-        {
-            rock = false;
         }
 
         //player on paper tile set to correct mat
-        if (playerTileCheck.GetComponent<CurrentTileCheckRayCast>().paperTile == true)
+        if (tileManager.paper == true)
         {
-            paper = true;
             Debug.Log("player on paper");
             r.material = paperMat;
         }
-        else
-        {
-            paper = false;
-        }
+    
         //player on scissors tile set to correct mat
-        if (playerTileCheck.GetComponent<CurrentTileCheckRayCast>().scissorsTile == true)
+        if (tileManager.scissors == true)
         {
-            scissors = true;
+            Debug.Log("player on scissors");
             r.material = scissorsMat;
-        }
-        else
-        {
-            scissors=false;
         }
 
         //player on special tile set to correct mat
-        if (playerTileCheck.GetComponent<CurrentTileCheckRayCast>().specialTile == true)
+        if (tileManager.special == true)
         {
-            special = true;
+            Debug.Log("player on special");
             r.material = specialMat;
         }
-        else
-        {
-            special = false;
-        }   
 
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    [SerializeField] private bool rock = false, paper = false, scissors = false, special = false;
+    [SerializeField] public bool rock = false, paper = false, scissors = false, special = false;
 
     public void PlayerOnRockTile()
     {
