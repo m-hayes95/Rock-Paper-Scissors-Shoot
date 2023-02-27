@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CurrentTileCheckRayCast : MonoBehaviour
 {
-    //bool check for current tile
-    public bool rockTile = false, paperTile = false, scissorsTile = false, specialTile = false;
     //Layer mask ref for tiles
     [SerializeField] private LayerMask rockTileLayerMask, paperTileLayerMask, scissorsTileLayerMask, specialTileLayerMask;
+    //ref to tile manager script
+    public TileManager tileManager;
 
     private void Update()
     {
@@ -24,43 +24,28 @@ public class CurrentTileCheckRayCast : MonoBehaviour
         if (Physics.Raycast(transform.position, tileCheckRayCast, out tileCheckHit, maxDistance, rockTileLayerMask))
         {
             //Debug.Log("Player current tile is " + tileCheckHit.collider.gameObject.tag);
-            rockTile = true;
-        }else
-        {
-            rockTile = false;
+            tileManager.PlayerOnRockTile();
         }
 
         //set paper tile bool to true if on correct tile. Check tile with layer mask
         if (Physics.Raycast(transform.position, tileCheckRayCast, out tileCheckHit, maxDistance, paperTileLayerMask))
         {
             //Debug.Log("Player current tile is " + tileCheckHit.collider.gameObject.tag);
-            paperTile = true;
-        }
-        else
-        {
-            paperTile = false;
+            tileManager.PlayerOnPaperTile();
         }
 
         //set scissors tile bool to true if on correct tile. Check tile with layer mask
         if (Physics.Raycast(transform.position, tileCheckRayCast, out tileCheckHit, maxDistance, scissorsTileLayerMask))
         {
             //Debug.Log("Player current tile is " + tileCheckHit.collider.gameObject.tag);
-            scissorsTile = true;
-        }
-        else
-        {
-            scissorsTile = false;
+            tileManager.PlayerOnScissorsTile();
         }
 
         //set special tile bool to true if on correct tile. Check tile with layer mask
         if (Physics.Raycast(transform.position, tileCheckRayCast, out tileCheckHit, maxDistance, specialTileLayerMask))
         {
             //Debug.Log("Player current tile is " + tileCheckHit.collider.gameObject.tag);
-            specialTile = true;
-        }
-        else
-        {
-            specialTile = false;
+            tileManager.PlayerOnSpecialTile();
         }
     }
 }
