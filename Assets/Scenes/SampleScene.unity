@@ -2186,6 +2186,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3887143369033993669, guid: 14a2183e06590b54daaa87985fd7c0ab, type: 3}
   m_PrefabInstance: {fileID: 1146818646}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1173614815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 596749468877698142, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
+  m_PrefabInstance: {fileID: 596749467315243258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173614819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173614815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b1bd9106fb77542addcd1293b1f53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockMat: {fileID: 2100000, guid: bc2aad0eb46ad924e8d10fd151b99fea, type: 2}
+  paperMat: {fileID: 2100000, guid: 14a1e940221320c48ba6d49897a29d69, type: 2}
+  scissorsMat: {fileID: 2100000, guid: 8ac2c4a2178ac224785341a3d726f451, type: 2}
+  specialMat: {fileID: 2100000, guid: 210316402bfa8e94fb94d719b18ecb69, type: 2}
+  tileManager: {fileID: 1255846560}
+--- !u!1 &1255846559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1255846561}
+  - component: {fileID: 1255846560}
+  m_Layer: 0
+  m_Name: Tile Managment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1255846560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255846559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5208d59053978c944bfeff3f305bba85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: 0
+  paper: 0
+  scissors: 0
+  special: 0
+--- !u!4 &1255846561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255846559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.6992145, y: 1.4593048, z: -0.66155326}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1317225829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 526835821171138510, guid: bcfec6c8058398742841b397c69074ac, type: 3}
@@ -3013,11 +3083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 596749468671349063, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.41
+      value: -1.29
       objectReference: {fileID: 0}
     - target: {fileID: 596749468671349063, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.552
+      value: 4.49
       objectReference: {fileID: 0}
     - target: {fileID: 596749468671349063, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3047,7 +3117,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7314323922167853197, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
+      propertyPath: tileManager
+      value: 
+      objectReference: {fileID: 1255846560}
+    m_RemovedComponents:
+    - {fileID: 7314323922167853197, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
 --- !u!1001 &2918767105052488818
 PrefabInstance:
@@ -3056,22 +3131,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
-      propertyPath: rockTileLayerMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
-      propertyPath: paperTileLayerMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
-      propertyPath: specialTileLayerMask.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 36900169661704556, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
-      propertyPath: scissorsTileLayerMask.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
+    - target: {fileID: 822657117298488649, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
+      propertyPath: tileManager
+      value: 
+      objectReference: {fileID: 1255846560}
     - target: {fileID: 2918767104412040896, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3120,8 +3183,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4371743534957970511, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
 --- !u!1001 &5141544101317185993
 PrefabInstance:

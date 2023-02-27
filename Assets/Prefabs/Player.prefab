@@ -342,10 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e06ca646da7904cbcc7e31025d3c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockTile: 0
-  paperTile: 0
-  scissorsTile: 0
-  specialTile: 0
   rockTileLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -358,6 +354,7 @@ MonoBehaviour:
   specialTileLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  tileManager: {fileID: 0}
 --- !u!1 &2918767105577960589
 GameObject:
   m_ObjectHideFlags: 0
