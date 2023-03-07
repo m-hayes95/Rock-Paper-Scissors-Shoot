@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4818663562099820112}
   - component: {fileID: 8963437883652653604}
   - component: {fileID: 8477366550252489108}
-  - component: {fileID: 8533542901492999512}
   m_Layer: 0
   m_Name: LeftRayCastCheck
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8533542901492999512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79169635586466305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87ef06cd64a809499c27e08fcd95ca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &1014853574525574336
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +94,6 @@ GameObject:
   - component: {fileID: 8746171440786797410}
   - component: {fileID: 3867554567262428618}
   - component: {fileID: 4586218218312870366}
-  - component: {fileID: 5999429122932241376}
   m_Layer: 0
   m_Name: BattlePhaseRayCastCheck
   m_TagString: Untagged
@@ -181,21 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5999429122932241376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014853574525574336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31eab93d50f8bc24586d357c754e8904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2918767104412040898}
-  playerBattlePodium: {fileID: 596749468671349057, guid: db6041790fe6cd045818f05c385a9bde, type: 3}
-  playerHasEnteredBP: 0
 --- !u!1 &2918767104412040898
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +322,6 @@ GameObject:
   - component: {fileID: 3873969686439323068}
   - component: {fileID: 209979659143570735}
   - component: {fileID: 2086949776784537316}
-  - component: {fileID: 5637515179515249188}
   m_Layer: 0
   m_Name: UpRayCastCheck
   m_TagString: Untagged
@@ -425,19 +394,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5637515179515249188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6019313417543614238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcec1fbd46c624e4b873ed76d0ac9c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &7907982117184331259
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +405,6 @@ GameObject:
   - component: {fileID: 1970673312504197112}
   - component: {fileID: 6006725830083617988}
   - component: {fileID: 1702596808830477221}
-  - component: {fileID: 2897810020352416638}
   m_Layer: 0
   m_Name: RightRayCastCheck
   m_TagString: Untagged
@@ -522,16 +477,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2897810020352416638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7907982117184331259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8659f44a7c9664a4abb02f808b4ffd09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
