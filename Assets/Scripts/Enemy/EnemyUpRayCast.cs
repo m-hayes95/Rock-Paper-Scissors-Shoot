@@ -25,7 +25,7 @@ public class EnemyUpRayCast : MonoBehaviour
         if (hit.collider != null && hit.collider.CompareTag(MOVEABLE_TILE))
         {
             //Move enemy to position of tile hit with raycast
-            Debug.Log("Enemy Moved Foward to " + hit.collider.gameObject.name);
+            //Debug.Log("Enemy Moved Foward to " + hit.collider.gameObject.name);
             //Tiles are under player, so needs an offset on the Y axis
             float enemyHeight = 1.5f;
             enemyAI.transform.position = hit.collider.transform.position + Vector3.up * enemyHeight;

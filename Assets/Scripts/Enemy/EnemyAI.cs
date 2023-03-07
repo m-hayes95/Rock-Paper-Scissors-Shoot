@@ -10,12 +10,23 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private EnemyLeftRayCast enemyLeftRayCast;
     [SerializeField] private EnemyRightRayCast enemyRightRayCast;
     [SerializeField] private EnemyBattlePhaseRayCast enemyBattlePhaseRayCast;
-
     // check if enemy can move this turn
     [SerializeField] private bool canMovePhase1 = false, canMovePhase2 = false, canMovePhase3 = false, canMovePhase4 = false, isBattlePhase = false;
-    // statemachine for enemy ai moves
+
+    // define a list for potential moves
+    private List<System.Action> moves = new List<System.Action>(); 
+
+    // statemachine for enemy ai phases
     public enum EnemyAISM { phase1, phase2, phase3, phase4, battlePhase }
     public EnemyAISM enemyState;
+
+    private void Start()
+    {
+        // Add moves to list
+        moves.Add(enemyUpRayCast.EnemyMoveUp);
+        moves.Add(enemyRightRayCast.EnemyMoveRight);
+        moves.Add(enemyLeftRayCast.EnemyMoveLeft);
+    }
 
     private void Update()
     {
@@ -30,7 +41,11 @@ public class EnemyAI : MonoBehaviour
                     canMovePhase1 = true;
                     if (canMovePhase1 == true)
                     {
-                        enemyUpRayCast.EnemyMoveUp(); // enemy make 1st move
+                        // Generate a random index within the range of the list
+                        int randomIndex = Random.Range(0, moves.Count);
+                        // Invoke the method at the random index
+                        moves[randomIndex].Invoke();
+                        // Return the can move boolean to false
                         canMovePhase1 = false;
                     }
                     enemyState = EnemyAISM.phase2; // change current phase
@@ -44,7 +59,8 @@ public class EnemyAI : MonoBehaviour
                     canMovePhase2 = true;
                     if (canMovePhase2 == true)
                     {
-                        enemyRightRayCast.EnemyMoveRight();
+                        int randomIndex = Random.Range(0, moves.Count);
+                        moves[randomIndex].Invoke();
                         canMovePhase2 = false;
                     }
                     enemyState = EnemyAISM.phase3;
@@ -59,7 +75,8 @@ public class EnemyAI : MonoBehaviour
                     canMovePhase3 = true;
                     if (canMovePhase3 == true)
                     {
-                        enemyLeftRayCast.EnemyMoveLeft();
+                        int randomIndex = Random.Range(0, moves.Count);
+                        moves[randomIndex].Invoke();
                         canMovePhase3 = false;
                     }
                     enemyState = EnemyAISM.phase4;
@@ -73,7 +90,8 @@ public class EnemyAI : MonoBehaviour
                     canMovePhase4 = true;
                     if (canMovePhase4 == true)
                     {
-                        enemyUpRayCast.EnemyMoveUp();
+                        int randomIndex = Random.Range(0, moves.Count);
+                        moves[randomIndex].Invoke();
                         canMovePhase4 = false;
                     }
                     enemyState = EnemyAISM.battlePhase;
@@ -94,5 +112,7 @@ public class EnemyAI : MonoBehaviour
                 Debug.Log(enemyState);
                 break;
         }
+
+       
     }
 }
