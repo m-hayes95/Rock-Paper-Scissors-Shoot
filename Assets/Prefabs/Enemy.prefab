@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2918767104412040896}
   - component: {fileID: 822657117298488649}
+  - component: {fileID: -3923018190625792810}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -228,6 +229,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   tileManager: {fileID: 135600001662338639, guid: dc1de4c128061b7428619bf48a9b3cca, type: 3}
+--- !u!114 &-3923018190625792810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918767104412040898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31364af5da6b3184584c5c5aa4168812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2918767105577960589
 GameObject:
   m_ObjectHideFlags: 0
