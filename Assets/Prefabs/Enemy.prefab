@@ -242,6 +242,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phaseManager: {fileID: 5224942129628719359, guid: 3d593525178cbc948b9f5d0836921799, type: 3}
+  enemyUpRayCast: {fileID: 0}
+  canMove1: 0
+  canMove2: 0
+  canMove3: 0
+  canMove4: 0
+  battlePhase: 0
+  enemyState: 0
 --- !u!1 &2918767105577960589
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +343,7 @@ GameObject:
   - component: {fileID: 3873969686439323068}
   - component: {fileID: 209979659143570735}
   - component: {fileID: 2086949776784537316}
+  - component: {fileID: 8432181671680243892}
   m_Layer: 0
   m_Name: UpRayCastCheck
   m_TagString: Untagged
@@ -408,6 +416,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8432181671680243892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6019313417543614238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2a3711a2097a64ea0bf1ec7f0f3ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!1 &7907982117184331259
 GameObject:
   m_ObjectHideFlags: 0
