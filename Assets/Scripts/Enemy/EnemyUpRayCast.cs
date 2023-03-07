@@ -11,7 +11,7 @@ public class EnemyUpRayCast : MonoBehaviour
     public void EnemyMoveUp()
     {
         //Cast ray cast in diagonal position, using the up game object
-        Vector3 fwd = transform.TransformDirection(new Vector3(0, 1, -1));
+        Vector3 fwd = transform.TransformDirection(new Vector3(0, -1, 1));
 
         //Store the raycast hit data
         RaycastHit hit;

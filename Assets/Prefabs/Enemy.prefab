@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 8746171440786797410}
   - component: {fileID: 3867554567262428618}
   - component: {fileID: 4586218218312870366}
+  - component: {fileID: 4030697456071943059}
   m_Layer: 0
   m_Name: BattlePhaseRayCastCheck
   m_TagString: Untagged
@@ -166,6 +167,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4030697456071943059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014853574525574336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ada33dd5cc345d4bbc31b10540e1f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2918767104412040898
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,11 +256,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaseManager: {fileID: 5224942129628719359, guid: 3d593525178cbc948b9f5d0836921799, type: 3}
   enemyUpRayCast: {fileID: 0}
-  canMove1: 0
-  canMove2: 0
-  canMove3: 0
-  canMove4: 0
-  battlePhase: 0
+  canMovePhase1: 0
+  canMovePhase2: 0
+  canMovePhase3: 0
+  canMovePhase4: 0
+  isBattlePhase: 0
   enemyState: 0
 --- !u!1 &2918767105577960589
 GameObject:

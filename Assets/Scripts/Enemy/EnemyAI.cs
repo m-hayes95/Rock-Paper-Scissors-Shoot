@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     // ref to phase manager for checkpoint / phase check
     [SerializeField] private PhaseManager phaseManager;
     [SerializeField] private EnemyUpRayCast enemyUpRayCast;
+    [SerializeField] private EnemyBattlePhaseRayCast enemyBattlePhaseRayCast;
     // check if enemy can move this turn
     [SerializeField] private bool canMovePhase1 = false, canMovePhase2 = false, canMovePhase3 = false, canMovePhase4 = false, isBattlePhase = false;
     // statemachine for enemy ai moves
@@ -81,6 +82,7 @@ public class EnemyAI : MonoBehaviour
                 if (isBattlePhase == true)
                 {
                     // move to enemy podium
+                    enemyBattlePhaseRayCast.EnemyEnterBattlePhase();
                 }
                 break;
 
