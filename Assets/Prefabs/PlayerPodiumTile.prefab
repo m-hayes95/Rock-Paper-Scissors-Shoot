@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 596749468671349063}
   - component: {fileID: 596749468671349062}
-  - component: {fileID: 7314323922167853197}
   m_Layer: 0
   m_Name: PlayerPodiumTile
   m_TagString: PlayerBattleTile
@@ -47,23 +46,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.196751, y: 1.2015617, z: 1.1351829}
   m_Center: {x: 0.0048285127, y: -0.014470935, z: -0.0033804476}
---- !u!114 &7314323922167853197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 596749468671349057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b1bd9106fb77542addcd1293b1f53d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTileCheck: {fileID: 2918767104412040898, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
-  rockMat: {fileID: 2100000, guid: bc2aad0eb46ad924e8d10fd151b99fea, type: 2}
-  paperMat: {fileID: 2100000, guid: 14a1e940221320c48ba6d49897a29d69, type: 2}
-  scissorsMat: {fileID: 2100000, guid: 8ac2c4a2178ac224785341a3d726f451, type: 2}
-  specialMat: {fileID: 2100000, guid: 210316402bfa8e94fb94d719b18ecb69, type: 2}
 --- !u!1 &596749468877698142
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,6 +57,7 @@ GameObject:
   - component: {fileID: 596749468877698130}
   - component: {fileID: 596749468877698141}
   - component: {fileID: 596749468877698140}
+  - component: {fileID: 1173614819}
   m_Layer: 0
   m_Name: Player PodiumVisual
   m_TagString: Untagged
@@ -147,3 +130,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1173614819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596749468877698142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b1bd9106fb77542addcd1293b1f53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockMat: {fileID: 2100000, guid: bc2aad0eb46ad924e8d10fd151b99fea, type: 2}
+  paperMat: {fileID: 2100000, guid: 14a1e940221320c48ba6d49897a29d69, type: 2}
+  scissorsMat: {fileID: 2100000, guid: 8ac2c4a2178ac224785341a3d726f451, type: 2}
+  specialMat: {fileID: 2100000, guid: 210316402bfa8e94fb94d719b18ecb69, type: 2}
+  tileManager: {fileID: 0}

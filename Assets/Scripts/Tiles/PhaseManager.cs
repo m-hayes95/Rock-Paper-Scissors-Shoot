@@ -10,7 +10,7 @@ public class PhaseManager : MonoBehaviour
     private float phaseDistanceCheckpoint1 = 4.7f, phaseDistanceCheckpoint2 = 3.7f, phaseDistanceCheckpoint3 = 2.8f, phaseDistanceCheckpoint4 = 1.9f;
     private float battlePhaseDistanceCheckpoint = 1.2f;
     // Bool to check if distance has been reached.
-    [SerializeField] private bool checkpoint1 = false, checkpoint2 = false, checkpoint3 = false, checkpoint4 = false, battlePhaseCheckPoint = false;
+    public bool checkpoint1 = false, checkpoint2 = false, checkpoint3 = false, checkpoint4 = false, battlePhaseCheckPoint = false;
 
 
     private void Update()

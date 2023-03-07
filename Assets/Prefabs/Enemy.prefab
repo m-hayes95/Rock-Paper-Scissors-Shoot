@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31364af5da6b3184584c5c5aa4168812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phaseManager: {fileID: 5224942129628719359, guid: 3d593525178cbc948b9f5d0836921799, type: 3}
 --- !u!1 &2918767105577960589
 GameObject:
   m_ObjectHideFlags: 0
