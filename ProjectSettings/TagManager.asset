@@ -8,6 +8,7 @@ TagManager:
   - PreBattleTile
   - EnemyBattleTile
   - PlayerBattleTile
+  - Enemy
   layers:
   - Default
   - TransparentFX
