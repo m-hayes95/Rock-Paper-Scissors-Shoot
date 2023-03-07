@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4818663562099820112}
   - component: {fileID: 8963437883652653604}
   - component: {fileID: 8477366550252489108}
+  - component: {fileID: 791844623474174111}
   m_Layer: 0
   m_Name: LeftRayCastCheck
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &791844623474174111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79169635586466305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3143c674ae36afe42bd7ad6240b2bf91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: -3923018190625792810}
 --- !u!1 &1014853574525574336
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ada33dd5cc345d4bbc31b10540e1f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 2918767104412040898}
+  enemyBattlePodium: {fileID: 0}
+  playerHasEnteredBP: 0
 --- !u!1 &2918767104412040898
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,8 +271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31364af5da6b3184584c5c5aa4168812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phaseManager: {fileID: 5224942129628719359, guid: 3d593525178cbc948b9f5d0836921799, type: 3}
-  enemyUpRayCast: {fileID: 0}
+  phaseManager: {fileID: 0}
+  enemyUpRayCast: {fileID: 8432181671680243892}
+  enemyLeftRayCast: {fileID: 791844623474174111}
+  enemyRightRayCast: {fileID: 5941014340610062283}
+  enemyBattlePhaseRayCast: {fileID: 4030697456071943059}
   canMovePhase1: 0
   canMovePhase2: 0
   canMovePhase3: 0
@@ -371,7 +391,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6019313417543614238}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.037, y: -0.148, z: -0.019}
   m_LocalScale: {x: 0.23102, y: 0.23102, z: 0.23102}
   m_ConstrainProportionsScale: 0
@@ -441,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a3711a2097a64ea0bf1ec7f0f3ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAI: {fileID: 0}
+  enemyAI: {fileID: -3923018190625792810}
 --- !u!1 &7907982117184331259
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +473,7 @@ GameObject:
   - component: {fileID: 1970673312504197112}
   - component: {fileID: 6006725830083617988}
   - component: {fileID: 1702596808830477221}
+  - component: {fileID: 5941014340610062283}
   m_Layer: 0
   m_Name: RightRayCastCheck
   m_TagString: Untagged
@@ -525,3 +546,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5941014340610062283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907982117184331259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef763cb215513942bb1e9761749a0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAI: {fileID: -3923018190625792810}

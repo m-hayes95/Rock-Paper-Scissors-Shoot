@@ -7,7 +7,10 @@ public class EnemyAI : MonoBehaviour
     // ref to phase manager for checkpoint / phase check
     [SerializeField] private PhaseManager phaseManager;
     [SerializeField] private EnemyUpRayCast enemyUpRayCast;
+    [SerializeField] private EnemyLeftRayCast enemyLeftRayCast;
+    [SerializeField] private EnemyRightRayCast enemyRightRayCast;
     [SerializeField] private EnemyBattlePhaseRayCast enemyBattlePhaseRayCast;
+
     // check if enemy can move this turn
     [SerializeField] private bool canMovePhase1 = false, canMovePhase2 = false, canMovePhase3 = false, canMovePhase4 = false, isBattlePhase = false;
     // statemachine for enemy ai moves
@@ -41,7 +44,7 @@ public class EnemyAI : MonoBehaviour
                     canMovePhase2 = true;
                     if (canMovePhase2 == true)
                     {
-                        enemyUpRayCast.EnemyMoveUp();
+                        enemyRightRayCast.EnemyMoveRight();
                         canMovePhase2 = false;
                     }
                     enemyState = EnemyAISM.phase3;
@@ -56,7 +59,7 @@ public class EnemyAI : MonoBehaviour
                     canMovePhase3 = true;
                     if (canMovePhase3 == true)
                     {
-                        enemyUpRayCast.EnemyMoveUp();
+                        enemyLeftRayCast.EnemyMoveLeft();
                         canMovePhase3 = false;
                     }
                     enemyState = EnemyAISM.phase4;
