@@ -25,7 +25,7 @@ public class BattlePhaseRayCast : MonoBehaviour
         //Debug to check tile being hit
         if (Physics.Raycast(transform.position, battlePhaseCheckRayCast, out battlePhaseCheckRCHit))
         {
-            Debug.Log("Battle Phase Ray Cast Check hit" +battlePhaseCheckRCHit.collider.gameObject.tag);
+            //Debug.Log("Battle Phase Ray Cast Check hit" +battlePhaseCheckRCHit.collider.gameObject.tag);
         }
 
         //If ray cast hit collision is with tile with Pre battle tag, and has not entered battle
@@ -34,7 +34,7 @@ public class BattlePhaseRayCast : MonoBehaviour
             playerHasEnteredBP == false)
         {
             //Enter battle phase if condions are met
-            Debug.Log("StartBattlePhase");
+            //Debug.Log("StartBattlePhase");
             //Players postion transformed to player podium location w/ offset on Y axis
             float playerHeight = 1.5f;
             player.transform.position = playerBattlePodium.transform.position + Vector3.up * playerHeight;

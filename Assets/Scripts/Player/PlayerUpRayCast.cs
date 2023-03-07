@@ -21,7 +21,7 @@ public class PlayerUpRayCast : MonoBehaviour
 
         if (Physics.Raycast(transform.position, fwd, out hit))
         {
-            Debug.Log("Up hit " + hit.collider.gameObject.name + hit.collider.gameObject.tag);
+            //Debug.Log("Up hit " + hit.collider.gameObject.name + hit.collider.gameObject.tag);
         }
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -30,7 +30,7 @@ public class PlayerUpRayCast : MonoBehaviour
             if (hit.collider != null && hit.collider.CompareTag(MOVEABLE_TILE))
             {
                 //Move player to position of tile hit with raycast
-                Debug.Log("Player Moved Foward to " + hit.collider.gameObject.name);
+                //Debug.Log("Player Moved Foward to " + hit.collider.gameObject.name);
                 //Tiles are under player, so needs an offset on the Y axis
                 float playerHeight = 1.5f;
                 player.transform.position = hit.collider.transform.position + Vector3.up * playerHeight;
