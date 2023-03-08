@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurrentTileCheckRayCast : MonoBehaviour
+public class PlayerCurrentTileCheckRayCast : MonoBehaviour
 {
     //Layer mask ref for tiles
     [SerializeField] private LayerMask rockTileLayerMask, paperTileLayerMask, scissorsTileLayerMask, specialTileLayerMask;

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    // ref to phase manager for checkpoint / phase check
+    // ref to phase manager and ray cast scripts
     [SerializeField] private PhaseManager phaseManager;
     [SerializeField] private EnemyUpRayCast enemyUpRayCast;
     [SerializeField] private EnemyLeftRayCast enemyLeftRayCast;
     [SerializeField] private EnemyRightRayCast enemyRightRayCast;
     [SerializeField] private EnemyBattlePhaseRayCast enemyBattlePhaseRayCast;
+    [SerializeField] private EnemyCurrentTileCheckRayCast enemyCurrentTileCheckRayCast;
+
     // check if enemy can move this turn
     [SerializeField] private bool canMovePhase1 = false, canMovePhase2 = false, canMovePhase3 = false, canMovePhase4 = false, isBattlePhase = false;
 
@@ -22,7 +24,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        // Add moves to list
+        // Add potential moves to the moves list
         moves.Add(enemyUpRayCast.EnemyMoveUp);
         moves.Add(enemyRightRayCast.EnemyMoveRight);
         moves.Add(enemyLeftRayCast.EnemyMoveLeft);
@@ -30,6 +32,9 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+        // Check enemys current tile]
+        enemyCurrentTileCheckRayCast.CheckEnemysCurrentTile();
+
         // Enemy ai state machine
         switch (enemyState)
         {

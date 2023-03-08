@@ -18,23 +18,23 @@ public class PodiumColour : MonoBehaviour
     private void Update()
     {
         //player on rock tile set to correct mat
-        if (tileManager.rock == true) 
+        if (tileManager.playerRock == true) 
         {
             //Debug.Log("player on rock");
             r.material = rockMat; //Set the tile to rock materail
 
         }
-        if (tileManager.paper == true) 
+        if (tileManager.playerPaper == true) 
         {
             //Debug.Log("player on paper");
             r.material = paperMat;
         }
-        if (tileManager.scissors == true) 
+        if (tileManager.playerScissors == true) 
         {
             //Debug.Log("player on scissors");
             r.material = scissorsMat;
         }
-        if (tileManager.special == true)
+        if (tileManager.playerSpecial == true)
         {
             //Debug.Log("player on special");
             r.material = specialMat;
