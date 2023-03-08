@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PodiumColour : MonoBehaviour
+public class PlayerPodiumColour : MonoBehaviour
 {
     [SerializeField] private Material rockMat, paperMat, scissorsMat, specialMat; // ref to materials for each tile
     private Renderer r; // ref to game object renderer.
