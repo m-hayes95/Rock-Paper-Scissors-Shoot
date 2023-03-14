@@ -9,6 +9,8 @@ public class EnemyCurrentTileCheckRayCast : MonoBehaviour
     //ref to tile manager script
     [SerializeField] private TileManager tileManager;
 
+    private System.Action lastKnownTile;
+
     public void CheckEnemysCurrentTile()
     {
         //Create raycast from tile check game object, facing down
@@ -25,6 +27,7 @@ public class EnemyCurrentTileCheckRayCast : MonoBehaviour
         {
             //Debug.Log("Enemy current tile is " + enemyTileCheckHit.collider.gameObject.name);
             tileManager.EnemyOnRockTile();
+            
         }
 
         //set paper tile bool to true if on correct tile. Check tile with layer mask
