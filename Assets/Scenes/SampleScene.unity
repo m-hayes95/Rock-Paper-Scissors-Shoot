@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -255,6 +255,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -3923018190625792810, guid: afec2985a77f64c4abcc3ddf6cc47825, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1985895787}
+    - target: {fileID: -3923018190625792810, guid: afec2985a77f64c4abcc3ddf6cc47825, type: 3}
+      propertyPath: tileManager
+      value: 
+      objectReference: {fileID: 1255846560}
+    - target: {fileID: -3923018190625792810, guid: afec2985a77f64c4abcc3ddf6cc47825, type: 3}
       propertyPath: phaseManager
       value: 
       objectReference: {fileID: 586107348}
@@ -284,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: afec2985a77f64c4abcc3ddf6cc47825, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: afec2985a77f64c4abcc3ddf6cc47825, type: 3}
       propertyPath: m_LocalRotation.y
@@ -292,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: afec2985a77f64c4abcc3ddf6cc47825, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2918767104412040896, guid: afec2985a77f64c4abcc3ddf6cc47825, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2758,6 +2766,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 526835821171138510, guid: bcfec6c8058398742841b397c69074ac, type: 3}
   m_PrefabInstance: {fileID: 1985486341}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1985895786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1985895788}
+  - component: {fileID: 1985895787}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1985895787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985895786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e778f7cede40a842b714eb33307d3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1985895788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985895786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.355324, y: -0.23000458, z: 7.9201937}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2000772381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,6 +3460,10 @@ PrefabInstance:
       propertyPath: tileManager
       value: 
       objectReference: {fileID: 1255846560}
+    - target: {fileID: 4073970980319048213, guid: 872cd496c5e44ee429e1d6b9ec7e860b, type: 3}
+      propertyPath: phaseManager
+      value: 
+      objectReference: {fileID: 586107348}
     - target: {fileID: 4073970980319048213, guid: 872cd496c5e44ee429e1d6b9ec7e860b, type: 3}
       propertyPath: enemyPodiumVisual
       value: 

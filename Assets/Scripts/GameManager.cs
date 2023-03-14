@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //Battle phase start
-    //Rock beats scissors
-    //Scissors beat paper 
-    //Paper beat rock
+    public void GamePlayerWin()
+    {
+        Debug.Log("Player Wins");
+    }
+    public void GameEnemyWin()
+    {
+        Debug.Log("Enemy Wins");
+    }
+    public void GameDraw()
+    {
+        Debug.Log("Draw");
+    }
+
+
+
+
+
 }

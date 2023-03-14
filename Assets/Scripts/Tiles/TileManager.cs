@@ -80,4 +80,6 @@ public class TileManager : MonoBehaviour
         enemyPaper= false;
         enemyScissors = false;
     }
+
+    
 }

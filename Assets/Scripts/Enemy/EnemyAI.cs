@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    // ref to phase manager and ray cast scripts
+    // ref to phase & tile & game manager and ray cast scripts
     [SerializeField] private PhaseManager phaseManager;
+    [SerializeField] private TileManager tileManager;
+    [SerializeField] private GameManager gameManager;
+
     [SerializeField] private EnemyUpRayCast enemyUpRayCast;
     [SerializeField] private EnemyLeftRayCast enemyLeftRayCast;
     [SerializeField] private EnemyRightRayCast enemyRightRayCast;
@@ -109,6 +112,51 @@ public class EnemyAI : MonoBehaviour
                 {
                     // move to enemy podium
                     enemyBattlePhaseRayCast.EnemyEnterBattlePhase();
+
+                    // check what the current tile is for the battle phase to see who wins
+                    //Player Wins
+                    if (tileManager.playerRock && tileManager.enemyScissors == true) {
+                        gameManager.GamePlayerWin();
+                    }
+                    if (tileManager.playerPaper && tileManager.enemyRock == true)
+                    {
+                        gameManager.GamePlayerWin();
+                    }
+                    if (tileManager.playerScissors && tileManager.enemyPaper == true)
+                    {
+                        gameManager.GamePlayerWin();
+                    }
+                    //Enemy wins
+                    if (tileManager.playerRock && tileManager.enemyPaper == true)
+                    {
+                        gameManager.GameEnemyWin();
+                    }
+                    if (tileManager.playerPaper && tileManager.enemyScissors == true)
+                    {
+                        gameManager.GameEnemyWin();
+                    }
+                    if (tileManager.playerScissors && tileManager.enemyRock == true)
+                    {
+                        gameManager.GameEnemyWin();
+                    }
+                    //Draws
+                    if (tileManager.playerRock && tileManager.enemyRock == true)
+                    {
+                        gameManager.GameDraw();
+                    }
+                    if (tileManager.playerPaper && tileManager.enemyPaper == true)
+                    {
+                        gameManager.GameDraw();
+                    }
+                    if (tileManager.playerScissors && tileManager.enemyScissors == true)
+                    {
+                        gameManager.GameDraw();
+                    }
+                    // check if the last tile was a special tile
+                    if (tileManager.playerSpecial || tileManager.enemySpecial == true)
+                    {
+                        Debug.Log("Player or enemy on special tile");
+                    }
                 }
                 break;
 

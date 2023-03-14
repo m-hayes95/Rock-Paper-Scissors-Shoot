@@ -9,6 +9,9 @@ public class EnemyPodiumTile : MonoBehaviour
     [SerializeField] private GameObject enemyPodiumVisual; // ref to enemy podium game object
     [SerializeField] private TileManager tileManager; // ref to tile manager script
 
+    // ref to phase manager script to check current phase
+    [SerializeField] private PhaseManager phaseManager;
+
 
     private void Start()
     {
@@ -21,7 +24,7 @@ public class EnemyPodiumTile : MonoBehaviour
         // If enemy is on a tile, set the material of the podium to match the corrosponding colour.
         if (tileManager.enemyRock == true)
         {
-            enemyPodiumTileRenderer.material = rockMat; 
+            enemyPodiumTileRenderer.material = rockMat;
         }
         if (tileManager.enemyPaper == true)
         {
