@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-
+    // Ref for Phase Manager script
+    [SerializeField] PhaseManager phaseManager;
+    // Set bool to true if player or enemy is on the corresponding tile
     public bool playerRock = false, playerPaper = false, playerScissors = false, playerSpecial = false;
     public bool enemyRock = false, enemyPaper = false, enemyScissors = false, enemySpecial = false;
+
     // Store the last enemy tile if the current player tile is a special tile
-    public bool lastPlayerTileIsRock = false, lastPlayerTileIsPaper = false, lastPlayerTileIsScissors = false;
-    public bool lastEnemyTileIsRock = false, lastEnemyTileIsPaper = false, lastEnemyTileIsScissors = false;
-    private string lastPlayerTile, lastEnemyTile;
+    //public bool lastPlayerTileIsRock = false, lastPlayerTileIsPaper = false, lastPlayerTileIsScissors = false;
+    //public bool lastEnemyTileIsRock = false, lastEnemyTileIsPaper = false, lastEnemyTileIsScissors = false;
+
+    // Ref to current players current tile using string field
+    private string lastPlayerTileOnSpecial, lastEnemyTileOnSpecial;
     private const string ROCK = "Rock", PAPER = "Paper", SCISSORS = "Scissors";
 
     public void PlayerOnRockTile()
@@ -22,7 +27,7 @@ public class TileManager : MonoBehaviour
         playerScissors = false;
         playerSpecial = false;
         // set the last player tile for when we hit a special tile
-        lastPlayerTile = ROCK;
+        lastPlayerTileOnSpecial = ROCK;
     }
 
     public void PlayerOnPaperTile()
@@ -34,7 +39,7 @@ public class TileManager : MonoBehaviour
         playerScissors = false;
         playerSpecial = false;
 
-        lastPlayerTile = PAPER;
+        lastPlayerTileOnSpecial = PAPER;
     }
 
     public void PlayerOnScissorsTile()
@@ -46,7 +51,7 @@ public class TileManager : MonoBehaviour
         playerPaper = false;
         playerSpecial =false;
 
-        lastPlayerTile = SCISSORS;
+        lastPlayerTileOnSpecial = SCISSORS;
     }
 
     public void PlayerOnSpecialTile()
@@ -57,17 +62,16 @@ public class TileManager : MonoBehaviour
         playerRock = false;
         playerPaper = false;
         playerScissors = false;
-        // set the last tile bool to its corrosponding last time string
-        if (lastPlayerTile == ROCK)
+        //if player lands on a special tile, set the players tile as their previous tile.
+        if (lastPlayerTileOnSpecial == ROCK)
         {
-            lastPlayerTileIsRock = true;
-        } else if (lastPlayerTile == PAPER)
+            playerRock = true;
+        } else if (lastPlayerTileOnSpecial == PAPER)
         {
-            lastPlayerTileIsPaper = true;
-        }
-        else if (lastPlayerTile == SCISSORS)
+            playerPaper = true;
+        } else if (lastPlayerTileOnSpecial == SCISSORS)
         {
-            lastPlayerTileIsScissors = true;
+            playerScissors = true;
         }
     }
 
@@ -79,7 +83,7 @@ public class TileManager : MonoBehaviour
         enemyScissors = false;  
         enemySpecial = false;
 
-        lastEnemyTile = ROCK;
+        lastEnemyTileOnSpecial = ROCK;
     }
     public void EnemyOnPaperTile()
     {
@@ -89,7 +93,7 @@ public class TileManager : MonoBehaviour
         enemyScissors = false;
         enemySpecial = false;
 
-        lastEnemyTile = PAPER;
+        lastEnemyTileOnSpecial = PAPER;
     }
     public void EnemyOnScissorsTile() 
     { 
@@ -99,7 +103,7 @@ public class TileManager : MonoBehaviour
         enemyPaper= false;
         enemySpecial = false;
 
-        lastEnemyTile = SCISSORS;
+        lastEnemyTileOnSpecial = SCISSORS;
     }
     public void EnemyOnSpecialTile()
     {
@@ -108,18 +112,18 @@ public class TileManager : MonoBehaviour
         enemyRock= false;
         enemyPaper= false;
         enemyScissors = false;
-
-        if (lastEnemyTile == ROCK)
+        //if enemy lands on a special tile, set the enemys tile as their previous tile.
+        if (lastEnemyTileOnSpecial == ROCK)
         {
-            lastEnemyTileIsRock = true;
+            enemyRock = true;
         }
-        else if (lastEnemyTile == PAPER)
+        else if (lastEnemyTileOnSpecial == PAPER)
         {
-            lastEnemyTileIsPaper |= true;
+            enemyPaper = true;
         }
-        else if (lastEnemyTile == SCISSORS)
+        else if (lastEnemyTileOnSpecial == SCISSORS)
         {
-            lastEnemyTileIsScissors = true;
+            enemyScissors = true;
         }
     }
 
