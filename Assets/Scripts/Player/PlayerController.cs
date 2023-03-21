@@ -5,51 +5,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //ref to prefab layer mask - For Capsule Cast
-    [SerializeField] private LayerMask rockTileLayerMask;
-    [SerializeField] private float playerSpeed = 7f;
+    private PlayerInputActions playerInputActions;
 
-    private void Update()
+    private void Awake()
     {
-        //only moving on a 2 axis so Vector 3 is not required.
-        Vector2 inputVector = new Vector2(0,0);
-        //player inputs
-        if (Input.GetKey(KeyCode.W))
-        {
-            inputVector.y = +1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputVector.y = -1;
-        }
-        /*if (Input.GetKey(KeyCode.D))
-        {
-            inputVector.x = +1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputVector.x = -1;
-        }*/
-
-        //Debug.Log(inputVector);
-
-        //translate the Vector 2 input into vector 3 input.
-        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
-        //transform.position += moveDir * playerSpeed * Time.deltaTime;
-        
-        //Create a capsuale cast around the player object that checks for tile layer masks on objects it collides with.
-        float playerHeight = 2f;
-        float playerRadius = 0.3f;
-        float moveDistance = 4f;
-        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance, rockTileLayerMask);
-        Debug.Log(canMove);
-        Color color = Color.yellow;
-        Debug.DrawLine(transform.position, transform.position + Vector3.up * playerHeight, color, 0.5f);
-        if (!canMove)
-        {
-            transform.position += moveDir * playerSpeed * Time.deltaTime;
-        }
+        // Construct the new player input action controller
+        PlayerInputActions playerInputActions = new PlayerInputActions();
+        playerInputActions.Player.Enable();
     }
+
+    public Vector3 PlayerMoveUpInput()
+    {
+        Vector3 movePlayerUp = playerInputActions.Player.MoveUp.ReadValue<Vector3>();
+        return movePlayerUp;
+    }
+    
 
 
 }
