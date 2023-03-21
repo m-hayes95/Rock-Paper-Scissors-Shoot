@@ -12,6 +12,9 @@ public class RandomTileGenerator : MonoBehaviour
     // Ref to start position of player and enemy tiles.
     private Vector3 startPositionOfPlayerTiles = new Vector3(0,0,0);
     private Vector3 startPositionOfEnemyTiles = new Vector3(0,0,7);
+    // Bool used to check if tile generation is completed
+    public bool playerTilesHaveBeenGenerated= false;
+    public bool enemyTilesHaveBeenGenerated= false;
 
     private void Start()
     {
@@ -32,7 +35,8 @@ public class RandomTileGenerator : MonoBehaviour
             }
             
         }
-        
+
+        playerTilesHaveBeenGenerated = true;
     }
 
     public void GenerateStartEnemyTiles()
@@ -50,5 +54,7 @@ public class RandomTileGenerator : MonoBehaviour
             }
 
         }
+
+        enemyTilesHaveBeenGenerated = true;
     }
 }

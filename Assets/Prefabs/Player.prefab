@@ -330,6 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65e245479d4c73478a7a6dffb913684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomTileGenerator: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+  player: {fileID: 2918767104412040898}
 --- !u!114 &822657117298488649
 MonoBehaviour:
   m_ObjectHideFlags: 0
