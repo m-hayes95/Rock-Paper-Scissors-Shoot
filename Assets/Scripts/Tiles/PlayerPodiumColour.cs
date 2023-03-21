@@ -36,8 +36,8 @@ public class PlayerPodiumColour : MonoBehaviour
         }
         if (tileManager.playerSpecial == true)
         {
-            //Debug.Log("player on special");
-            r.material = specialMat;
+            //Do not need the podium to change to special tile colour
+            Debug.Log("Last player tile was a special tile");
         }
 
     }
