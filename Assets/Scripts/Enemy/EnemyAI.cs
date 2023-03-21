@@ -110,7 +110,6 @@ public class EnemyAI : MonoBehaviour
                 isBattlePhase = true;
                 if (isBattlePhase == true)
                 {
-                    
                     // move to enemy podium
                     enemyBattlePhaseRayCast.EnemyEnterBattlePhase();
 
@@ -153,13 +152,6 @@ public class EnemyAI : MonoBehaviour
                     {
                         gameManager.GameDraw();
                     }
-                    // check if the last tile was a special tile
-                    if (tileManager.enemySpecial == true)
-                    {
-                        Debug.Log("Enemy on special tile");
-                    }
-
-                    
                 }
                 break;
 
