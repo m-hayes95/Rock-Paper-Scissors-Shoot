@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - PhaseManagerTag
   - TileManagerTag
+  - CenterOfBoard
   layers:
   - Default
   - TransparentFX

@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     // ref to phase & tile & game manager and ray cast scripts
-    [SerializeField] private GameObject _phaseManager;
-    [SerializeField] private PhaseManager phaseManager;
+    [SerializeField] private GameObject _playerPhase;
+    [SerializeField] private PlayerPhase playerPhase;
     [SerializeField] private GameObject _tileManager;
     [SerializeField] private TileManager tileManager;
     [SerializeField] private GameManager gameManager;
@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     public enum EnemyAISM { phase1, phase2, phase3, phase4, battlePhase }
     public EnemyAISM enemyState;
 
-    private const string PHASE_MANAGER_TAG = "PhaseManagerTag";
+    private const string PLAYER = "Player";
     private const string TILE_MANAGER_TAG = "TileManagerTag";
 
 
@@ -35,8 +35,8 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         // Assign Phase and Tile manger scripts
-        _phaseManager = GameObject.FindGameObjectWithTag(PHASE_MANAGER_TAG);
-        phaseManager = _phaseManager.GetComponent<PhaseManager>();
+        _playerPhase = GameObject.FindGameObjectWithTag(PLAYER);
+        playerPhase = _playerPhase.GetComponent<PlayerPhase>();
         _tileManager = GameObject.FindGameObjectWithTag(TILE_MANAGER_TAG);
         tileManager = _tileManager.GetComponent<TileManager>();
 
@@ -56,7 +56,7 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyAISM.phase1:
                 
-                if (phaseManager.checkpoint2 == true)
+                if (playerPhase.checkpoint2 == true)
                 {
                     // check if player has moved, if yes enemy can now make 1st move
                     canMovePhase1 = true;
@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour
 
             case EnemyAISM.phase2:
                 
-                if (phaseManager.checkpoint3 == true)
+                if (playerPhase.checkpoint3 == true)
                 {
                     canMovePhase2 = true;
                     if (canMovePhase2 == true)
@@ -91,7 +91,7 @@ public class EnemyAI : MonoBehaviour
             case EnemyAISM.phase3:
                 
 
-                if (phaseManager.checkpoint4 == true)
+                if (playerPhase.checkpoint4 == true)
                 {
                     canMovePhase3 = true;
                     if (canMovePhase3 == true)
@@ -106,7 +106,7 @@ public class EnemyAI : MonoBehaviour
 
             case EnemyAISM.phase4:
             
-                if (phaseManager.battlePhaseCheckPoint == true)
+                if (playerPhase.battlePhaseCheckPoint == true)
                 {
                     canMovePhase4 = true;
                     if (canMovePhase4 == true)

@@ -5,36 +5,44 @@ using UnityEngine;
 public class PhaseManager : MonoBehaviour
 {
     [SerializeField] private GameObject phaseDistanceChecker;
+    [SerializeField]
     private GameObject player;
     private const string PLAYER = "Player";
     [SerializeField] private PlayerSpawner playerSpawner;
     private float vector3Distance;
     // Distance ref to switch current phase.
-    private float phaseDistanceCheckpoint1 = 4.7f, phaseDistanceCheckpoint2 = 3.7f, phaseDistanceCheckpoint3 = 2.8f, phaseDistanceCheckpoint4 = 1.9f;
+    private float phaseDistanceCheckpoint2 = 3.7f, phaseDistanceCheckpoint3 = 2.8f, phaseDistanceCheckpoint4 = 1.9f;
     private float battlePhaseDistanceCheckpoint = 1.2f;
     // Bool to check if distance has been reached.
     public bool checkpoint1 = false, checkpoint2 = false, checkpoint3 = false, checkpoint4 = false, battlePhaseCheckPoint = false;
+    [SerializeField]
+    private bool playerExists = false;
 
-    private void Start()
+    private void Update()
     {   
-        if (playerSpawner.playerHasSpawned == true) {
+        if (playerSpawner.playerHasSpawned == true && playerExists == false) {
             player = GameObject.FindGameObjectWithTag(PLAYER);
+            playerExists = true;
+
+            if (playerExists == true)
+            {
+                PhaseDistanceChecker();
+                checkpoint1 = true; // phase 1 
+            }
+            
         }
         
     }
-    private void Update()
+    private void PhaseDistanceChecker()
     {
         // use vector distance from player 
         // with checkpoint that change the current phase
-        if (player!= null) { vector3Distance = Vector3.Distance(player.transform.position, phaseDistanceChecker.transform.position); }
-        
-        //Debug.Log("PHASE  " + vector3Distance);
+        vector3Distance = Vector3.Distance(player.transform.position, phaseDistanceChecker.transform.position);
+
+        Debug.Log("PHASE  " + vector3Distance);
 
         // Phase 1
-        if (vector3Distance <= phaseDistanceCheckpoint1 && !checkpoint1)
-        {
-            checkpoint1 = true;
-        }
+        
         // Phase 2
         if (vector3Distance <= phaseDistanceCheckpoint2 && !checkpoint2)
         {
@@ -55,6 +63,7 @@ public class PhaseManager : MonoBehaviour
         {
             battlePhaseCheckPoint = true;
         }
+
     }
 
 }

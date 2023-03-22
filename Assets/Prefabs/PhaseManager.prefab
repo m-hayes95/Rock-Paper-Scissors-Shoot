@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5224942129628719358}
-  - component: {fileID: 5224942129628719359}
+  - component: {fileID: 1795700878}
   m_Layer: 0
   m_Name: PhaseManager
   m_TagString: PhaseManagerTag
@@ -109,14 +109,14 @@ Transform:
   m_GameObject: {fileID: 5224942129628719352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4233965841164135590}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5224942129628719359
+--- !u!114 &1795700878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,13 +125,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5224942129628719352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da9458150a520d94496650173a167edd, type: 3}
+  m_Script: {fileID: 11500000, guid: f61c4abb6c5002d4da112a9daa93c964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  phaseDistanceChecker: {fileID: 5224942129628719352}
-  checkpoint1: 0
-  checkpoint2: 0
-  checkpoint3: 0
-  checkpoint4: 0
-  battlePhaseCheckPoint: 0
