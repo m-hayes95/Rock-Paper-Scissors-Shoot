@@ -273,6 +273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phaseManager: {fileID: 0}
+  tileManager: {fileID: 0}
+  gameManager: {fileID: 3081055702764522515, guid: 8f5a4bff0a8f57243b48c7c6f10d0747, type: 3}
   enemyUpRayCast: {fileID: 8432181671680243892}
   enemyLeftRayCast: {fileID: 791844623474174111}
   enemyRightRayCast: {fileID: 5941014340610062283}

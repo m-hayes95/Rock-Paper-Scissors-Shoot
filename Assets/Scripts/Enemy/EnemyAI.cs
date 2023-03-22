@@ -27,6 +27,8 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        // Assign Phase and Tile manger scripts
+        
         // Add potential moves to the moves list
         moves.Add(enemyUpRayCast.EnemyMoveUp);
         moves.Add(enemyRightRayCast.EnemyMoveRight);

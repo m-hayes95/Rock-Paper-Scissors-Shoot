@@ -11,7 +11,7 @@ public class RandomTileGenerator : MonoBehaviour
     private int tileHeight = 4;
     // Ref to start position of player and enemy tiles.
     public Vector3 startPositionOfPlayerTiles = new Vector3(0,0,0); // Referenced in Player Spawner Script.
-    private Vector3 startPositionOfEnemyTiles = new Vector3(0,0,7);
+    public Vector3 startPositionOfEnemyTiles = new Vector3(0,0,7); // Referenced in Enemy Spawner Script
     // Bool used to check if tile generation is completed
     public bool playerTilesHaveBeenGenerated= false;
     public bool enemyTilesHaveBeenGenerated= false;

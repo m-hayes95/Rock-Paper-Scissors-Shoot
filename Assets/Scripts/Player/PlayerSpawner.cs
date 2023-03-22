@@ -10,6 +10,7 @@ public class PlayerSpawner : MonoBehaviour
 
     private float playerHeight = 1.5f; // Height offset for choosen spawn locations.
 
+    public bool playerHasSpawned = false; // Ref in Enemy Spawner to check if enemy can spawn.
 
     public void PlayerChooseStartPosition_Tile1()
     {
@@ -21,6 +22,8 @@ public class PlayerSpawner : MonoBehaviour
             Vector3 firstTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(0, playerHeight, 0);
             Debug.Log(firstTile);
             Instantiate(player, firstTile, Quaternion.identity); // Spawn player on first position with no rotation.
+
+            playerHasSpawned = true; // Set player has spawned to true.
         }
 
     }
@@ -33,6 +36,7 @@ public class PlayerSpawner : MonoBehaviour
             Vector3 secondTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(secondTileOffset, playerHeight, 0);
             Debug.Log(secondTile);
             Instantiate(player, secondTile, Quaternion.identity);
+            playerHasSpawned = true;
         }
     }
 
@@ -44,6 +48,7 @@ public class PlayerSpawner : MonoBehaviour
             Vector3 thirdTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(thirdTileOffset, playerHeight, 0);
             Debug.Log(thirdTile);
             Instantiate(player, thirdTile, Quaternion.identity);
+            playerHasSpawned = true;
         }
     }
 
@@ -55,6 +60,7 @@ public class PlayerSpawner : MonoBehaviour
             Vector3 forthTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(forthTileOffset, playerHeight, 0);
             Debug.Log(forthTile);
             Instantiate(player, forthTile, Quaternion.identity);
+            playerHasSpawned = true;
         }
     }
 
@@ -66,6 +72,7 @@ public class PlayerSpawner : MonoBehaviour
             Vector3 fithTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(fithTileOffset, playerHeight, 0);
             Debug.Log(fithTile);
             Instantiate(player, fithTile, Quaternion.identity);
+            playerHasSpawned = true;
         }
     }
 }
