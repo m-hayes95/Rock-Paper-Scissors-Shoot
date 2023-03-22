@@ -158,6 +158,42 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerStartsOnTile2"",
+                    ""type"": ""Button"",
+                    ""id"": ""9998ba3f-4d4b-46b7-89a6-86d694ba4347"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerStartsOnTile3"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a1e1f0d-8d29-457d-9a1b-73e72b70f8c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerStartsOnTile4"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd37ddcb-b37e-4bbf-90ea-7bb9abe5f4ee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerStartsOnTile5"",
+                    ""type"": ""Button"",
+                    ""id"": ""96d38050-f093-499f-beb0-292a2e3bf9f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -182,6 +218,94 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""PlayerStartsOnTile1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f4beef6-9511-45b1-b21b-1045d6917c6d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""305aba7b-4acd-497a-9b08-833f0b96b13d"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ccc3612-2213-4926-a833-a78c7088084f"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""518e4b94-08b7-4d19-a2b8-7d633afc338f"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d39feaef-0e4f-4c13-9134-07e01995bd4e"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf06ae16-f73a-4931-9bca-008adeaa6e33"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8a0bb924-5e48-4216-9af7-6072e7e9e3b0"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a066416a-36c6-4c3f-9934-6c1ad31cbe69"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerStartsOnTile5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -196,6 +320,10 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         // SpawnPlayer
         m_SpawnPlayer = asset.FindActionMap("SpawnPlayer", throwIfNotFound: true);
         m_SpawnPlayer_PlayerStartsOnTile1 = m_SpawnPlayer.FindAction("PlayerStartsOnTile1", throwIfNotFound: true);
+        m_SpawnPlayer_PlayerStartsOnTile2 = m_SpawnPlayer.FindAction("PlayerStartsOnTile2", throwIfNotFound: true);
+        m_SpawnPlayer_PlayerStartsOnTile3 = m_SpawnPlayer.FindAction("PlayerStartsOnTile3", throwIfNotFound: true);
+        m_SpawnPlayer_PlayerStartsOnTile4 = m_SpawnPlayer.FindAction("PlayerStartsOnTile4", throwIfNotFound: true);
+        m_SpawnPlayer_PlayerStartsOnTile5 = m_SpawnPlayer.FindAction("PlayerStartsOnTile5", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -305,11 +433,19 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_SpawnPlayer;
     private ISpawnPlayerActions m_SpawnPlayerActionsCallbackInterface;
     private readonly InputAction m_SpawnPlayer_PlayerStartsOnTile1;
+    private readonly InputAction m_SpawnPlayer_PlayerStartsOnTile2;
+    private readonly InputAction m_SpawnPlayer_PlayerStartsOnTile3;
+    private readonly InputAction m_SpawnPlayer_PlayerStartsOnTile4;
+    private readonly InputAction m_SpawnPlayer_PlayerStartsOnTile5;
     public struct SpawnPlayerActions
     {
         private @PlayerInputActions m_Wrapper;
         public SpawnPlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @PlayerStartsOnTile1 => m_Wrapper.m_SpawnPlayer_PlayerStartsOnTile1;
+        public InputAction @PlayerStartsOnTile2 => m_Wrapper.m_SpawnPlayer_PlayerStartsOnTile2;
+        public InputAction @PlayerStartsOnTile3 => m_Wrapper.m_SpawnPlayer_PlayerStartsOnTile3;
+        public InputAction @PlayerStartsOnTile4 => m_Wrapper.m_SpawnPlayer_PlayerStartsOnTile4;
+        public InputAction @PlayerStartsOnTile5 => m_Wrapper.m_SpawnPlayer_PlayerStartsOnTile5;
         public InputActionMap Get() { return m_Wrapper.m_SpawnPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -322,6 +458,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @PlayerStartsOnTile1.started -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile1;
                 @PlayerStartsOnTile1.performed -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile1;
                 @PlayerStartsOnTile1.canceled -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile1;
+                @PlayerStartsOnTile2.started -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile2;
+                @PlayerStartsOnTile2.performed -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile2;
+                @PlayerStartsOnTile2.canceled -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile2;
+                @PlayerStartsOnTile3.started -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile3;
+                @PlayerStartsOnTile3.performed -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile3;
+                @PlayerStartsOnTile3.canceled -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile3;
+                @PlayerStartsOnTile4.started -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile4;
+                @PlayerStartsOnTile4.performed -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile4;
+                @PlayerStartsOnTile4.canceled -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile4;
+                @PlayerStartsOnTile5.started -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile5;
+                @PlayerStartsOnTile5.performed -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile5;
+                @PlayerStartsOnTile5.canceled -= m_Wrapper.m_SpawnPlayerActionsCallbackInterface.OnPlayerStartsOnTile5;
             }
             m_Wrapper.m_SpawnPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -329,6 +477,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @PlayerStartsOnTile1.started += instance.OnPlayerStartsOnTile1;
                 @PlayerStartsOnTile1.performed += instance.OnPlayerStartsOnTile1;
                 @PlayerStartsOnTile1.canceled += instance.OnPlayerStartsOnTile1;
+                @PlayerStartsOnTile2.started += instance.OnPlayerStartsOnTile2;
+                @PlayerStartsOnTile2.performed += instance.OnPlayerStartsOnTile2;
+                @PlayerStartsOnTile2.canceled += instance.OnPlayerStartsOnTile2;
+                @PlayerStartsOnTile3.started += instance.OnPlayerStartsOnTile3;
+                @PlayerStartsOnTile3.performed += instance.OnPlayerStartsOnTile3;
+                @PlayerStartsOnTile3.canceled += instance.OnPlayerStartsOnTile3;
+                @PlayerStartsOnTile4.started += instance.OnPlayerStartsOnTile4;
+                @PlayerStartsOnTile4.performed += instance.OnPlayerStartsOnTile4;
+                @PlayerStartsOnTile4.canceled += instance.OnPlayerStartsOnTile4;
+                @PlayerStartsOnTile5.started += instance.OnPlayerStartsOnTile5;
+                @PlayerStartsOnTile5.performed += instance.OnPlayerStartsOnTile5;
+                @PlayerStartsOnTile5.canceled += instance.OnPlayerStartsOnTile5;
             }
         }
     }
@@ -342,5 +502,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     public interface ISpawnPlayerActions
     {
         void OnPlayerStartsOnTile1(InputAction.CallbackContext context);
+        void OnPlayerStartsOnTile2(InputAction.CallbackContext context);
+        void OnPlayerStartsOnTile3(InputAction.CallbackContext context);
+        void OnPlayerStartsOnTile4(InputAction.CallbackContext context);
+        void OnPlayerStartsOnTile5(InputAction.CallbackContext context);
     }
 }
