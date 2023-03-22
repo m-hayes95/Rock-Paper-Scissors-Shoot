@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class PlayerController : MonoBehaviour
-{
-    private PlayerInputActions playerInputActions;
-
+{ 
     private void Awake()
-    {
-        // Construct the new player input action controller
+    { 
+        // Construct input system.
         PlayerInputActions playerInputActions = new PlayerInputActions();
+        // Enable the Player action maps within the input system.
         playerInputActions.Player.Enable();
+        // Subscribe to the MoveUp action in the input system.
+        playerInputActions.Player.MoveUp.performed += MoveUp;
     }
 
-    public Vector3 PlayerMoveUpInput()
+    public void MoveUp(InputAction.CallbackContext context)
     {
-        Vector3 movePlayerUp = playerInputActions.Player.MoveUp.ReadValue<Vector3>();
-        return movePlayerUp;
+        Debug.Log(context); // Check call back context value
+
+        if (context.performed) // Check if the input has been performed.
+        {
+            // If the input has been performed call the player move up method.
+            Debug.Log("Move PLayer up");
+        }
     }
     
 
