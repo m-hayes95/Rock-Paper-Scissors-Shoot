@@ -7,6 +7,8 @@ public class PlayerSpawnerController : MonoBehaviour
 {
     [SerializeField] private PlayerSpawner playerSpawner; // Ref to player spawner methods.
 
+    private bool playerHasChoosen = false; // Check if player has choosen start tile.
+
     private void Awake()
     {
         // Construct input system.
@@ -26,37 +28,51 @@ public class PlayerSpawnerController : MonoBehaviour
         //Debug.Log(context); // Check call back context value.
         if (context.performed) // If intput is performed...
         {
-            // Call player choose tile in the Player Spawner script.
-            playerSpawner.PlayerChooseStartPosition_Tile1();
-            //Debug.Log("Call choose first tile function");
+            if (!playerHasChoosen) // Don't allow 2 players to be spawned at once.
+            {
+                // Call player choose tile in the Player Spawner script.
+                playerSpawner.PlayerChooseStartPosition_Tile1();
+                //Debug.Log("Call choose first tile function");
+                playerHasChoosen = true;
+            }
         }
     }
     public void PlayerStartOnTile2_Input(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            playerSpawner.PlayerChooseStartPosition_Tile2();
+            if (!playerHasChoosen)
+            {
+                playerSpawner.PlayerChooseStartPosition_Tile2();
+                playerHasChoosen = true;
+            }
         }
     }
     public void PlayerStartOnTile3_Input(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!playerHasChoosen)
         {
             playerSpawner.PlayerChooseStartPosition_Tile3();
+            playerHasChoosen = true;
         }
     }
     public void PlayerStartOnTile4_Input(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!playerHasChoosen)
         {
             playerSpawner.PlayerChooseStartPosition_Tile4();
+            playerHasChoosen = true;
         }
     }
     public void PlayerStartOnTile5_Input(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            playerSpawner.PlayerChooseStartPosition_Tile5();
+            if (!playerHasChoosen)
+            {
+                playerSpawner.PlayerChooseStartPosition_Tile5();
+                playerHasChoosen = true;
+            }
         }
     }
 }
