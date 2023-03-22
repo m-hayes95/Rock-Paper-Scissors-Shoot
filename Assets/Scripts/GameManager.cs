@@ -4,20 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private RandomTileGenerator randomTileGenerator;
-    [SerializeField] private Player player;
-    public void Update()
-    {
-        if (randomTileGenerator.playerTilesHaveBeenGenerated == true)
-        {
-
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                player.PlayerChooseStartPosition();
-            }
-
-        }
-    }
+    
+    // On Game win, lose or draw
     public void GamePlayerWin()
     {
         Debug.Log("Player Wins");

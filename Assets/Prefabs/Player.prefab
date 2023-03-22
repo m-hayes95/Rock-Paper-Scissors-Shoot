@@ -331,7 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65e245479d4c73478a7a6dffb913684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2918767104412040898}
 --- !u!114 &822657117298488649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +368,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b63298378309649b57b70439f28213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUpRayCast: {fileID: 5637515179515249188}
+  playerLeftRayCast: {fileID: 8533542901492999512}
+  playerRightRayCast: {fileID: 2897810020352416638}
+  playerSpawner: {fileID: 8351892068860915346, guid: 23276d5fa48cfb44cbbdcccfcb5a20e4, type: 3}
 --- !u!1 &2918767105577960589
 GameObject:
   m_ObjectHideFlags: 0
