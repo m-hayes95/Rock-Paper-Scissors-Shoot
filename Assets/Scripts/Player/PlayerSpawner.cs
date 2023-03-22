@@ -20,7 +20,7 @@ public class PlayerSpawner : MonoBehaviour
             // Define a start position using the first tile location from the Random Tile Generator script, 
             // then add a vector offset for the players height.
             Vector3 firstTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(0, playerHeight, 0);
-            Debug.Log(firstTile);
+            //Debug.Log(firstTile);
             Instantiate(player, firstTile, Quaternion.identity); // Spawn player on first position with no rotation.
 
             playerHasSpawned = true; // Set player has spawned to true.
@@ -34,7 +34,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             float secondTileOffset = 1f;
             Vector3 secondTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(secondTileOffset, playerHeight, 0);
-            Debug.Log(secondTile);
+            //Debug.Log(secondTile);
             Instantiate(player, secondTile, Quaternion.identity);
             playerHasSpawned = true;
         }
@@ -46,7 +46,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             float thirdTileOffset = 2f;
             Vector3 thirdTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(thirdTileOffset, playerHeight, 0);
-            Debug.Log(thirdTile);
+            //Debug.Log(thirdTile);
             Instantiate(player, thirdTile, Quaternion.identity);
             playerHasSpawned = true;
         }
@@ -58,7 +58,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             float forthTileOffset = 3f;
             Vector3 forthTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(forthTileOffset, playerHeight, 0);
-            Debug.Log(forthTile);
+            //Debug.Log(forthTile);
             Instantiate(player, forthTile, Quaternion.identity);
             playerHasSpawned = true;
         }
@@ -70,7 +70,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             float fithTileOffset = 4f;
             Vector3 fithTile = randomTileGenerator.startPositionOfPlayerTiles + new Vector3(fithTileOffset, playerHeight, 0);
-            Debug.Log(fithTile);
+            //Debug.Log(fithTile);
             Instantiate(player, fithTile, Quaternion.identity);
             playerHasSpawned = true;
         }
