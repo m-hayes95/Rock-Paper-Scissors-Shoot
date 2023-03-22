@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     // ref to phase & tile & game manager and ray cast scripts
+    [SerializeField] private GameObject _phaseManager;
     [SerializeField] private PhaseManager phaseManager;
+    [SerializeField] private GameObject _tileManager;
     [SerializeField] private TileManager tileManager;
     [SerializeField] private GameManager gameManager;
 
@@ -25,10 +27,19 @@ public class EnemyAI : MonoBehaviour
     public enum EnemyAISM { phase1, phase2, phase3, phase4, battlePhase }
     public EnemyAISM enemyState;
 
+    private const string PHASE_MANAGER_TAG = "PhaseManagerTag";
+    private const string TILE_MANAGER_TAG = "TileManagerTag";
+
+
+
     private void Start()
     {
         // Assign Phase and Tile manger scripts
-        
+        _phaseManager = GameObject.FindGameObjectWithTag(PHASE_MANAGER_TAG);
+        phaseManager = _phaseManager.GetComponent<PhaseManager>();
+        _tileManager = GameObject.FindGameObjectWithTag(TILE_MANAGER_TAG);
+        tileManager = _tileManager.GetComponent<TileManager>();
+
         // Add potential moves to the moves list
         moves.Add(enemyUpRayCast.EnemyMoveUp);
         moves.Add(enemyRightRayCast.EnemyMoveRight);

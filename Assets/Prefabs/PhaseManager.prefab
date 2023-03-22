@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5224942129628719359}
   m_Layer: 0
   m_Name: PhaseManager
-  m_TagString: Untagged
+  m_TagString: PhaseManagerTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,5 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9458150a520d94496650173a167edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2918767104412040898, guid: 8bd9e0f9751031a4590e461a94b11906, type: 3}
+  player: {fileID: 0}
   phaseDistanceChecker: {fileID: 5224942129628719352}
+  checkpoint1: 0
+  checkpoint2: 0
+  checkpoint3: 0
+  checkpoint4: 0
+  battlePhaseCheckPoint: 0

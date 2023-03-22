@@ -7,7 +7,20 @@ public class PlayerCurrentTileCheckRayCast : MonoBehaviour
     //Layer mask ref for tiles
     [SerializeField] private LayerMask rockTileLayerMask, paperTileLayerMask, scissorsTileLayerMask, specialTileLayerMask;
     //ref to tile manager script
-    public TileManager tileManager;
+    [SerializeField]
+    private TileManager tileManager;
+    [SerializeField]
+    private GameObject _tileManager;
+    private GameObject player;
+
+    private const string TILE_MANAGER_TAG = "TileManagerTag";
+
+    private void Start()
+    {
+        player = GetComponent<GameObject>();
+        _tileManager = GameObject.FindGameObjectWithTag(TILE_MANAGER_TAG);
+        tileManager = _tileManager.GetComponent<TileManager>();
+    }
 
     private void Update()
     {

@@ -9,6 +9,8 @@ TagManager:
   - EnemyBattleTile
   - PlayerBattleTile
   - Enemy
+  - PhaseManagerTag
+  - TileManagerTag
   layers:
   - Default
   - TransparentFX

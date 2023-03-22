@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 135600001662338639}
   m_Layer: 0
   m_Name: Tile Managment
-  m_TagString: Untagged
+  m_TagString: TileManagerTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5208d59053978c944bfeff3f305bba85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rock: 0
-  paper: 0
-  scissors: 0
-  special: 0
+  phaseManager: {fileID: 0}
+  playerRock: 0
+  playerPaper: 0
+  playerScissors: 0
+  playerSpecial: 0
+  enemyRock: 0
+  enemyPaper: 0
+  enemyScissors: 0
+  enemySpecial: 0

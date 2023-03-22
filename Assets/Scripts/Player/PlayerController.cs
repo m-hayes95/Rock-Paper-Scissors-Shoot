@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveUp_Input(InputAction.CallbackContext context)
     {
-        Debug.Log(context); // Check call back context value
+        //Debug.Log(context); // Check call back context value
 
         if (context.performed) // Check if the up input has been performed.
         {

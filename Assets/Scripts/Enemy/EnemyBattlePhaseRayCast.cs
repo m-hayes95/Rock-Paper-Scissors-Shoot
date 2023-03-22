@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBattlePhaseRayCast : MonoBehaviour
 {
     private const string PRE_BATTLE_PHASE_TILE = "PreBattleTile";
+    private const string ENEMY_BATTLE_PODIUM = "EnemyBattleTile";
     //Ref to player and battle podium game object
-    [SerializeField] private GameObject enemy, enemyBattlePodium;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject enemyBattlePodium;
     //Ref to check if battle phase has been entered yet
     [SerializeField] private bool playerHasEnteredBP = false;
+
+    private void Start()
+    {
+        // Assign game object in scene for the battle podium
+        enemyBattlePodium = GameObject.FindGameObjectWithTag(ENEMY_BATTLE_PODIUM);
+    }
 
     public void EnemyEnterBattlePhase()
     {

@@ -8,8 +8,16 @@ public class EnemyCurrentTileCheckRayCast : MonoBehaviour
     [SerializeField] private LayerMask rockTileLayerMask, paperTileLayerMask, scissorsTileLayerMask, specialTileLayerMask;
     //ref to tile manager script
     [SerializeField] private TileManager tileManager;
+    [SerializeField] private GameObject _tileManager;
+    private const string TILE_MANAGER_TAG = "TileManagerTag";
+    private void Start()
+    {
+        // Assign scene tile manager script for ref
+        _tileManager = GameObject.FindGameObjectWithTag(TILE_MANAGER_TAG);
+        tileManager = _tileManager.GetComponent<TileManager>();
+    }
 
-    private System.Action lastKnownTile;
+
 
     public void CheckEnemysCurrentTile()
     {

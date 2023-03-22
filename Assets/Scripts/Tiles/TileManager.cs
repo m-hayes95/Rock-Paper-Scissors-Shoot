@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     // Ref for Phase Manager script
-    [SerializeField] PhaseManager phaseManager;
+    //[SerializeField] PhaseManager phaseManager;
     // Set bool to true if player or enemy is on the corresponding tile
     public bool playerRock = false, playerPaper = false, playerScissors = false, playerSpecial = false;
     public bool enemyRock = false, enemyPaper = false, enemyScissors = false, enemySpecial = false;

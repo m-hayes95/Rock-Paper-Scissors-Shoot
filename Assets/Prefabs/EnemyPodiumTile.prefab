@@ -147,4 +147,5 @@ MonoBehaviour:
   scissorsMat: {fileID: 2100000, guid: 8ac2c4a2178ac224785341a3d726f451, type: 2}
   specialMat: {fileID: 2100000, guid: 210316402bfa8e94fb94d719b18ecb69, type: 2}
   enemyPodiumVisual: {fileID: 6759019890348648751}
-  tileManager: {fileID: 135600001662338639, guid: dc1de4c128061b7428619bf48a9b3cca, type: 3}
+  tileManager: {fileID: 0}
+  phaseManager: {fileID: 0}
