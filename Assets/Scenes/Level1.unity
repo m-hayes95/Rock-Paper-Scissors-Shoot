@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -784,6 +784,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: allTilePrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: startPositionOfEnemyTiles.z
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: allTilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7009990291204844443, guid: 3ede713ad9964dc45805464982cde3f1, type: 3}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: allTilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6643502336839752207, guid: 14a2183e06590b54daaa87985fd7c0ab, type: 3}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: allTilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 4768071767552279479, guid: bcfec6c8058398742841b397c69074ac, type: 3}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: allTilePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 3253977672495350565, guid: c199f1441b292534d9cbe6b3bed7106f, type: 3}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: normalTilePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: normalTilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 7009990291204844443, guid: 3ede713ad9964dc45805464982cde3f1, type: 3}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: normalTilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6643502336839752207, guid: 14a2183e06590b54daaa87985fd7c0ab, type: 3}
+    - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
+      propertyPath: normalTilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 4768071767552279479, guid: bcfec6c8058398742841b397c69074ac, type: 3}
     - target: {fileID: 8297265892520813575, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
       propertyPath: m_RootOrder
       value: 2

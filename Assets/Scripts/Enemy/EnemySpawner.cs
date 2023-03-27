@@ -30,12 +30,10 @@ public class EnemySpawner : MonoBehaviour
         float enemyRandomStartTile = Random.Range(0, startTileLocation.Length);
         Debug.Log("Enemy Started on tile " + enemyRandomStartTile);
 
-        // Enemy tile coord start at the bottom of the grid, so need offset to spawn at the top row.
-        float offsetForEnemyTileStartCoord = 3f; 
         float offsetForEnemyHeight = 1.5f; // Enemy height offset, so they spawn above the grid.
         // New vector transform coord for enemy spawn, using start tile from enemy generated grid.
         Vector3 enemyStartTile = randomTileGenerator.startPositionOfEnemyTiles + 
-            new Vector3(enemyRandomStartTile, offsetForEnemyHeight, offsetForEnemyTileStartCoord);
+            new Vector3(enemyRandomStartTile, offsetForEnemyHeight, 0);
 
         // Spawn enemy at new start tile rotated at 180 degrees, so they face the player.
         Instantiate(enemy, enemyStartTile, Quaternion.Euler(0, 180f, 0));
