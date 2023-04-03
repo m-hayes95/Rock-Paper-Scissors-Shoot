@@ -191,6 +191,14 @@ public class EnemyAI : MonoBehaviour
 
     public void EnemyOnSpecialTileEffect()
     {
-
+        Debug.Log("Enemy moves reset");
+        // Add potential moves to the moves list
+        if (moves.Count < 3)
+        {
+            moves.Add(enemyUpRayCast.EnemyMoveUp);
+            moves.Add(enemyRightRayCast.EnemyMoveRight);
+            moves.Add(enemyLeftRayCast.EnemyMoveLeft);
+        }
+        
     }
 }
