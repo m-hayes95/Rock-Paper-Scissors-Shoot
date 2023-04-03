@@ -30,6 +30,8 @@ public class EnemyAI : MonoBehaviour
     private const string PLAYER = "Player";
     private const string TILE_MANAGER_TAG = "TileManagerTag";
 
+    
+
 
 
     private void Start()
@@ -48,6 +50,9 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+        // Check how many current moves available 
+        Debug.Log("Enemy Moves Available" + moves.Count);
+
         // Check enemys current tile]
         enemyCurrentTileCheckRayCast.CheckEnemysCurrentTile();
 
@@ -66,6 +71,10 @@ public class EnemyAI : MonoBehaviour
                         int randomIndex = Random.Range(0, moves.Count);
                         // Invoke the method at the random index
                         moves[randomIndex].Invoke();
+                        moves.RemoveAt(randomIndex); // Remove the action used from the list.
+
+
+
                         // Return the can move boolean to false
                         canMovePhase1 = false;
                     }
@@ -82,6 +91,7 @@ public class EnemyAI : MonoBehaviour
                     {
                         int randomIndex = Random.Range(0, moves.Count);
                         moves[randomIndex].Invoke();
+                        moves.RemoveAt(randomIndex);
                         canMovePhase2 = false;
                     }
                     enemyState = EnemyAISM.phase3;
@@ -98,6 +108,7 @@ public class EnemyAI : MonoBehaviour
                     {
                         int randomIndex = Random.Range(0, moves.Count);
                         moves[randomIndex].Invoke();
+                        moves.RemoveAt(randomIndex);
                         canMovePhase3 = false;
                     }
                     enemyState = EnemyAISM.phase4;
@@ -111,8 +122,9 @@ public class EnemyAI : MonoBehaviour
                     canMovePhase4 = true;
                     if (canMovePhase4 == true)
                     {
-                        int randomIndex = Random.Range(0, moves.Count);
-                        moves[randomIndex].Invoke();
+                        //int randomIndex = Random.Range(0, moves.Count);
+                        //moves[randomIndex].Invoke();
+                        
                         canMovePhase4 = false;
                     }
                     enemyState = EnemyAISM.battlePhase;
