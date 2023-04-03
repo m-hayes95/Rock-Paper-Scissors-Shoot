@@ -12,12 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerSpawner playerSpawner;
 
     // Allow player to use a direction only once.
-    [SerializeField]
-    private bool playerMoveUpAvailable = true;
-    [SerializeField]
-    private bool playerMoveUpLeftAvailable = true;
-    [SerializeField]
-    private bool playerMoveUpRightAvailable = true;
+    public bool playerMoveUpAvailable = true;
+    public bool playerMoveUpLeftAvailable = true;
+    public bool playerMoveUpRightAvailable = true;
     
 
     private void Awake()

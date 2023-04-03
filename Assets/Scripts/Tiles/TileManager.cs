@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    // Ref for Phase Manager script
-    //[SerializeField] PhaseManager phaseManager;
+    // Ref for Player script
+    [SerializeField] Player player;
     // Set bool to true if player or enemy is on the corresponding tile
     public bool playerRock = false, playerPaper = false, playerScissors = false, playerSpecial = false;
     public bool enemyRock = false, enemyPaper = false, enemyScissors = false, enemySpecial = false;
@@ -58,6 +58,8 @@ public class TileManager : MonoBehaviour
     {
         //set player on rock tile bool to true
         playerSpecial = true;
+        //call the player on special tile effect method on the player script.
+        player.PlayerOnSpecialTileEffect();
         //set others to false
         playerRock = false;
         playerPaper = false;

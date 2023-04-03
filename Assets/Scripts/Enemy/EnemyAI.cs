@@ -188,4 +188,9 @@ public class EnemyAI : MonoBehaviour
 
        
     }
+
+    public void EnemyOnSpecialTileEffect()
+    {
+
+    }
 }
