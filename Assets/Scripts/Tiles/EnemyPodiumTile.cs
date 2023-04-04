@@ -10,7 +10,7 @@ public class EnemyPodiumTile : MonoBehaviour
     [SerializeField] private TileManager tileManager; // ref to tile manager script
 
     // ref to phase manager script to check current phase
-    [SerializeField] private PhaseManager phaseManager;
+    //[SerializeField] private PhaseManager phaseManager;
 
 
     private void Start()
