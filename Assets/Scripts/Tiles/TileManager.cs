@@ -25,11 +25,11 @@ public class TileManager : MonoBehaviour
     private void Update()
     {
         //Assign player and enemy game objects and scripts.
-            _player = GameObject.FindGameObjectWithTag(PLAYER);
-            player = _player.GetComponent<Player>();
+        _player = GameObject.FindGameObjectWithTag(PLAYER);
+        player = _player.GetComponent<Player>();
         
-            _enemy = GameObject.FindGameObjectWithTag(ENEMY);
-            enemyAI = _enemy.GetComponent<EnemyAI>();
+        _enemy = GameObject.FindGameObjectWithTag(ENEMY);
+        enemyAI = _enemy.GetComponent<EnemyAI>();
      
         
     }
