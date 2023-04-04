@@ -20,6 +20,10 @@ public class EnemyAI : MonoBehaviour
     // Check if enemy can move this turn
     [SerializeField] private bool canMovePhase1 = false, canMovePhase2 = false, canMovePhase3 = false, canMovePhase4 = false, isBattlePhase = false;
 
+    // Check if game win coniditon has already been called, if yes do not repeat. 
+    // Need this to stop high score being inputted more than once on win.
+    private bool isGameOverCalled = false;
+
     // Define a list for potential moves
     private List<System.Action> moves = new List<System.Action>();
     // Define a list for moves that have been used
@@ -27,6 +31,7 @@ public class EnemyAI : MonoBehaviour
     // Define a list containing the two methods that can be used to randomly move the enemy,
     // before and after a special tile reset.
     private List<System.Action> randomMovesOrUsedMove = new List<System.Action>();
+    // Check if enemys moves have been reset before deciding to use used moves list to Invoke actions.
     [SerializeField]
     private bool enemyMovesReset = false;
 
@@ -216,44 +221,55 @@ public class EnemyAI : MonoBehaviour
 
     private void CallGameWinLoseDraw()
     {
+        // Check player current tile and enemy current tile using tile manager script.
+        // Then check if the game over method has been run before before calling nested code.
         //Player Wins
-        if (tileManager.playerRock && tileManager.enemyScissors == true)
+        if (tileManager.playerRock && tileManager.enemyScissors == true && isGameOverCalled == false)
         {
             gameManager.GamePlayerWin();
+            isGameOverCalled = true;
         }
-        if (tileManager.playerPaper && tileManager.enemyRock == true)
+        if (tileManager.playerPaper && tileManager.enemyRock == true && isGameOverCalled == false)
         {
             gameManager.GamePlayerWin();
+            isGameOverCalled = true;
         }
-        if (tileManager.playerScissors && tileManager.enemyPaper == true)
+        if (tileManager.playerScissors && tileManager.enemyPaper == true && isGameOverCalled == false)
         {
             gameManager.GamePlayerWin();
+            isGameOverCalled = true;
         }
         //Enemy wins
-        if (tileManager.playerRock && tileManager.enemyPaper == true)
+        if (tileManager.playerRock && tileManager.enemyPaper == true && isGameOverCalled == false)
         {
             gameManager.GameEnemyWin();
+            isGameOverCalled = true;
         }
-        if (tileManager.playerPaper && tileManager.enemyScissors == true)
+        if (tileManager.playerPaper && tileManager.enemyScissors == true && isGameOverCalled == false)
         {
             gameManager.GameEnemyWin();
+            isGameOverCalled = true;
         }
-        if (tileManager.playerScissors && tileManager.enemyRock == true)
+        if (tileManager.playerScissors && tileManager.enemyRock == true && isGameOverCalled == false)
         {
             gameManager.GameEnemyWin();
+            isGameOverCalled = true;
         }
         //Draws
-        if (tileManager.playerRock && tileManager.enemyRock == true)
+        if (tileManager.playerRock && tileManager.enemyRock == true && isGameOverCalled == false)
         {
             gameManager.GameDraw();
+            isGameOverCalled = true;
         }
-        if (tileManager.playerPaper && tileManager.enemyPaper == true)
+        if (tileManager.playerPaper && tileManager.enemyPaper == true && isGameOverCalled == false)
         {
             gameManager.GameDraw();
+            isGameOverCalled = true;
         }
-        if (tileManager.playerScissors && tileManager.enemyScissors == true)
+        if (tileManager.playerScissors && tileManager.enemyScissors == true && isGameOverCalled == false)
         {
             gameManager.GameDraw();
+            isGameOverCalled=true;
         }
     }
 }

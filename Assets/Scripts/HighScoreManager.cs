@@ -15,6 +15,7 @@ public class HighScoreManager : MonoBehaviour
         if (Instance == null) // Check if there is an instance already.
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
