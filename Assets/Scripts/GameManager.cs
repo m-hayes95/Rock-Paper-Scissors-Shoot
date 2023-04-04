@@ -28,43 +28,36 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Player Wins");
         HighScoreManager.Instance.AddToHighScore(1000);
-        if (timer >= waitTime)
-        {
-            RestartLevel();
-            timer = 0f;
-        }
-        else timer += Time.deltaTime;
-        
+        RestartLevel();
+
     }
     public void GameEnemyWin()
     {
         Debug.Log("Enemy Wins");
-        if (timer >= waitTime)
-        {
-            RestartLevel();
-            timer = 0f;
-        }
-        else timer += Time.deltaTime;
+        RestartLevel();
     }
     public void GameDraw()
     {
         Debug.Log("Draw");
         HighScoreManager.Instance.AddToHighScore(500);
-        if (timer >= waitTime)
-        {
-            RestartLevel();
-            timer = 0f;
-        }
-        else timer += Time.deltaTime;
+        RestartLevel();
     }
 
     private void RestartLevel()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-        int randomScenePicker = Random.Range(0, 3);
+        int randomScenePicker = Random.Range(0, 2);
         SceneManager.LoadScene(randomScenePicker);
     }
 
+    /*
+     * if (timer >= waitTime)
+        {
+            RestartLevel();
+            timer = 0f;
+        }
+        else timer += Time.deltaTime;
+    */
 
 
 }
