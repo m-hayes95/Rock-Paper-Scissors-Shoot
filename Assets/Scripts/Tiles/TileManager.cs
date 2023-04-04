@@ -5,9 +5,9 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     // Ref for Player & Enemy AI script
-    private Player player;
-    private EnemyAI enemyAI;
-    private GameObject _player, _enemy;
+    [SerializeField] private Player player;
+    [SerializeField] private EnemyAI enemyAI;
+    [SerializeField] private GameObject _player, _enemy;
     // Set bool to true if player or enemy is on the corresponding tile
     public bool playerRock = false, playerPaper = false, playerScissors = false, playerSpecial = false;
     public bool enemyRock = false, enemyPaper = false, enemyScissors = false, enemySpecial = false;
@@ -29,7 +29,7 @@ public class TileManager : MonoBehaviour
             player = _player.GetComponent<Player>();
         
             _enemy = GameObject.FindGameObjectWithTag(ENEMY);
-            enemyAI.GetComponent<EnemyAI>();
+            enemyAI = _enemy.GetComponent<EnemyAI>();
      
         
     }
