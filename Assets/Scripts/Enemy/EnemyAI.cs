@@ -133,7 +133,7 @@ public class EnemyAI : MonoBehaviour
                 if (playerPhase.checkpoint4 == true)
                 {
                     canMovePhase3 = true;
-                    if (canMovePhase3 == true)
+                    if (canMovePhase3 == true && enemyMovesReset == false)
                     {
                         EnemyRandomMove();
                         canMovePhase3 = false;
