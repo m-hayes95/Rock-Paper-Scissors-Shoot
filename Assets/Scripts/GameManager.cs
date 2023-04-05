@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("The Player Died! :'(");
         
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 
     private void MoveToNextLevel()
