@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
     public bool playerMoveUpAvailable = true;
     public bool playerMoveUpLeftAvailable = true;
     public bool playerMoveUpRightAvailable = true;
-    
+    // Timer that sets next move delayed to false.
+    private bool playersNextMoveDelayed = false;
+    private float timer = 0f;
+    private float nextMoveDelay = 0.5f;
 
     private void Awake()
     { 
@@ -30,37 +33,54 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        // Add a delay to stop player spamming moves, allowing timer for enemys move to happen.
+        if (playersNextMoveDelayed == true)
+        {
+            if (timer >= nextMoveDelay)
+            {
+                playersNextMoveDelayed = false;
+            }
+            else timer += Time.deltaTime;
+        } 
+    }
+
     public void MoveUp_Input(InputAction.CallbackContext context)
     {
         //Debug.Log(context); // Check call back context value
 
         // Check if the up input has been performed & player can use move up.
-        if (context.performed && playerMoveUpAvailable == true) 
+        if (context.performed && playerMoveUpAvailable == true && playersNextMoveDelayed == false) 
         {
             // If the input has been performed call the player move up method.
             //Debug.Log("Move PLayer up");
             // Call the Player move up function on the player up ray cast script.
             playerUpRayCast.PlayerMoveUp();
             // If player has used their move up move, dont allow to use the same move again.
-            playerMoveUpAvailable = false; 
+            playerMoveUpAvailable = false;
+            // Set the delay next move to true.
+            playersNextMoveDelayed = true;
         }
     }
 
     public void MoveUpLeft_Input(InputAction.CallbackContext context)
     {
-        if (context.performed && playerMoveUpLeftAvailable == true) // Move player up to the left.
+        if (context.performed && playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false) // Move player up to the left.
         {
             playerLeftRayCast.PlayerMoveUpLeft();
             playerMoveUpLeftAvailable=false;
+            playersNextMoveDelayed = true;
         }
     }
 
     public void MoveUpRight_Input(InputAction.CallbackContext context)
     {
-        if (context.performed && playerMoveUpRightAvailable == true) // Move player up to the right.
+        if (context.performed && playerMoveUpRightAvailable == true && playersNextMoveDelayed == false) // Move player up to the right.
         {
             playerRightRayCast.PlayerMoveUpRight();
             playerMoveUpRightAvailable=false;
+            playersNextMoveDelayed = true;
         }
     }
 

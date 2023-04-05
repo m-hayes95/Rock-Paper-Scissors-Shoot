@@ -42,7 +42,12 @@ public class EnemyAI : MonoBehaviour
     private const string PLAYER = "Player";
     private const string TILE_MANAGER_TAG = "TileManagerTag";
 
-   
+    // Timer
+    private float timer = 0f;
+    private float enemyMoveDelay = 0.5f;
+
+
+
     private void Start()
     {
         // Assign Phase and Tile manger scripts.
@@ -92,79 +97,103 @@ public class EnemyAI : MonoBehaviour
         {
             case EnemyAISM.phase1: // Phase one, enemy makes their first move to the second row.
                 
-                if (playerPhase.checkpoint2 == true)
+                // Timer for delay of enemy moves. Makes the enemy feel like they are thinking about the next move.
+                if (timer >= enemyMoveDelay)
                 {
-                    // check if player has moved, if yes enemy can now make 1st move.
-                    canMovePhase1 = true;
-                    if (canMovePhase1 == true)
+                    if (playerPhase.checkpoint2 == true)
                     {
-                        EnemyRandomMove(); // Call method to randomly move enemy.
+                        // check if player has moved, if yes enemy can now make 1st move.
+                        canMovePhase1 = true;
+                        if (canMovePhase1 == true)
+                        {
+                            EnemyRandomMove(); // Call method to randomly move enemy.
 
-                        canMovePhase1 = false; // Return the can move boolean to false.
+                            canMovePhase1 = false; // Return the can move boolean to false.
+                        }
+
+                        enemyState = EnemyAISM.phase2; // Change current phase.
                     }
-
-                    enemyState = EnemyAISM.phase2; // Change current phase.
+                    timer = 0f; // Reset timer to 0.
                 }
+                else timer += Time.deltaTime; // Increase timer until it goes past defined threshold.
+                
                 break;
 
             case EnemyAISM.phase2: // Enemy makes their 2nd move to the 3rd row.
                 
-                if (playerPhase.checkpoint3 == true)
+                if (timer >= enemyMoveDelay)
                 {
-                    canMovePhase2 = true;
-                    // Check if enemy's moves have been reset. If false, just call the enemy random move method.
-                    if (canMovePhase2 == true && enemyMovesReset == false)
+                    if (playerPhase.checkpoint3 == true)
                     {
-                        EnemyRandomMove();
-                        canMovePhase2 = false;
+                        canMovePhase2 = true;
+                        // Check if enemy's moves have been reset. If false, just call the enemy random move method.
+                        if (canMovePhase2 == true && enemyMovesReset == false)
+                        {
+                            EnemyRandomMove();
+                            canMovePhase2 = false;
+                        }
+                        // If check is true...
+                        if (canMovePhase2 == true && enemyMovesReset == true)
+                        {
+                            // Create a random index to randomly select a move called from either the moves or used moves lists.
+                            int randomIndexForMethods = Random.Range(0, randomMovesOrUsedMove.Count);
+                            // Use the random index to randomly call a move from the moves or used moves list.
+                            randomMovesOrUsedMove[randomIndexForMethods].Invoke();
+                            canMovePhase2 = false;
+                        }
+
+                        enemyState = EnemyAISM.phase3;
                     }
-                    // If check is true...
-                    if (canMovePhase2 == true && enemyMovesReset == true)
-                    {
-                        // Create a random index to randomly select a move called from either the moves or used moves lists.
-                        int randomIndexForMethods = Random.Range(0, randomMovesOrUsedMove.Count);
-                        // Use the random index to randomly call a move from the moves or used moves list.
-                        randomMovesOrUsedMove[randomIndexForMethods].Invoke();
-                        canMovePhase2 = false;
-                    }
-                       
-                    enemyState = EnemyAISM.phase3;
-                }
+                    timer = 0f;
+                } else timer += Time.deltaTime;
+
+                
                 break;
 
             case EnemyAISM.phase3: // Enemy makes their final move to the 4th row.
-                
 
-                if (playerPhase.checkpoint4 == true)
+                if (timer >= enemyMoveDelay)
                 {
-                    canMovePhase3 = true;
-                    if (canMovePhase3 == true && enemyMovesReset == false)
+                    if (playerPhase.checkpoint4 == true)
                     {
-                        EnemyRandomMove();
-                        canMovePhase3 = false;
-                    }
+                        canMovePhase3 = true;
+                        if (canMovePhase3 == true && enemyMovesReset == false)
+                        {
+                            EnemyRandomMove();
+                            canMovePhase3 = false;
+                        }
 
-                    if (canMovePhase3 == true && enemyMovesReset == true)
-                    {
-                        int randomIndexForMethods = Random.Range(0, randomMovesOrUsedMove.Count);
-                        randomMovesOrUsedMove[randomIndexForMethods].Invoke();
-                        canMovePhase3 = false;
+                        if (canMovePhase3 == true && enemyMovesReset == true)
+                        {
+                            int randomIndexForMethods = Random.Range(0, randomMovesOrUsedMove.Count);
+                            randomMovesOrUsedMove[randomIndexForMethods].Invoke();
+                            canMovePhase3 = false;
+                        }
+                        enemyState = EnemyAISM.phase4;
                     }
-                    enemyState = EnemyAISM.phase4;
+                    timer = 0f;
                 }
+                else timer += Time.deltaTime;
+                
                 break;
 
             case EnemyAISM.phase4: // Enemy now on 4th row, then moves to battle phase.
-            
-                if (playerPhase.battlePhaseCheckPoint == true)
+                if (timer >= enemyMoveDelay)
                 {
-                    canMovePhase4 = true;
-                    if (canMovePhase4 == true)
+                    if (playerPhase.battlePhaseCheckPoint == true)
                     {
-                        canMovePhase4 = false;
+                        canMovePhase4 = true;
+                        if (canMovePhase4 == true)
+                        {
+                            canMovePhase4 = false;
+                        }
+                        enemyState = EnemyAISM.battlePhase;
                     }
-                    enemyState = EnemyAISM.battlePhase;
+                    timer = 0f;
                 }
+                else timer += Time.deltaTime;
+
+                
                 break;
 
             case EnemyAISM.battlePhase: // Enemy battle phase conditions. 
