@@ -10,11 +10,18 @@ public class GameManager : MonoBehaviour
     private int drawPointsRecieved = 500;
     private int healthLostOnPlayerLoss = 1;
 
-    public float timer = 0f;
-    private float waitTime = 0.5f;
+    
 
+    public bool playerIsDead = false;
+
+    private void Start()
+    {
+        // Set player is dead to false on new start.
+        playerIsDead = false;
+    }
     private void Update()
     {
+        
         // Debug Test, add to high score on input.
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -26,10 +33,13 @@ public class GameManager : MonoBehaviour
             PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
         }
         // Call on player death method, when player health reaches or falls below 0.
-        if (PlayerHealth.Instance.health <= 0)
+        if (PlayerHealth.Instance.health <= 0 && playerIsDead == false)
         {
+            playerIsDead=true;
             OnPlayerDeath();
         }
+
+        
     }
 
     // On Game win, lose or draw
@@ -38,7 +48,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Player Wins");
         // If player wins add winning points to the players current points, uisng Highscore manager singleton.
         HighScoreManager.Instance.AddToHighScore(winPointsRecieved);
-        RestartLevel();
+        MoveToNextLevel();
 
     }
     public void GameEnemyWin()
@@ -46,29 +56,34 @@ public class GameManager : MonoBehaviour
         Debug.Log("Enemy Wins");
         // If enemy wins the round, take health from player using PlayerHealth singleton.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
-        RestartLevel();
+        MoveToNextLevel();
     }
     public void GameDraw()
     {
         Debug.Log("Draw");
         // If player draws add drawing points to the players current points, uisng Highscore manager singleton.
         HighScoreManager.Instance.AddToHighScore(drawPointsRecieved);
-        RestartLevel();
+        MoveToNextLevel();
     }
 
     private void OnPlayerDeath()
     {
         Debug.Log("The Player Died! :'(");
+        
+        SceneManager.LoadScene(0);
     }
 
-    private void RestartLevel()
+    private void MoveToNextLevel()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-        int randomScenePicker = Random.Range(0, 2);
+        int randomScenePicker = Random.Range(1, 3);
         SceneManager.LoadScene(randomScenePicker);
     }
 
     /*
+     * 
+     //public float timer = 0f;
+     //private float waitTime = 0.5f;
      * if (timer >= waitTime)
         {
             RestartLevel();

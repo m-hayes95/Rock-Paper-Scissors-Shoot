@@ -7,7 +7,9 @@ public class HighScoreManager : MonoBehaviour
     // Create a singleton to manage players current high score
 
     // Allow other scripts to read but not edit this Instance.
-    public static HighScoreManager Instance { get; private set; } 
+    public static HighScoreManager Instance { get; private set; }
+    [SerializeField]
+    private GameManager gameManager;
     // Define a variable of int datatype to manage player's current high score.
     public int playersHighScore = 0;
     private void Awake()
@@ -15,7 +17,11 @@ public class HighScoreManager : MonoBehaviour
         if (Instance == null) // Check if there is an instance already.
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Dont destroy game object when new scene loads.
+            if (gameManager.playerIsDead == false)
+            {
+                DontDestroyOnLoad(gameObject); // Dont destroy game object when new scene loads.
+            }
+            
         }
         else
         {

@@ -6,6 +6,8 @@ public class PlayerHealth : MonoBehaviour
 {
     // Singleton called in game manager script, to reduce health of player when they lose a round.
     public static PlayerHealth Instance { get; private set; }
+    [SerializeField]
+    private GameManager gameManager;
     private int maxHealth = 3;
     public int health;
 
@@ -14,7 +16,12 @@ public class PlayerHealth : MonoBehaviour
         if (Instance == null) // Check if there is an instance already.
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Dont destroy game object when new scene loads.
+            health = maxHealth; // Set the players starting Hp to the max hp value.
+            // Destroy this singleton if the players health reaches 0.
+            if (health <= 0) {
+                Destroy(gameObject);
+            } else DontDestroyOnLoad(gameObject); // Dont destroy game object when new scene loads.
+
         }
         else
         {
@@ -23,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Start()
     {
-        health = maxHealth; // Set the players starting Hp to the max hp value.
+        
     }
     public int TakePlayersHealthAfterLoss (int healthLost)
     {
