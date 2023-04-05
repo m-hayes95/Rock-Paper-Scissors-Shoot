@@ -31,6 +31,7 @@ public class HighScoreManager : MonoBehaviour
 
     private void Update()
     {
+        // If game resets, destroy high score object.
         if (gameHasReset == true)
         {
             Destroy(gameObject);
