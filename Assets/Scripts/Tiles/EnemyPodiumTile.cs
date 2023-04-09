@@ -21,6 +21,8 @@ public class EnemyPodiumTile : MonoBehaviour
 
     private void Update()
     {
+        if (tileManager == null)
+            return;
         // If enemy is on a tile, set the material of the podium to match the corrosponding colour.
         if (tileManager.enemyRock == true)
         {

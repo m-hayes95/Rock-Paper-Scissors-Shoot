@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -244,9 +244,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 135600001662338639, guid: dc1de4c128061b7428619bf48a9b3cca, type: 3}
+      propertyPath: enemySpawner
+      value: 
+      objectReference: {fileID: 8681375930279868856}
+    - target: {fileID: 135600001662338639, guid: dc1de4c128061b7428619bf48a9b3cca, type: 3}
       propertyPath: phaseManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 135600001662338639, guid: dc1de4c128061b7428619bf48a9b3cca, type: 3}
+      propertyPath: playerSpawner
+      value: 
+      objectReference: {fileID: 1673639530}
     - target: {fileID: 135600001662338672, guid: dc1de4c128061b7428619bf48a9b3cca, type: 3}
       propertyPath: m_Name
       value: Tile Managment
@@ -847,6 +855,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 127535657979939503, guid: 3d593525178cbc948b9f5d0836921799, type: 3}
+      propertyPath: playerSpawner
+      value: 
+      objectReference: {fileID: 1673639530}
     - target: {fileID: 3581400244025407175, guid: 3d593525178cbc948b9f5d0836921799, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -912,6 +924,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3081055702764522515, guid: 8f5a4bff0a8f57243b48c7c6f10d0747, type: 3}
+      propertyPath: enemySpawner
+      value: 
+      objectReference: {fileID: 8681375930279868856}
+    - target: {fileID: 3081055702764522515, guid: 8f5a4bff0a8f57243b48c7c6f10d0747, type: 3}
+      propertyPath: playerSpawner
+      value: 
+      objectReference: {fileID: 1673639530}
     - target: {fileID: 3081055702764522540, guid: 8f5a4bff0a8f57243b48c7c6f10d0747, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1405,3 +1425,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e488415a6c2c3934c8a6d754b628c7f3, type: 3}
+--- !u!114 &8681375930279868856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8681375930625128516, guid: e488415a6c2c3934c8a6d754b628c7f3, type: 3}
+  m_PrefabInstance: {fileID: 8681375930279868855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4b51930dc5fd84f8b09940c89ce10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

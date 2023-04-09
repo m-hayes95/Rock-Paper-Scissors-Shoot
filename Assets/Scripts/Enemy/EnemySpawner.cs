@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private PlayerSpawner playerSpawner;
     // Ref to tile script to check enemy grids 1st generated tile.
     [SerializeField] private RandomTileGenerator randomTileGenerator;
-    private bool enemyHasSpawned = false; 
+    public bool enemyHasSpawned = false; // Accessed in TileManager and GameManager.
 
     private void Update()
     {
@@ -37,5 +37,11 @@ public class EnemySpawner : MonoBehaviour
 
         // Spawn enemy at new start tile rotated at 180 degrees, so they face the player.
         Instantiate(enemy, enemyStartTile, Quaternion.Euler(0, 180f, 0));
+    }
+
+    public void EnemySpawnerOnNextLevel()
+    {
+        // Reset the enemy has spawned bool so other scripts can reset their found enemy game object on the start of the next scene.
+        enemyHasSpawned = false;
     }
 }

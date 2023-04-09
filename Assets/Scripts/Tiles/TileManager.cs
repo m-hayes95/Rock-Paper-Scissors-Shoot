@@ -8,6 +8,8 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private EnemyAI enemyAI;
     [SerializeField] private GameObject _player, _enemy;
+    [SerializeField] private PlayerSpawner playerSpawner;
+    [SerializeField] private EnemySpawner enemySpawner;
     // Set bool to true if player or enemy is on the corresponding tile
     public bool playerRock = false, playerPaper = false, playerScissors = false, playerSpecial = false;
     public bool enemyRock = false, enemyPaper = false, enemyScissors = false, enemySpecial = false;
@@ -24,12 +26,29 @@ public class TileManager : MonoBehaviour
 
     private void Update()
     {
-        //Assign player and enemy game objects and scripts.
-        _player = GameObject.FindGameObjectWithTag(PLAYER);
-        player = _player.GetComponent<Player>();
+        if (playerSpawner.playerHasSpawned == true)
+        {
+            //Assign player and enemy game objects and scripts.
+            Debug.Log("PLAYER Game Object and script found on TileManager");
+            _player = GameObject.FindGameObjectWithTag(PLAYER);
+            player = _player.GetComponent<Player>();
+        }
+        else return;
+
+        if (enemySpawner.enemyHasSpawned == true)
+        {
+            Debug.Log("ENEMY Game Object and script found on TileManager");
+            _enemy = GameObject.FindGameObjectWithTag(ENEMY);
+            enemyAI = _enemy.GetComponent<EnemyAI>();
+        }
+        else return;
+
         
-        _enemy = GameObject.FindGameObjectWithTag(ENEMY);
-        enemyAI = _enemy.GetComponent<EnemyAI>();
+            
+        
+
+        
+        
      
         
     }

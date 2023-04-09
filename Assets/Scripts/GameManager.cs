@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private PlayerSpawner playerSpawner;
+    [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private TileManager tileManager;
+
+
     // How many points player will recieve for a win or draw.
     private int winPointsRecieved = 1000;
     private int drawPointsRecieved = 500;
@@ -13,6 +18,8 @@ public class GameManager : MonoBehaviour
     
 
     public bool playerIsDead = false;
+    // Need this to stop high score being inputted more than once on win.
+    private bool isGameOverCalled = false;
 
     private void Start()
     {
@@ -48,6 +55,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Player Wins");
         // If player wins add winning points to the players current points, uisng Highscore manager singleton.
         HighScoreManager.Instance.AddToHighScore(winPointsRecieved);
+        playerSpawner.PlayerSpawnerOnNextLevel();
+        enemySpawner.EnemySpawnerOnNextLevel();
         MoveToNextLevel();
 
     }
@@ -56,6 +65,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Enemy Wins");
         // If enemy wins the round, take health from player using PlayerHealth singleton.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
+        playerSpawner.PlayerSpawnerOnNextLevel();
+        enemySpawner.EnemySpawnerOnNextLevel();
         MoveToNextLevel();
     }
     public void GameDraw()
@@ -63,6 +74,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Draw");
         // If player draws add drawing points to the players current points, uisng Highscore manager singleton.
         HighScoreManager.Instance.AddToHighScore(drawPointsRecieved);
+        playerSpawner.PlayerSpawnerOnNextLevel();
+        enemySpawner.EnemySpawnerOnNextLevel();
         MoveToNextLevel();
     }
 
@@ -75,11 +88,65 @@ public class GameManager : MonoBehaviour
 
     private void MoveToNextLevel()
     {
+        
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         int randomScenePicker = Random.Range(1, 3);
         SceneManager.LoadScene(randomScenePicker);
     }
 
+    public void CallGameWinLoseDraw()
+    {
+        // Check player current tile and enemy current tile using tile manager script.
+        // Then check if the game over method has been run before before calling nested code.
+        //Player Wins
+        if (tileManager.playerRock && tileManager.enemyScissors == true && isGameOverCalled == false)
+        {
+            GamePlayerWin();
+            isGameOverCalled = true;
+        }
+        if (tileManager.playerPaper && tileManager.enemyRock == true && isGameOverCalled == false)
+        {
+            GamePlayerWin();
+            isGameOverCalled = true;
+        }
+        if (tileManager.playerScissors && tileManager.enemyPaper == true && isGameOverCalled == false)
+        {
+            GamePlayerWin();
+            isGameOverCalled = true;
+        }
+        //Enemy wins
+        if (tileManager.playerRock && tileManager.enemyPaper == true && isGameOverCalled == false)
+        {
+            GameEnemyWin();
+            isGameOverCalled = true;
+        }
+        if (tileManager.playerPaper && tileManager.enemyScissors == true && isGameOverCalled == false)
+        {
+            GameEnemyWin();
+            isGameOverCalled = true;
+        }
+        if (tileManager.playerScissors && tileManager.enemyRock == true && isGameOverCalled == false)
+        {
+            GameEnemyWin();
+            isGameOverCalled = true;
+        }
+        //Draws
+        if (tileManager.playerRock && tileManager.enemyRock == true && isGameOverCalled == false)
+        {
+            GameDraw();
+            isGameOverCalled = true;
+        }
+        if (tileManager.playerPaper && tileManager.enemyPaper == true && isGameOverCalled == false)
+        {
+            GameDraw();
+            isGameOverCalled = true;
+        }
+        if (tileManager.playerScissors && tileManager.enemyScissors == true && isGameOverCalled == false)
+        {
+            GameDraw();
+            isGameOverCalled = true;
+        }
+    }
     /*
      * 
      //public float timer = 0f;

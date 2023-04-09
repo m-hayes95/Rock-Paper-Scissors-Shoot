@@ -17,6 +17,8 @@ public class PlayerPodiumColour : MonoBehaviour
 
     private void Update()
     {
+        if (tileManager == null)
+            return;
         //player on rock tile set to correct mat
         if (tileManager.playerRock == true) 
         {

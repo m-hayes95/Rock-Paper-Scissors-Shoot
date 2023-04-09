@@ -7,7 +7,9 @@ public class PlayerPhase : MonoBehaviour
 {
     private GameObject centerPointOfBoard; // Ref to center point of the board.
     private const string CENTER_OF_BOARD = "CenterOfBoard";
-    private Player player;
+    private const string PLAYER = "Player";
+    [SerializeField] private PlayerSpawner playerSpawner;
+    [SerializeField] private GameObject player;
     private float distanceVector; // Ref to vector distance.
 
     // Distance ref to switch current phase.
@@ -19,11 +21,19 @@ public class PlayerPhase : MonoBehaviour
     private void Start()
     {
         centerPointOfBoard = GameObject.FindGameObjectWithTag(CENTER_OF_BOARD);
-        player = GetComponent<Player>();
     }
 
     private void Update()
     {
+        if (playerSpawner.playerHasSpawned == true)
+        {
+            //Assign player and enemy game objects and scripts.
+            Debug.Log("PLAYER Game Object found on PlayerPhase");
+            player = GameObject.FindGameObjectWithTag(PLAYER);
+
+        }
+        else return;
+
         if (player!= null) // Check if the player exists first.
         {
             CheckDistnaceBetweenPlayerAndCenterOfBoard();
@@ -38,7 +48,7 @@ public class PlayerPhase : MonoBehaviour
     private void CheckDistnaceBetweenPlayerAndCenterOfBoard()
     {
         // Use VectorDistance Singleton to calcualate distance between player and the center of the board.
-        distanceVector = VectorDistance.Instance.CalculateVectorDistance(gameObject.transform.position, centerPointOfBoard.transform.position);
+        distanceVector = VectorDistance.Instance.CalculateVectorDistance(player.transform.position, centerPointOfBoard.transform.position);
         //Debug.Log("Player is " + distanceVector + "from center of board");
     }
 
@@ -67,4 +77,6 @@ public class PlayerPhase : MonoBehaviour
         }
 
     }
+
+   
 }

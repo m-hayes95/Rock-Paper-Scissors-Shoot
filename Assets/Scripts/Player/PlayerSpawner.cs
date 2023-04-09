@@ -7,6 +7,7 @@ public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject player; // Ref to spawn player prefab.
     [SerializeField] private RandomTileGenerator randomTileGenerator; // Ref to heirachy tile spawner.
+    
 
     private float playerHeight = 1.5f; // Height offset for choosen spawn locations.
 
@@ -25,6 +26,9 @@ public class PlayerSpawner : MonoBehaviour
 
             playerHasSpawned = true; // Set player has spawned to true.
         }
+
+        
+        
 
     }
 
@@ -74,5 +78,11 @@ public class PlayerSpawner : MonoBehaviour
             Instantiate(player, fithTile, Quaternion.identity);
             playerHasSpawned = true;
         }
+    }
+
+    public void PlayerSpawnerOnNextLevel()
+    {
+        // Reset the player has spawned bool so other scripts can reset their found player game object on the start of the next scene.
+        playerHasSpawned = false;
     }
 }
