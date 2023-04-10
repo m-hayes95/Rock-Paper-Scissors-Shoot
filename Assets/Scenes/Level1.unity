@@ -1297,6 +1297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3081055702764522514, guid: 8f5a4bff0a8f57243b48c7c6f10d0747, type: 3}
+      propertyPath: m_TagString
+      value: GameManagerTag
+      objectReference: {fileID: 0}
     - target: {fileID: 3081055702764522515, guid: 8f5a4bff0a8f57243b48c7c6f10d0747, type: 3}
       propertyPath: tileManager
       value: 

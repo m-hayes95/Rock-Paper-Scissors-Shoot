@@ -12,6 +12,7 @@ TagManager:
   - PhaseManagerTag
   - TileManagerTag
   - CenterOfBoard
+  - GameManagerTag
   layers:
   - Default
   - TransparentFX
