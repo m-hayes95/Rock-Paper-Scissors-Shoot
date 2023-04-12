@@ -44,8 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0177ac86621dec347a3a5107fea83b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefabs:
-  - {fileID: 7009990291204844443, guid: 3ede713ad9964dc45805464982cde3f1, type: 3}
-  - {fileID: 6643502336839752207, guid: 14a2183e06590b54daaa87985fd7c0ab, type: 3}
-  - {fileID: 4768071767552279479, guid: bcfec6c8058398742841b397c69074ac, type: 3}
-  - {fileID: 3253977672495350565, guid: c199f1441b292534d9cbe6b3bed7106f, type: 3}
+  allTilePrefabs:
+  - {fileID: 8324224194124663098, guid: 8ec5bbdbfbcfb7d458c8ef9c2417ad57, type: 3}
+  - {fileID: 1970736114990885087, guid: 75d6c140c7262d2499785e7b464dbe67, type: 3}
+  - {fileID: 7759653612050838274, guid: 94dcdccf5a71eb74d8a993af29915943, type: 3}
+  - {fileID: 5542099461617684308, guid: ee3c05e01d10ee243824310a7ce362b2, type: 3}
+  normalTilePrefabs:
+  - {fileID: 8324224194124663098, guid: 8ec5bbdbfbcfb7d458c8ef9c2417ad57, type: 3}
+  - {fileID: 1970736114990885087, guid: 75d6c140c7262d2499785e7b464dbe67, type: 3}
+  - {fileID: 7759653612050838274, guid: 94dcdccf5a71eb74d8a993af29915943, type: 3}
+  startPositionOfPlayerTiles: {x: 0, y: 0, z: 0}
+  startPositionOfEnemyTiles: {x: 0, y: 0, z: 10}
+  playerTilesHaveBeenGenerated: 0
+  enemyTilesHaveBeenGenerated: 0

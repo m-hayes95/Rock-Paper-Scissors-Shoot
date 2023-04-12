@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerPodiumColour : MonoBehaviour
 {
     [SerializeField] private Material rockMat, paperMat, scissorsMat, specialMat; // ref to materials for each tile
-    private Renderer r; // ref to game object renderer.
+    [SerializeField] private GameObject playerPodiumVisual; // ref to player podium game object
+    private Renderer playerRenderer; // ref to game object renderer.
     [SerializeField] private TileManager tileManager; // ref to tile manager script
 
 
     private void Start()
     {
-        r = GetComponent<Renderer>(); // assign renderer
+        playerRenderer = playerPodiumVisual.GetComponent<Renderer>(); // assign renderer on visual element of the game object.
    
     }
 
@@ -23,18 +24,18 @@ public class PlayerPodiumColour : MonoBehaviour
         if (tileManager.playerRock == true) 
         {
             //Debug.Log("player on rock");
-            r.material = rockMat; //Set the tile to rock materail
+            playerRenderer.material = rockMat; //Set the tile to rock materail
 
         }
         if (tileManager.playerPaper == true) 
         {
             //Debug.Log("player on paper");
-            r.material = paperMat;
+            playerRenderer.material = paperMat;
         }
         if (tileManager.playerScissors == true) 
         {
             //Debug.Log("player on scissors");
-            r.material = scissorsMat;
+            playerRenderer.material = scissorsMat;
         }
         if (tileManager.playerSpecial == true)
         {

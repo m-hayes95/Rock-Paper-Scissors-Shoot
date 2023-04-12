@@ -50,12 +50,13 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log(context); // Check call back context value
 
-        // Check if the up input has been performed & player can use move up.
+        // Check if the up input has been performed & player can acess the raycast to move.
+        // Check timer has reset, allowing player to move.
         if (context.performed && playerUpRayCast != null &&
             playerMoveUpAvailable == true && playersNextMoveDelayed == false) 
         {
             // If the input has been performed call the player move up method.
-            //Debug.Log("Move PLayer up");
+            Debug.Log("Input PLayer Up");
             // Call the Player move up function on the player up ray cast script.
             playerUpRayCast.PlayerMoveUp();
             // If player has used their move up move, dont allow to use the same move again.
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && playerLeftRayCast != null &&
             playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false) // Move player up to the left.
         {
+            Debug.Log("Input Move PLayer Left");
             playerLeftRayCast.PlayerMoveUpLeft();
             playerMoveUpLeftAvailable=false;
             playersNextMoveDelayed = true;
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && playerRightRayCast != null &&
             playerMoveUpRightAvailable == true && playersNextMoveDelayed == false) // Move player up to the right.
         {
+            Debug.Log("Input Move PLayer Right");
             playerRightRayCast.PlayerMoveUpRight();
             playerMoveUpRightAvailable=false;
             playersNextMoveDelayed = true;

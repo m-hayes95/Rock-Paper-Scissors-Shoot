@@ -44,9 +44,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7759653612050838273}
+  - component: {fileID: 1012821044}
+  - component: {fileID: 1012821045}
   m_Layer: 0
   m_Name: Enemy Podium
-  m_TagString: Untagged
+  m_TagString: EnemyBattleTile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,8 +62,8 @@ Transform:
   m_GameObject: {fileID: 7759653612050838274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.05, y: 0, z: 1.43}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7759653613171696596}
   - {fileID: 7759653611994425909}
@@ -71,6 +73,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1012821044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759653612050838274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dc19d19508d2541b919212a93bc3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockMat: {fileID: 2100000, guid: bc2aad0eb46ad924e8d10fd151b99fea, type: 2}
+  paperMat: {fileID: 2100000, guid: 14a1e940221320c48ba6d49897a29d69, type: 2}
+  scissorsMat: {fileID: 2100000, guid: 8ac2c4a2178ac224785341a3d726f451, type: 2}
+  specialMat: {fileID: 2100000, guid: 210316402bfa8e94fb94d719b18ecb69, type: 2}
+  enemyPodiumVisual: {fileID: 0}
+  tileManager: {fileID: 0}
+--- !u!65 &1012821045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759653612050838274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7759653612056462365
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +117,6 @@ GameObject:
   - component: {fileID: 7759653612056462352}
   - component: {fileID: 7759653612056462353}
   - component: {fileID: 7759653612056462354}
-  - component: {fileID: 7759653612056462355}
   m_Layer: 0
   m_Name: Edge (1)
   m_TagString: Untagged
@@ -319,7 +351,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8399
+  m_VersionIndex: 8402
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -401,20 +433,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653612056462365}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653612056462355
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653612056462365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653612115029820
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +479,6 @@ GameObject:
   - component: {fileID: 7759653612216752632}
   - component: {fileID: 7759653612216752633}
   - component: {fileID: 7759653612216752634}
-  - component: {fileID: 7759653612216752635}
   m_Layer: 0
   m_Name: Edge (3)
   m_TagString: Untagged
@@ -696,7 +713,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8405
+  m_VersionIndex: 8408
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -778,20 +795,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653612216752613}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653612216752635
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653612216752613}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653612403828213
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +808,6 @@ GameObject:
   - component: {fileID: 7759653612403828168}
   - component: {fileID: 7759653612403828169}
   - component: {fileID: 7759653612403828170}
-  - component: {fileID: 7759653612403828171}
   m_Layer: 0
   m_Name: Edge (2)
   m_TagString: Untagged
@@ -1040,7 +1042,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8402
+  m_VersionIndex: 8405
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1122,20 +1124,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653612403828213}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653612403828171
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653612403828213}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653612628771775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1137,6 @@ GameObject:
   - component: {fileID: 7759653612628771762}
   - component: {fileID: 7759653612628771763}
   - component: {fileID: 7759653612628771772}
-  - component: {fileID: 7759653612628771773}
   m_Layer: 0
   m_Name: Edge (3)
   m_TagString: Untagged
@@ -1384,7 +1371,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8411
+  m_VersionIndex: 8414
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1466,20 +1453,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653612628771775}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653612628771773
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653612628771775}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653612682046275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,7 +1499,6 @@ GameObject:
   - component: {fileID: 7759653612768680819}
   - component: {fileID: 7759653612768680828}
   - component: {fileID: 7759653612768680829}
-  - component: {fileID: 7759653612768680830}
   m_Layer: 0
   m_Name: Edge (3)
   m_TagString: Untagged
@@ -1761,7 +1733,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8408
+  m_VersionIndex: 8411
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1843,20 +1815,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653612768680824}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653612768680830
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653612768680824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653612776275823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,7 +1828,6 @@ GameObject:
   - component: {fileID: 7759653612776275810}
   - component: {fileID: 7759653612776275811}
   - component: {fileID: 7759653612776275820}
-  - component: {fileID: 7759653612776275821}
   m_Layer: 0
   m_Name: Edge (2)
   m_TagString: Untagged
@@ -2105,7 +2062,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8399
+  m_VersionIndex: 8402
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2187,20 +2144,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653612776275823}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653612776275821
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653612776275823}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653613036752341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2157,6 @@ GameObject:
   - component: {fileID: 7759653613036753448}
   - component: {fileID: 7759653613036753449}
   - component: {fileID: 7759653613036753450}
-  - component: {fileID: 7759653613036753451}
   m_Layer: 0
   m_Name: Edge (2)
   m_TagString: Untagged
@@ -2449,7 +2391,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8405
+  m_VersionIndex: 8408
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2531,20 +2473,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653613036752341}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653613036753451
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653613036752341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653613171696597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,7 +2521,6 @@ GameObject:
   - component: {fileID: 7759653613191960535}
   - component: {fileID: 7759653613191960528}
   - component: {fileID: 7759653613191960529}
-  - component: {fileID: 7759653613191960530}
   m_Layer: 0
   m_Name: Edge (3)
   m_TagString: Untagged
@@ -2828,7 +2755,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8402
+  m_VersionIndex: 8405
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2909,20 +2836,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653613191960540}
-  m_Mesh: {fileID: 0}
---- !u!64 &7759653613191960530
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653613191960540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &7759653613386151893
 GameObject:
@@ -3172,7 +3085,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19459
+  m_VersionIndex: 19462
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3281,7 +3194,6 @@ GameObject:
   - component: {fileID: 7759653613390420852}
   - component: {fileID: 7759653613390420853}
   - component: {fileID: 7759653613390420854}
-  - component: {fileID: 7759653613390420855}
   m_Layer: 0
   m_Name: Edge (2)
   m_TagString: Untagged
@@ -3516,7 +3428,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8408
+  m_VersionIndex: 8411
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3598,20 +3510,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653613390420849}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653613390420855
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653613390420849}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653613407442306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,7 +3523,6 @@ GameObject:
   - component: {fileID: 7759653613407442309}
   - component: {fileID: 7759653613407442310}
   - component: {fileID: 7759653613407442311}
-  - component: {fileID: 7759653613407442304}
   m_Layer: 0
   m_Name: Edge
   m_TagString: Untagged
@@ -3860,7 +3757,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8393
+  m_VersionIndex: 8396
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3942,20 +3839,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653613407442306}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653613407442304
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653613407442306}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653613584500357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,7 +3852,6 @@ GameObject:
   - component: {fileID: 7759653613584500376}
   - component: {fileID: 7759653613584500377}
   - component: {fileID: 7759653613584500378}
-  - component: {fileID: 7759653613584500379}
   m_Layer: 0
   m_Name: Edge (1)
   m_TagString: Untagged
@@ -4204,7 +4086,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8396
+  m_VersionIndex: 8399
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4286,20 +4168,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653613584500357}
   m_Mesh: {fileID: 0}
---- !u!64 &7759653613584500379
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653613584500357}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &7759653614022772240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,7 +4181,6 @@ GameObject:
   - component: {fileID: 7759653614022772331}
   - component: {fileID: 7759653614022772244}
   - component: {fileID: 7759653614022772245}
-  - component: {fileID: 7759653614022772246}
   m_Layer: 0
   m_Name: Edge
   m_TagString: Untagged
@@ -4548,7 +4415,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 8396
+  m_VersionIndex: 8399
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4629,18 +4496,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759653614022772240}
-  m_Mesh: {fileID: 0}
---- !u!64 &7759653614022772246
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7759653614022772240}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}

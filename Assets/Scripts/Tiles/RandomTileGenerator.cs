@@ -12,11 +12,11 @@ public class RandomTileGenerator : MonoBehaviour
     private int tileHeightWithoutSpecial = 1;
     private int tileHeightWithSpecial = 3;
     // Ref to start position of player and enemy tiles for the first row and spawn locations.
-    public Vector3 startPositionOfPlayerTiles = new Vector3(0,0,0); // Referenced in Player Spawner Script.
-    public Vector3 startPositionOfEnemyTiles = new Vector3(0,0,10); // Referenced in Enemy Spawner Script
+    public Vector3 startPositionOfPlayerTiles;
+    public Vector3 startPositionOfEnemyTiles;
     // Ref to initial start point of tile generator, from the 2nd row.
     private Vector3 startPositionOfPlayerTilesFromSecondRow = new Vector3(0,0,1);
-    private Vector3 startPositionOfEnemyTilesFromSecondRow = new Vector3(0,0,7);
+    private Vector3 startPositionOfEnemyTilesFromSecondRow = new Vector3(0,0,6);
 
     // Bool used to check if tile generation is completed
     public bool playerTilesHaveBeenGenerated= false;
@@ -29,6 +29,8 @@ public class RandomTileGenerator : MonoBehaviour
     {
         GenerateStartPlayerTiles();
         GenerateStartEnemyTiles();
+        startPositionOfPlayerTiles = new Vector3(0, 0, 0); // Referenced in Player Spawner Script.
+        startPositionOfEnemyTiles = new Vector3(0, 0, 9); // Referenced in Enemy Spawner Script
     }
     public void GenerateStartPlayerTiles()
     {

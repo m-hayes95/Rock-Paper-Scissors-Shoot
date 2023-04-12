@@ -136,7 +136,8 @@ public class EnemyAI : MonoBehaviour
                             EnemyRandomMove();
                             canMovePhase2 = false;
                         }
-                        // If check is true...
+                        // Check current phase is correct, then check if enemy has stepped on special tile,
+                        // then check that there is one or more actions within the used moves list.
                         if (canMovePhase2 == true && enemyMovesReset == true && usedMoves.Count >= 1)
                         {
                             // Create a random index to randomly select a move called from either the moves or used moves lists.
