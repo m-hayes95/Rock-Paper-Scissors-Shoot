@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3081055702764522515}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManagerTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e778f7cede40a842b714eb33307d3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpawner: {fileID: 0}
+  enemySpawner: {fileID: 0}
+  tileManager: {fileID: 0}
+  playerIsDead: 0

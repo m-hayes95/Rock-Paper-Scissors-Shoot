@@ -72,7 +72,7 @@ public class EnemyAI : MonoBehaviour
         randomMovesOrUsedMove.Add(EnemyRandomMoveAfterReset);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Check how many and which current moves are available for the enemy.
         Debug.Log("Enemy Moves Available " + moves.Count);
@@ -137,7 +137,7 @@ public class EnemyAI : MonoBehaviour
                             canMovePhase2 = false;
                         }
                         // If check is true...
-                        if (canMovePhase2 == true && enemyMovesReset == true)
+                        if (canMovePhase2 == true && enemyMovesReset == true && usedMoves.Count >= 1)
                         {
                             // Create a random index to randomly select a move called from either the moves or used moves lists.
                             int randomIndexForMethods = Random.Range(0, randomMovesOrUsedMove.Count);
@@ -167,7 +167,7 @@ public class EnemyAI : MonoBehaviour
                             canMovePhase3 = false;
                         }
 
-                        if (canMovePhase3 == true && enemyMovesReset == true)
+                        if (canMovePhase3 == true && enemyMovesReset == true && usedMoves.Count >= 1)
                         {
                             int randomIndexForMethods = Random.Range(0, randomMovesOrUsedMove.Count);
                             randomMovesOrUsedMove[randomIndexForMethods].Invoke();

@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(context); // Check call back context value
 
         // Check if the up input has been performed & player can use move up.
-        if (context.performed && playerMoveUpAvailable == true && playersNextMoveDelayed == false) 
+        if (context.performed && playerUpRayCast != null &&
+            playerMoveUpAvailable == true && playersNextMoveDelayed == false) 
         {
             // If the input has been performed call the player move up method.
             //Debug.Log("Move PLayer up");
@@ -66,7 +67,8 @@ public class PlayerController : MonoBehaviour
 
     public void MoveUpLeft_Input(InputAction.CallbackContext context)
     {
-        if (context.performed && playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false) // Move player up to the left.
+        if (context.performed && playerLeftRayCast != null &&
+            playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false) // Move player up to the left.
         {
             playerLeftRayCast.PlayerMoveUpLeft();
             playerMoveUpLeftAvailable=false;
@@ -76,7 +78,8 @@ public class PlayerController : MonoBehaviour
 
     public void MoveUpRight_Input(InputAction.CallbackContext context)
     {
-        if (context.performed && playerMoveUpRightAvailable == true && playersNextMoveDelayed == false) // Move player up to the right.
+        if (context.performed && playerRightRayCast != null &&
+            playerMoveUpRightAvailable == true && playersNextMoveDelayed == false) // Move player up to the right.
         {
             playerRightRayCast.PlayerMoveUpRight();
             playerMoveUpRightAvailable=false;
