@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private TileManager tileManager;
-    [SerializeField] private NewHeartsVisual heartsVisual;
+    [SerializeField] private NewHeartsVisual newHeartsVisual;
+
 
 
     // How many points player will recieve for a win or draw.
@@ -39,12 +40,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
-            heartsVisual.PlayerTakenDamage();
+            
         }
+        
         // Call on player death method, when player health reaches or falls below 0.
         if (PlayerHealth.Instance.health <= 0 && playerIsDead == false)
         {
             playerIsDead=true;
+            // Destroy player hearts singleton when player dies.
+            newHeartsVisual.noHeartsLeft = true;
             OnPlayerDeath();
         }
 
@@ -67,8 +71,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Enemy Wins");
         // If enemy wins the round, take health from player using PlayerHealth singleton.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
-        // Remove 1 heart from player hearts UI.
-        heartsVisual.PlayerTakenDamage();
+        
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
         MoveToNextLevel();

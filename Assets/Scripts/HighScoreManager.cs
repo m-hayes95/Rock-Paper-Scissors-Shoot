@@ -12,7 +12,8 @@ public class HighScoreManager : MonoBehaviour
     
     // Define a variable of int datatype to manage player's current high score.
     public int playersHighScore = 0;
-    public bool gameHasReset = false;
+    // Reset game so destroy high score singleton.
+    public bool gameHasResetHighScore = false;
 
    
     private void Awake()
@@ -32,7 +33,7 @@ public class HighScoreManager : MonoBehaviour
     private void Update()
     {
         // If game resets, destroy high score object.
-        if (gameHasReset == true)
+        if (gameHasResetHighScore == true)
         {
             Destroy(gameObject);
         }

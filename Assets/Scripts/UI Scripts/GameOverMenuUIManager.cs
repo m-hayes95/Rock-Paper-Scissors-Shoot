@@ -18,7 +18,7 @@ public class GameOverMenuUIManager : MonoBehaviour
     public void GoToStartMenu()
     {
         // Destroy high score when player goes back to start menu.
-        HighScoreManager.Instance.gameHasReset = true;
+        HighScoreManager.Instance.gameHasResetHighScore = true;
         SceneManager.LoadScene(0);
     }
 
@@ -26,7 +26,7 @@ public class GameOverMenuUIManager : MonoBehaviour
     {
         Debug.Log("Quit Game");
         // Destroy high score when player quits game.
-        HighScoreManager.Instance.gameHasReset = true;
+        HighScoreManager.Instance.gameHasResetHighScore = true;
 
         Application.Quit();
     }

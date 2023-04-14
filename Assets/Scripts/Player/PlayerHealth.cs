@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // Don't allow 2 High Score singletons.
+            Destroy(gameObject); // Don't allow 2 player health singletons.
         }
     }
 
