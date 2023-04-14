@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3366205616966727932}
   - component: {fileID: 3366205616966727933}
   - component: {fileID: 3366205616966727934}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameOverTileLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
