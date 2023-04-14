@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private TileManager tileManager;
+    [SerializeField] private NewHeartsVisual heartsVisual;
 
 
     // How many points player will recieve for a win or draw.
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
+            heartsVisual.PlayerTakenDamage();
         }
         // Call on player death method, when player health reaches or falls below 0.
         if (PlayerHealth.Instance.health <= 0 && playerIsDead == false)
@@ -65,6 +67,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Enemy Wins");
         // If enemy wins the round, take health from player using PlayerHealth singleton.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
+        // Remove 1 heart from player hearts UI.
+        heartsVisual.PlayerTakenDamage();
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
         MoveToNextLevel();
@@ -92,6 +96,11 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         int randomScenePicker = Random.Range(1, 3);
         SceneManager.LoadScene(randomScenePicker);
+    }
+
+    private void ResetScriptBoolOnNewScene()
+    {
+        // Reset bools here for new loaded scene.
     }
 
     public void CallGameWinLoseDraw()
