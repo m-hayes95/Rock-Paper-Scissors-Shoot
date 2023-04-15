@@ -29,7 +29,7 @@ public class TileManager : MonoBehaviour
         if (playerSpawner.playerHasSpawned == true)
         {
             //Assign player and enemy game objects and scripts.
-            Debug.Log("PLAYER Game Object and script found on TileManager");
+            //Debug.Log("PLAYER Game Object and script found on TileManager");
             _player = GameObject.FindGameObjectWithTag(PLAYER);
             player = _player.GetComponent<Player>();
         }
@@ -37,19 +37,11 @@ public class TileManager : MonoBehaviour
 
         if (enemySpawner.enemyHasSpawned == true)
         {
-            Debug.Log("ENEMY Game Object and script found on TileManager");
+            //Debug.Log("ENEMY Game Object and script found on TileManager");
             _enemy = GameObject.FindGameObjectWithTag(ENEMY);
             enemyAI = _enemy.GetComponent<EnemyAI>();
         }
         else return;
-
-        
-            
-        
-
-        
-        
-     
         
     }
 

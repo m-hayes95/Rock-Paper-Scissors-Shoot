@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -18,10 +20,26 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private EnemyBattlePhaseRayCast enemyBattlePhaseRayCast;
     [SerializeField] private EnemyCurrentTileCheckRayCast enemyCurrentTileCheckRayCast;
 
-    // Check if enemy can move this turn
-    [SerializeField] private bool canMovePhase1 = false, canMovePhase2 = false, canMovePhase3 = false, canMovePhase4 = false, isBattlePhase = false;
+    [SerializeField] private GameObject enemyTrailCube1, enemyTrailCube2;
+    // Check if we have instantiated a enemy trail light yet.
+    private bool phase1EnemyTrailInstantiated = false;
+    private bool phase2EnemyTrailInstantiated = false;
+    private bool phase3EnemyTrailInstantiated = false;
+    private bool phase4EnemyTrailInstantiated = false;
 
-    // Check if game win coniditon has already been called, if yes do not repeat. 
+    // Check if enemy can move this turn.
+    [SerializeField] private bool canMovePhase1 = false, canMovePhase2 = false, canMovePhase3 = false, canMovePhase4 = false, isBattlePhase = false;
+    private bool enemyMadeFistMove = false, enemyMadeSecondMove = false, enemyMadeThridMove = false;
+    // Check if enemy position vector is false.
+    private bool phase1PositionEmpty = true;
+    private bool phase2PositionEmpty = true;
+    private bool phase3PositionEmpty = true;
+    private bool phase4PositionEmpty = true;
+    // Store each phase location.
+    public Vector3 enemyPhase1Location;
+    public Vector3 enemyPhase2Location;
+    public Vector3 enemyPhase3Location;
+    public Vector3 enemyPhase4Location;
     
 
     // Define a list for potential moves
@@ -75,26 +93,30 @@ public class EnemyAI : MonoBehaviour
     private void FixedUpdate()
     {
         // Check how many and which current moves are available for the enemy.
-        Debug.Log("Enemy Moves Available " + moves.Count);
+        //Debug.Log("Enemy Moves Available " + moves.Count);
         foreach (var move in moves)
         {
             var method = move.Method;
-            Debug.Log("Available move: " + method.Name);
+            //Debug.Log("Available move: " + method.Name);
         }
         // Check how many and which moves are in the used moves list.
         if (usedMoves != null)
         {
-            Debug.Log("Enemy Used Moves " + usedMoves.Count);
+            //Debug.Log("Enemy Used Moves " + usedMoves.Count);
 
             foreach (var usedMove in usedMoves)
             {
                 var usedMethod = usedMove.Method;
-                Debug.Log("Used Move: " + usedMethod.Name);
+                //Debug.Log("Used Move: " + usedMethod.Name);
             }
         }
 
-        // Check enemys current tile]
+        // Check enemys current tile.
         enemyCurrentTileCheckRayCast.CheckEnemysCurrentTile();
+        // Store current enemy position.
+        EnemyLastTransformPosition();
+        // Spawn a light up trail of where the enemy has been.
+        InstantiateEnemyCubeTrail();
 
         // Enemy ai state machine
         switch (enemyState)
@@ -111,7 +133,7 @@ public class EnemyAI : MonoBehaviour
                         if (canMovePhase1 == true)
                         {
                             EnemyRandomMove(); // Call method to randomly move enemy.
-
+                            enemyMadeFistMove = true; // Ref in enemy last transform position method.
                             canMovePhase1 = false; // Return the can move boolean to false.
                         }
 
@@ -134,6 +156,7 @@ public class EnemyAI : MonoBehaviour
                         if (canMovePhase2 == true && enemyMovesReset == false)
                         {
                             EnemyRandomMove();
+                            enemyMadeSecondMove =true;
                             canMovePhase2 = false;
                         }
                         // Check current phase is correct, then check if enemy has stepped on special tile,
@@ -165,6 +188,7 @@ public class EnemyAI : MonoBehaviour
                         if (canMovePhase3 == true && enemyMovesReset == false)
                         {
                             EnemyRandomMove();
+                            enemyMadeThridMove= true;
                             canMovePhase3 = false;
                         }
 
@@ -225,7 +249,7 @@ public class EnemyAI : MonoBehaviour
     public void EnemyOnSpecialTileEffect()
     {
         // Reset the enemy moves if they land on a special tile.
-        Debug.Log("Enemy moves reset");
+        //Debug.Log("Enemy moves reset");
         enemyMovesReset = true;
     }
 
@@ -251,6 +275,76 @@ public class EnemyAI : MonoBehaviour
         usedMoves[randomIndexUsedMoves].Invoke();
         // Remove the random mehod when Invoked.
         usedMoves.RemoveAt(randomIndexUsedMoves);
+    }
+
+    public void EnemyLastTransformPosition()
+    {
+        // Get enemy current position and assign it to a new vector 3.
+        Vector3 currentEnemyTransformPosition = transform.position;
+        //Debug.Log("Current enemy pos " + currentEnemyTransformPosition);
+
+        // Store Phase 1 pos into a new vector if it is currently empty.
+        if (phase1PositionEmpty == true) 
+        {
+            enemyPhase1Location = currentEnemyTransformPosition;
+            //Debug.Log("Phase 1 pos " + enemyPhase1Location);
+            phase1PositionEmpty = false;    
+        }
+        
+        if (enemyMadeFistMove == true && phase2PositionEmpty == true)
+        {
+            // Store vector for phase 2.
+            enemyPhase2Location = currentEnemyTransformPosition;
+            //Debug.Log("Phase 2 pos " + enemyPhase2Location);
+            phase2PositionEmpty = false;
+        }
+        if (enemyMadeSecondMove == true && phase3PositionEmpty == true)
+        {
+            // Store vector for phase 3.
+            enemyPhase3Location = currentEnemyTransformPosition;
+            //Debug.Log("Phase 3 pos " + enemyPhase3Location);
+            phase3PositionEmpty = false;
+        }
+        if (enemyMadeThridMove == true && phase4PositionEmpty == true)
+        {
+            // Store vector for phase 4.
+            enemyPhase4Location = currentEnemyTransformPosition;
+            //Debug.Log("Phase 4 pos " + enemyPhase4Location);
+            phase4PositionEmpty = false;
+        }
+        
+    }
+
+    private void InstantiateEnemyCubeTrail()
+    {
+        // Hight offset to Instantiate light below enemy.
+        Vector3 tileHeightOffset = new Vector3(0, -.5f, 0);
+
+        // Check current state and then Instantiate trail cube on the previous phases location vector.
+        if (enemyState == EnemyAISM.phase2 && phase1EnemyTrailInstantiated == false)
+        {
+            Instantiate(enemyTrailCube1, enemyPhase1Location + tileHeightOffset, Quaternion.identity);
+            // Prevent multiple cubes being spawned.
+            phase1EnemyTrailInstantiated= true;
+        }
+
+        if (enemyState == EnemyAISM.phase3 && phase2EnemyTrailInstantiated == false)
+        {
+            Instantiate(enemyTrailCube2, enemyPhase2Location + tileHeightOffset, Quaternion.identity);
+            phase2EnemyTrailInstantiated= true;
+        }
+
+        if (enemyState == EnemyAISM.phase4 && phase3EnemyTrailInstantiated == false)
+        {
+            Instantiate(enemyTrailCube1, enemyPhase3Location + tileHeightOffset, Quaternion.identity);
+            phase3EnemyTrailInstantiated= true;
+        }
+
+        if (enemyState == EnemyAISM.battlePhase && phase4EnemyTrailInstantiated == false)
+        {
+            Instantiate(enemyTrailCube2, enemyPhase4Location + tileHeightOffset, Quaternion.identity);
+            phase4EnemyTrailInstantiated= true;
+        }
     }
 
     

@@ -28,7 +28,7 @@ public class PlayerPhase : MonoBehaviour
         if (playerSpawner.playerHasSpawned == true)
         {
             //Assign player and enemy game objects and scripts.
-            Debug.Log("PLAYER Game Object found on PlayerPhase");
+            //Debug.Log("PLAYER Game Object found on PlayerPhase");
             player = GameObject.FindGameObjectWithTag(PLAYER);
 
         }

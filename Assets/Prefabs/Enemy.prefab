@@ -253,11 +253,17 @@ MonoBehaviour:
   enemyRightRayCast: {fileID: 5941014340610062283}
   enemyBattlePhaseRayCast: {fileID: 4030697456071943059}
   enemyCurrentTileCheckRayCast: {fileID: 302904358448949203}
+  enemyTrailCube1: {fileID: 5542099461617684308, guid: afda884245d693146bf511af4ccbb9e1, type: 3}
+  enemyTrailCube2: {fileID: 5542099461617684308, guid: 646b5f693b80d1e43abc94b9d0f5eb47, type: 3}
   canMovePhase1: 0
   canMovePhase2: 0
   canMovePhase3: 0
   canMovePhase4: 0
   isBattlePhase: 0
+  enemyPhase1Location: {x: 0, y: 0, z: 0}
+  enemyPhase2Location: {x: 0, y: 0, z: 0}
+  enemyPhase3Location: {x: 0, y: 0, z: 0}
+  enemyPhase4Location: {x: 0, y: 0, z: 0}
   enemyMovesReset: 0
   enemyState: 0
 --- !u!1 &2918767105577960589
