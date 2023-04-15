@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 2918767105577960818}
   - component: {fileID: 2918767105577960817}
   - component: {fileID: 2918767105577960816}
+  - component: {fileID: 5899934780930611826}
   m_Layer: 0
   m_Name: EnemyVisual
   m_TagString: Untagged
@@ -350,6 +351,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5899934780930611826
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918767105577960589}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4da38d6db9e0a443a2e56cdef4d5efb, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6019313417543614238
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,10 +682,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2918767105577960818}
     m_Modifications:
+    - target: {fileID: 1703395325591826959, guid: 1dfd67d9cdd3154439647e35eb0d6acb, type: 3}
+      propertyPath: m_Name
+      value: R eye
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703395325830055471, guid: 1dfd67d9cdd3154439647e35eb0d6acb, type: 3}
+      propertyPath: m_Name
+      value: L eye
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395325999801011, guid: 1dfd67d9cdd3154439647e35eb0d6acb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 832eef2c340703d438e5036d363ba69a, type: 2}
+    - target: {fileID: 1703395325999801012, guid: 1dfd67d9cdd3154439647e35eb0d6acb, type: 3}
+      propertyPath: m_Name
+      value: Body
+      objectReference: {fileID: 0}
     - target: {fileID: 1703395326196551834, guid: 1dfd67d9cdd3154439647e35eb0d6acb, type: 3}
       propertyPath: m_Name
       value: EnemyCharacter
@@ -733,6 +766,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 832eef2c340703d438e5036d363ba69a, type: 2}
+    - target: {fileID: 1703395326235972855, guid: 1dfd67d9cdd3154439647e35eb0d6acb, type: 3}
+      propertyPath: m_Name
+      value: head
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dfd67d9cdd3154439647e35eb0d6acb, type: 3}
 --- !u!4 &1769828917830784287 stripped
