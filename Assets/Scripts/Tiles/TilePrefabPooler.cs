@@ -17,29 +17,17 @@ public class TilePrefabPooler : MonoBehaviour
         public int amount; // How many prefabs are stored in this pool.
     }
 
-    // Turn class into a singleton pattern so it can be easily accessed elsewhere.
-    #region Singleton pattern
-
-    public static TilePrefabPooler Instance;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-    #endregion
-
     public List<TilePrefabPool> tilePrefabPools; // List of each Tile Prefab Pool created.
-    public Dictionary<string, Queue<GameObject>> tilePrefabPoolDictionary; // Dictionary holding all tile prefab pools inside.
+    
 
     private void Start()
     {
-        // Instantiate the dictionary to store all pools inside.
-        tilePrefabPoolDictionary= new Dictionary<string, Queue<GameObject>>();
+        
         // Add each pool to the dictionary using a for each loop.
         foreach (TilePrefabPool _tilePrefabPool in tilePrefabPools)
         {
             // Create a list of instantiated game objects (tile prefabs), that will be contained within the tile prefab pool list.
-            Queue<GameObject> tilePrefabs = new Queue<GameObject>();
+            List<GameObject> tilePrefabs = new List<GameObject>();
 
             // Instantiate each prefab within the tile prefab list using a for loop, set to the amount set within the TilePrefabPool class.
             for (int i = 0; i < _tilePrefabPool.amount; i++)
@@ -49,13 +37,12 @@ public class TilePrefabPooler : MonoBehaviour
                 // Set the instantiated game object to inactive within the scene.
                 obj.SetActive(false);
                 // Store the new game object into the Tile Prefabs list.
-                tilePrefabs.Enqueue(obj);
+                tilePrefabs.Add(obj);
             }
-            // Add new tile prefab list to the dictionary.
-            tilePrefabPoolDictionary.Add(_tilePrefabPool.tag, tilePrefabs);
+            
         }
     }
-
+    /*
     public GameObject SpawnTilePrefabFromPool (string tag, Vector3 position, Quaternion rotation)
     {
         // Give an error if a pool with an incorrect tag attempts to call this method.
@@ -77,4 +64,21 @@ public class TilePrefabPooler : MonoBehaviour
         
         return tileToSpawn;
     }
+
+    
+     * public Dictionary<string, Queue<GameObject>> tilePrefabPoolDictionary; // Dictionary holding all tile prefab pools inside.
+     // Instantiate the dictionary to store all pools inside.
+        tilePrefabPoolDictionary= new Dictionary<string, Queue<GameObject>>();
+
+    // Turn class into a singleton pattern so it can be easily accessed elsewhere.
+    #region Singleton pattern
+
+    public static TilePrefabPooler Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion
+    */
 }
