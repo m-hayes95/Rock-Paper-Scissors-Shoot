@@ -56,11 +56,13 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void SetResolution (int resolutionIndex) // Update the resolution to the one choosen in the resolution dropdown.
+    public void SetResolution (int resolutionIndex) 
+        // Update the resolution to the one choosen in the resolution dropdown.
     {
         // Assign the resolution to the index to the resolution array.
         Resolution resolution = resolutions[resolutionIndex];
-        // Set the resolutions width and height and set fullscreen to the current fullscreen bool value, set in the SetFullscreen method.
+        // Set the resolutions width and height and set fullscreen to the current fullscreen bool value,
+        // set in the SetFullscreen method.
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 

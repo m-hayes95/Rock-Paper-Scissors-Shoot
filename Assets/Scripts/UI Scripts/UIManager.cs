@@ -21,12 +21,16 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI highScoreCounter;
     // Ref to move player's available move images.
     [SerializeField]
-    private Image leftPlayerMoveImage;
-    [SerializeField]
-    private Image rightPlayerMoveImage;
-    [SerializeField]
-    private Image upPlayerMoveImage;
+    private Image leftPlayerMoveImage, rightPlayerMoveImage, upPlayerMoveImage;
+    
+    public Image playerWonRoundImage, playerLostRoundImage, playerDrawRoundImage;
 
+    private void Start()
+    {
+        playerWonRoundImage.enabled= false;
+        playerDrawRoundImage.enabled = false;
+        playerLostRoundImage.enabled = false;
+    }
     private void Update()
     {
         // Display players current high score.
@@ -58,9 +62,7 @@ public class UIManager : MonoBehaviour
         }
         else rightPlayerMoveImage.color = Color.white;
 
-        
-
-        
-        
     }
+
+    
 }

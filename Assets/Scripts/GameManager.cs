@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private TileManager tileManager;
     [SerializeField] private NewHeartsVisual newHeartsVisual;
+    [SerializeField] private UIManager uiManager;
 
 
 
@@ -55,40 +56,58 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private IEnumerator CountSeconds(int seconds) // Add a coutdown / timer before a function is called.
+    {
+        for (int i = 0; i <= seconds; i++)
+        {
+            Debug.Log(i + " second(s) have passed");
+            yield return new WaitForSeconds(seconds);
+
+        }
+    }
+
     // On Game win, lose or draw
     public void GamePlayerWin()
     {
-        Debug.Log("Player Wins");
-        // If player wins add winning points to the players current points, uisng Highscore manager singleton.
+        //Debug.Log("Player Wins");
+        //uiManager.playerWonRoundImage.enabled = true;
+
+        // If player wins add winning points to the players current points, uisng Highscore manager singleton
         HighScoreManager.Instance.AddToHighScore(winPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
+        StartCoroutine(CountSeconds(3));
         MoveToNextLevel();
 
     }
     public void GameEnemyWin()
     {
-        Debug.Log("Enemy Wins");
+        //Debug.Log("Enemy Wins");
+        //uiManager.playerLostRoundImage.enabled = true;
+
         // If enemy wins the round, take health from player using PlayerHealth singleton.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
         
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
+        StartCoroutine(CountSeconds(3));
         MoveToNextLevel();
     }
     public void GameDraw()
     {
-        Debug.Log("Draw");
+        //Debug.Log("Draw");
+        //uiManager.playerDrawRoundImage.enabled = true;
         // If player draws add drawing points to the players current points, uisng Highscore manager singleton.
         HighScoreManager.Instance.AddToHighScore(drawPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
+        StartCoroutine(CountSeconds(3));
         MoveToNextLevel();
     }
 
     private void OnPlayerDeath()
     {
-        Debug.Log("The Player Died! :'(");
+        //Debug.Log("The Player Died! :'(");
         
         SceneManager.LoadScene(3);
     }
@@ -170,6 +189,8 @@ public class GameManager : MonoBehaviour
         }
         else timer += Time.deltaTime;
     */
+
+    
 
 
 }
