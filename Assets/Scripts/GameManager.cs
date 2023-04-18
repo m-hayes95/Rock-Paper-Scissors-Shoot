@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(i + " second(s) have passed");
             yield return new WaitForSeconds(seconds);
-
         }
     }
 
@@ -70,8 +69,8 @@ public class GameManager : MonoBehaviour
     public void GamePlayerWin()
     {
         //Debug.Log("Player Wins");
-        //uiManager.playerWonRoundImage.enabled = true;
 
+        uiManager.gameWon = true;
         // If player wins add winning points to the players current points, uisng Highscore manager singleton
         HighScoreManager.Instance.AddToHighScore(winPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();
@@ -83,8 +82,8 @@ public class GameManager : MonoBehaviour
     public void GameEnemyWin()
     {
         //Debug.Log("Enemy Wins");
-        //uiManager.playerLostRoundImage.enabled = true;
-
+        
+        uiManager.gameLost = true;
         // If enemy wins the round, take health from player using PlayerHealth singleton.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
         
@@ -96,7 +95,7 @@ public class GameManager : MonoBehaviour
     public void GameDraw()
     {
         //Debug.Log("Draw");
-        //uiManager.playerDrawRoundImage.enabled = true;
+        uiManager.gameDraw = true;
         // If player draws add drawing points to the players current points, uisng Highscore manager singleton.
         HighScoreManager.Instance.AddToHighScore(drawPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();

@@ -10,26 +10,30 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private PlayerSpawner playerSpawner;
     
+    
     private PlayerController playerController;
     private GameObject player;
+    [SerializeField]
+    private GameObject choosingStartingTileGroup;
     
     private const string PLAYER = "Player";
     private Color transparentBlueColour = new Color(0, 0, 1, 0.5f);
 
-    // Ref to high score text field in canvas.
     [SerializeField]
     private TextMeshProUGUI highScoreCounter;
-    // Ref to move player's available move images.
+    
     [SerializeField]
     private Image leftPlayerMoveImage, rightPlayerMoveImage, upPlayerMoveImage;
-    
+ 
     public Image playerWonRoundImage, playerLostRoundImage, playerDrawRoundImage;
+
+    public bool gameWon, gameDraw, gameLost;
 
     private void Start()
     {
-        playerWonRoundImage.enabled= false;
-        playerDrawRoundImage.enabled = false;
-        playerLostRoundImage.enabled = false;
+        gameWon = false;
+        gameDraw = false;
+        gameLost = false;
     }
     private void Update()
     {
@@ -40,6 +44,7 @@ public class UIManager : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag(PLAYER);
             playerController = player.GetComponent<PlayerController>();
+            choosingStartingTileGroup.SetActive(false);
         }
         else return;
 
@@ -47,7 +52,7 @@ public class UIManager : MonoBehaviour
         if (playerController.playerMoveUpAvailable == false)
         {
             upPlayerMoveImage.color = transparentBlueColour;
-        }  // Reset the colour if player move available is true.
+        }  // Reset the colour if the move becomes available again.
         else upPlayerMoveImage.color = Color.white;
 
         if (playerController.playerMoveUpLeftAvailable == false)
@@ -61,6 +66,20 @@ public class UIManager : MonoBehaviour
             rightPlayerMoveImage.color = transparentBlueColour;
         }
         else rightPlayerMoveImage.color = Color.white;
+
+        // Display game win, draw, loss banner on round over. Set in game manager script.
+        if (gameWon == true)
+        {
+            playerWonRoundImage.enabled = true;
+        }
+        if (gameDraw == true)
+        {
+            playerDrawRoundImage.enabled = true;
+        }
+        if (gameLost == true)
+        {
+            playerLostRoundImage.enabled = true;
+        }
 
     }
 

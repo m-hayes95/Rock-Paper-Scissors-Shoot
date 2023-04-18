@@ -8,7 +8,6 @@ using static TilePrefabPooler;
 
 public class RandomTileGenerator : MonoBehaviour
 {
-    // Ref to prefab tile Array, assigned with inspector.
     [SerializeField] private GameObject[] allTilePrefabs;
     [SerializeField] private GameObject[] normalTilePrefabs;
     [SerializeField] private GameObject specialTilePrefab;
@@ -18,14 +17,13 @@ public class RandomTileGenerator : MonoBehaviour
     private int tileWidth = 5;
     private int tileHeightWithoutSpecial = 1;
     private int tileHeightWithSpecial = 3;
-    // Ref to start position of player and enemy tiles for the first row and spawn locations.
+    
     public Vector3 startPositionOfPlayerTiles;
     public Vector3 startPositionOfEnemyTiles;
     // Ref to initial start point of tile generator, from the 2nd row.
     private Vector3 startPositionOfPlayerTilesFromSecondRow = new Vector3(0,0,1);
     private Vector3 startPositionOfEnemyTilesFromSecondRow = new Vector3(0,0,6);
 
-    // Bool used to check if tile generation is completed
     public bool playerTilesHaveBeenGenerated= false;
     public bool enemyTilesHaveBeenGenerated= false;
     // Check if first row has finished generating before spawning the rest.
@@ -71,24 +69,18 @@ public class RandomTileGenerator : MonoBehaviour
                         allowSpecialTilesSpawn = true;
                     } else allowSpecialTilesSpawn = false;
 
-                    // Assign the current tile location within the loop from the start position, to a new vector.
                     Vector3 nextTilePosition = startPositionOfPlayerTilesFromSecondRow + new Vector3(x, 0f, z);
-                    // Assign a random value from the special tile prefab Array.
+                    // Create random indexes for both prefab arrays.
                     int randomIndexForAllTiles = Random.Range(0, allTilePrefabs.Length);
-                    // Assign a random value from the normal tile prefab Array.
                     int randomIndexForNormalTiles = Random.Range(0, normalTilePrefabs.Length);
 
                     while (!allowSpecialTilesSpawn)
                     {
-                        // Instantiate random tile excluding special tiles.
                         Instantiate(normalTilePrefabs[randomIndexForNormalTiles], nextTilePosition, Quaternion.identity);
-                        
-                        
                         break;
                     }
                     while (allowSpecialTilesSpawn == true)
                     {
-                        // Instantiate the random tile (including specials), at current position with no rotation.
                         Instantiate(allTilePrefabs[randomIndexForAllTiles], nextTilePosition, Quaternion.identity);
                         break;
                     }
@@ -106,11 +98,9 @@ public class RandomTileGenerator : MonoBehaviour
         {
             for (int z = 0; z < tileHeightWithoutSpecial; z++)
             {
-                // Assign the current tile location within the loop from the start position, to a new vector.
                 Vector3 nextTilePosition = startPositionOfEnemyTiles + new Vector3(x, 0f, z);
-                // Assign a random value from the normal tile prefab Array.
                 int randomIndexForNormalTiles = Random.Range(0, normalTilePrefabs.Length);
-                // Instantiate the random tile, at current position with opposite rotation.
+                // Set enemy tiles upside down to hide tile images as they are not required.
                 Instantiate(normalTilePrefabs[randomIndexForNormalTiles], nextTilePosition, Quaternion.Euler(0, 0, 180f));
                 enemyFirstRowGenerated = true;
             }
@@ -131,27 +121,20 @@ public class RandomTileGenerator : MonoBehaviour
                     }
                     else allowSpecialTilesSpawn = false;
 
-                    // Assign the current tile location within the loop from the start position, to a new vector.
                     Vector3 nextTilePosition = startPositionOfEnemyTilesFromSecondRow + new Vector3(x, 0f, z);
-                    // Assign a random value from the special tile prefab Array.
                     int randomIndexForAllTiles = Random.Range(0, allTilePrefabs.Length);
                     int randomIndexForNormalTiles = Random.Range(0, normalTilePrefabs.Length);
 
                     while (!allowSpecialTilesSpawn)
                     {
-                        // Instantiate random tile excluding special tiles.
                         Instantiate(normalTilePrefabs[randomIndexForNormalTiles], nextTilePosition, Quaternion.Euler(0, 0, 180f));
-
-
                         break;
                     }
                     while (allowSpecialTilesSpawn == true)
                     {
-                        // Instantiate the random tile (including specials), at current position with no rotation.
                         Instantiate(allTilePrefabs[randomIndexForAllTiles], nextTilePosition, Quaternion.Euler(0, 0, 180f));
                         break;
                     }
-
                 }
             }
             enemyTilesHaveBeenGenerated = true; // Allow enemy to spawn.
