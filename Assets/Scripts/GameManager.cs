@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
         if (PlayerHealth.Instance.health <= 0 && playerIsDead == false)
         {
             playerIsDead=true;
+            // Destroy virtual camera when the player dies.
+            CameraShake.Instance.gameOver = true;
             // Destroy player hearts singleton when player dies.
             newHeartsVisual.noHeartsLeft = true;
             OnPlayerDeath();
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator CountSeconds() // Add a coutdown / timer before a function is called.
     {
             //Debug.Log( " second(s) have passed");
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
         MoveToNextLevel();
 
     }
@@ -68,9 +70,9 @@ public class GameManager : MonoBehaviour
     public void GamePlayerWin()
     {
         //Debug.Log("Player Wins");
-
+        
         uiManager.gameWon = true;
-        Debug.Log(uiManager.gameWon);
+        //Debug.Log(uiManager.gameWon);
         // If player wins add winning points to the players current points, uisng Highscore manager singleton
         HighScoreManager.Instance.AddToHighScore(winPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();
@@ -84,7 +86,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Enemy Wins");
         
         uiManager.gameLost = true;
-        Debug.Log(uiManager.gameLost);
+        //Debug.Log(uiManager.gameLost);
         // If enemy wins the round, take health from player using PlayerHealth singleton.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
         
@@ -96,8 +98,9 @@ public class GameManager : MonoBehaviour
     public void GameDraw()
     {
         //Debug.Log("Draw");
+        
         uiManager.gameDraw = true;
-        Debug.Log(uiManager.gameDraw);
+        //Debug.Log(uiManager.gameDraw);
         // If player draws add drawing points to the players current points, uisng Highscore manager singleton.
         HighScoreManager.Instance.AddToHighScore(drawPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();

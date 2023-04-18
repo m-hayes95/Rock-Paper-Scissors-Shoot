@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private float timer = 0f;
     private float nextMoveDelay = 0.5f;
 
+    public float cameraShakeIntesity = 3f;
+    private float cameraShakeTimer = .1f;
+
     private void Awake()
     { 
         // Construct input system.
@@ -55,6 +58,11 @@ public class PlayerController : MonoBehaviour
         if (context.performed && playerUpRayCast != null &&
             playerMoveUpAvailable == true && playersNextMoveDelayed == false) 
         {
+            if (CameraShake.Instance.isCameraShakeEnabled == true)
+            {
+                CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
+            }
+            
             // If the input has been performed call the player move up method.
             //Debug.Log("Input PLayer Up");
             // Call the Player move up function on the player up ray cast script.
@@ -71,6 +79,11 @@ public class PlayerController : MonoBehaviour
         if (context.performed && playerLeftRayCast != null &&
             playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false) // Move player up to the left.
         {
+            if (CameraShake.Instance.isCameraShakeEnabled == true)
+            {
+                CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
+            }
+                
             //Debug.Log("Input Move PLayer Left");
             playerLeftRayCast.PlayerMoveUpLeft();
             playerMoveUpLeftAvailable=false;
@@ -83,6 +96,11 @@ public class PlayerController : MonoBehaviour
         if (context.performed && playerRightRayCast != null &&
             playerMoveUpRightAvailable == true && playersNextMoveDelayed == false) // Move player up to the right.
         {
+            if (CameraShake.Instance.isCameraShakeEnabled == true)
+            {
+                CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
+            }
+                
             //Debug.Log("Input Move PLayer Right");
             playerRightRayCast.PlayerMoveUpRight();
             playerMoveUpRightAvailable=false;
