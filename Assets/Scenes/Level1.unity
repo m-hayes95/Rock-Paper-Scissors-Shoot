@@ -8138,7 +8138,7 @@ PrefabInstance:
     - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
       propertyPath: specialTilePrefab
       value: 
-      objectReference: {fileID: 7009990291204844443, guid: 3ede713ad9964dc45805464982cde3f1, type: 3}
+      objectReference: {fileID: 5542099461617684308, guid: ee3c05e01d10ee243824310a7ce362b2, type: 3}
     - target: {fileID: 8297265892520813574, guid: f624ee9e99ff1da40a7915065835915d, type: 3}
       propertyPath: allTilePrefabs.Array.size
       value: 4
