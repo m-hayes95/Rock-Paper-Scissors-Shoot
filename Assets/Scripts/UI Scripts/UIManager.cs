@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image leftPlayerMoveImage, rightPlayerMoveImage, upPlayerMoveImage;
  
-    public Image playerWonRoundImage, playerLostRoundImage, playerDrawRoundImage;
+    public GameObject playerWonRoundImage, playerLostRoundImage, playerDrawRoundImage;
 
     public bool gameWon, gameDraw, gameLost;
 
@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
+        ShowRoundOverBanner();
         // Display players current high score.
         highScoreCounter.text = HighScoreManager.Instance.playersHighScore.ToString();
 
@@ -67,21 +68,28 @@ public class UIManager : MonoBehaviour
         }
         else rightPlayerMoveImage.color = Color.white;
 
-        // Display game win, draw, loss banner on round over. Set in game manager script.
-        if (gameWon == true)
-        {
-            playerWonRoundImage.enabled = true;
-        }
-        if (gameDraw == true)
-        {
-            playerDrawRoundImage.enabled = true;
-        }
-        if (gameLost == true)
-        {
-            playerLostRoundImage.enabled = true;
-        }
+        
+
 
     }
 
-    
+    private void ShowRoundOverBanner()
+    {
+        // Display game win, draw, loss banner on round over. Set in game manager script.
+        if (gameWon == true)
+        {
+            playerWonRoundImage.SetActive(true);
+            Debug.Log(gameWon);
+        }
+        if (gameDraw == true)
+        {
+            playerDrawRoundImage.SetActive(true);
+            Debug.Log(gameDraw);
+        }
+        if (gameLost == true)
+        {
+            playerLostRoundImage.SetActive(true);
+            Debug.Log(gameLost);
+        }
+    }
 }

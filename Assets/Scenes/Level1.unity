@@ -10270,9 +10270,9 @@ MonoBehaviour:
   leftPlayerMoveImage: {fileID: 486212427}
   rightPlayerMoveImage: {fileID: 2053628791}
   upPlayerMoveImage: {fileID: 621862438}
-  playerWonRoundImage: {fileID: 1694908751}
-  playerLostRoundImage: {fileID: 1360881476}
-  playerDrawRoundImage: {fileID: 614727049}
+  playerWonRoundImage: {fileID: 1694908749}
+  playerLostRoundImage: {fileID: 1360881474}
+  playerDrawRoundImage: {fileID: 614727047}
   gameWon: 0
   gameDraw: 0
   gameLost: 0
