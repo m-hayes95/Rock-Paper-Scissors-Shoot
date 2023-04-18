@@ -47,9 +47,7 @@ public class GameManager : MonoBehaviour
         // Call on player death method, when player health reaches or falls below 0.
         if (PlayerHealth.Instance.health <= 0 && playerIsDead == false)
         {
-            playerIsDead=true;
-            // Destroy virtual camera when the player dies.
-            CameraShake.Instance.gameOver = true;
+            playerIsDead = true;
             // Destroy player hearts singleton when player dies.
             newHeartsVisual.noHeartsLeft = true;
             OnPlayerDeath();

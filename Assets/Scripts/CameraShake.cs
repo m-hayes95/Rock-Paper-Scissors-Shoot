@@ -8,19 +8,16 @@ using Cinemachine;
 public class CameraShake : MonoBehaviour
 {
     public static CameraShake Instance { get; private set; }
+    public static bool IsCameraShakeEnabled = true;
     private CinemachineVirtualCamera cinemachineVirtualCamera;
     private float shakeTimer;
 
-
-    public bool isCameraShakeEnabled =  true;
-    public bool gameOver = false; // Called on game manager script.
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Dont destroy game object when new scene loads.
         }
         else
         {
@@ -41,7 +38,7 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Camera shake is " + isCameraShakeEnabled);
+        Debug.Log("Camera shake is " + IsCameraShakeEnabled);
         // Turn camera shake off after timer.
         if (shakeTimer > 0)
         {
@@ -55,10 +52,5 @@ public class CameraShake : MonoBehaviour
             }
         }
 
-        if (gameOver == true)
-        {
-            Debug.Log("VC camera shake singleton destroyed");
-            Destroy(gameObject);
-        }
     }
 }

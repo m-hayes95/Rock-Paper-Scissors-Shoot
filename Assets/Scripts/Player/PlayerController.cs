@@ -56,9 +56,10 @@ public class PlayerController : MonoBehaviour
         // Check if the up input has been performed & player can acess the raycast to move.
         // Check timer has reset, allowing player to move.
         if (context.performed && playerUpRayCast != null &&
-            playerMoveUpAvailable == true && playersNextMoveDelayed == false) 
+                playerMoveUpAvailable == true && playersNextMoveDelayed == false 
+                && PauseMenu.GameIsPaused == false) 
         {
-            if (CameraShake.Instance.isCameraShakeEnabled == true)
+            if (CameraShake.IsCameraShakeEnabled == true)
             {
                 CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
             }
@@ -77,9 +78,10 @@ public class PlayerController : MonoBehaviour
     public void MoveUpLeft_Input(InputAction.CallbackContext context)
     {
         if (context.performed && playerLeftRayCast != null &&
-            playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false) // Move player up to the left.
+            playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false
+            && PauseMenu.GameIsPaused == false) // Move player up to the left.
         {
-            if (CameraShake.Instance.isCameraShakeEnabled == true)
+            if (CameraShake.IsCameraShakeEnabled == true)
             {
                 CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
             }
@@ -94,9 +96,10 @@ public class PlayerController : MonoBehaviour
     public void MoveUpRight_Input(InputAction.CallbackContext context)
     {
         if (context.performed && playerRightRayCast != null &&
-            playerMoveUpRightAvailable == true && playersNextMoveDelayed == false) // Move player up to the right.
+            playerMoveUpRightAvailable == true && playersNextMoveDelayed == false
+            && PauseMenu.GameIsPaused == false) // Move player up to the right.
         {
-            if (CameraShake.Instance.isCameraShakeEnabled == true)
+            if (CameraShake.IsCameraShakeEnabled == true)
             {
                 CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
             }

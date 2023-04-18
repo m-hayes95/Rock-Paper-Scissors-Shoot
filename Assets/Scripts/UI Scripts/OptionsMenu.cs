@@ -85,9 +85,9 @@ public class OptionsMenu : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
-    public void SetCameraShakeOnOff (bool isCameraShakeEnabled)
+    public void SetCameraShakeOnOff (bool enableCameraShake)
     { 
-        CameraShake.Instance.isCameraShakeEnabled = isCameraShakeEnabled;
+        CameraShake.IsCameraShakeEnabled = enableCameraShake;
     }
 
     
