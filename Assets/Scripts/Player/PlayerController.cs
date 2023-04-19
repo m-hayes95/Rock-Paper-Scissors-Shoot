@@ -17,10 +17,6 @@ public class PlayerController : MonoBehaviour
     public bool playerMoveUpAvailable = true;
     public bool playerMoveUpLeftAvailable = true;
     public bool playerMoveUpRightAvailable = true;
-    // Timer that sets next move delayed to false.
-    private bool playersNextMoveDelayed = false;
-    private float timer = 0f;
-    private float nextMoveDelay = 0.5f;
 
     public float cameraShakeIntesity = 3f;
     private float cameraShakeTimer = .1f;
@@ -33,24 +29,11 @@ public class PlayerController : MonoBehaviour
         playerInputActions = new PlayerInputActions();
         // Enable the Player action maps within the input system.
         //playerInputActions.PlayerMovement.Enable();
-        
+
         // Subscribe to the Player movement actions in the input system.
         playerInputActions.PlayerMovement.MoveUp.performed += MoveUp_Input;
         playerInputActions.PlayerMovement.MoveUpLeft.performed += MoveUpLeft_Input;
         playerInputActions.PlayerMovement.MoveUpRight.performed += MoveUpRight_Input;
-    }
-
-    private void Update()
-    {
-        // Add a delay to stop player spamming moves, allowing timer for enemys move to happen.
-        if (playersNextMoveDelayed == true)
-        {
-            if (timer >= nextMoveDelay)
-            {
-                playersNextMoveDelayed = false;
-            }
-            else timer += Time.deltaTime;
-        }
     }
 
     public void MoveUp_Input(InputAction.CallbackContext context)
@@ -60,8 +43,7 @@ public class PlayerController : MonoBehaviour
         // Check if the up input has been performed & player can acess the raycast to move.
         // Check timer has reset, allowing player to move.
         if (context.performed && playerUpRayCast != null &&
-                playerMoveUpAvailable == true && playersNextMoveDelayed == false 
-                && PauseMenu.GameIsPaused == false) 
+                playerMoveUpAvailable == true && PauseMenu.GameIsPaused == false) 
         {
             if (CameraShake.IsCameraShakeEnabled == true)
             {
@@ -74,16 +56,13 @@ public class PlayerController : MonoBehaviour
             playerUpRayCast.PlayerMoveUp();
             // If player has used their move up move, dont allow to use the same move again.
             playerMoveUpAvailable = false;
-            // Set the delay next move to true.
-            playersNextMoveDelayed = true;
         }
     }
 
     public void MoveUpLeft_Input(InputAction.CallbackContext context)
     {
         if (context.performed && playerLeftRayCast != null &&
-            playerMoveUpLeftAvailable == true && playersNextMoveDelayed == false
-            && PauseMenu.GameIsPaused == false) // Move player up to the left.
+            playerMoveUpLeftAvailable == true && PauseMenu.GameIsPaused == false) // Move player up to the left.
         {
             if (CameraShake.IsCameraShakeEnabled == true)
             {
@@ -93,15 +72,13 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Input Move PLayer Left");
             playerLeftRayCast.PlayerMoveUpLeft();
             playerMoveUpLeftAvailable=false;
-            playersNextMoveDelayed = true;
         }
     }
 
     public void MoveUpRight_Input(InputAction.CallbackContext context)
     {
         if (context.performed && playerRightRayCast != null &&
-            playerMoveUpRightAvailable == true && playersNextMoveDelayed == false
-            && PauseMenu.GameIsPaused == false) // Move player up to the right.
+            playerMoveUpRightAvailable == true && PauseMenu.GameIsPaused == false) // Move player up to the right.
         {
             GameplayMusic.Insatance.PlayPlayerMoveSound();
             if (CameraShake.IsCameraShakeEnabled == true)
@@ -112,7 +89,6 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Input Move PLayer Right");
             playerRightRayCast.PlayerMoveUpRight();
             playerMoveUpRightAvailable=false;
-            playersNextMoveDelayed = true;
         }
     }
 
