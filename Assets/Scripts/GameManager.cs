@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool PlayerIsDead = false;
+
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private TileManager tileManager;
@@ -18,16 +20,14 @@ public class GameManager : MonoBehaviour
     private int drawPointsRecieved = 500;
     private int healthLostOnPlayerLoss = 1;
 
-    
 
-    public bool playerIsDead = false;
     // Need this to stop high score being inputted more than once on win.
-    private bool isGameOverCalled = false;
+    public bool isGameOverCalled = false;
 
     private void Start()
     {
         // Set player is dead to false on new start.
-        playerIsDead = false;
+        PlayerIsDead = false;
     }
     private void Update()
     {
@@ -45,9 +45,9 @@ public class GameManager : MonoBehaviour
         }
         
         // Call on player death method, when player health reaches or falls below 0.
-        if (PlayerHealth.Instance.health <= 0 && playerIsDead == false)
+        if (PlayerHealth.Instance.health <= 0 && PlayerIsDead == false)
         {
-            playerIsDead = true;
+            PlayerIsDead = true;
             // Destroy player hearts singleton when player dies.
             newHeartsVisual.noHeartsLeft = true;
             OnPlayerDeath();
@@ -69,10 +69,10 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log("Player Wins");
         
-        uiManager.gameWon = true;
-        //Debug.Log(uiManager.gameWon);
-        // If player wins add winning points to the players current points, uisng Highscore manager singleton
-        HighScoreManager.Instance.AddToHighScore(winPointsRecieved);
+        uiManager.gameWon = true; // Show banner on round over.
+        GameplayMusic.Insatance.isRoundWin = true; // Play round over sound effects
+        //Debug.Log(uiManager.gameWon
+        HighScoreManager.Instance.AddToHighScore(winPointsRecieved); // Add points to players current points.
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
         StartCoroutine(CountSeconds());
@@ -84,10 +84,10 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Enemy Wins");
         
         uiManager.gameLost = true;
+        GameplayMusic.Insatance.isRoundLost = true;
         //Debug.Log(uiManager.gameLost);
-        // If enemy wins the round, take health from player using PlayerHealth singleton.
+        // On lose, take health from player.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
-        
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
         StartCoroutine(CountSeconds());
@@ -98,8 +98,8 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Draw");
         
         uiManager.gameDraw = true;
-        //Debug.Log(uiManager.gameDraw);
-        // If player draws add drawing points to the players current points, uisng Highscore manager singleton.
+        GameplayMusic.Insatance.isRoundDraw = true;
+        //Debug.Log(uiManager.gameDraw
         HighScoreManager.Instance.AddToHighScore(drawPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
