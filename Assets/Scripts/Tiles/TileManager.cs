@@ -85,6 +85,7 @@ public class TileManager : MonoBehaviour
     {
         //set player on rock tile bool to true
         playerSpecial = true;
+        GameplayMusic.Insatance.PlaySpecialTileSound(); // Play special tile sound.
         //call the player on special tile effect method on the player script.
         player.PlayerOnSpecialTileEffect();
         //set others to false

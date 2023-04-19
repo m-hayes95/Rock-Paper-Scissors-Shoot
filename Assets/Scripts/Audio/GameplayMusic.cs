@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class GameplayMusic : MonoBehaviour
 {
-    public static GameplayMusic Insatance {  get; private set; }
+    public static GameplayMusic Insatance {  get; private set; } // Singleton
 
     [SerializeField]
     private AudioSource crowdCheering, crowdGasp;
+    [SerializeField]
+    private AudioSource chooseRock, choosePaper, chooseScissors, specialTileSound;
+    [SerializeField]
+    private AudioSource playerMoveSound;
 
     public bool isRoundWin = false, isRoundDraw = false, isRoundLost = false;
+
+    private float crowdSoundEffectTimer = 2.5f;
 
     private void Awake()
     {
@@ -25,28 +31,10 @@ public class GameplayMusic : MonoBehaviour
 
     private void Update()
     { 
-        // Destroy instance when the player goes to game over screen.
-        if (GameManager.PlayerIsDead == true)
+        // Destroy Instance before game over screen.
+        if(GameManager.PlayerIsDead == true)
         {
             Destroy(gameObject);
-        }
-
-        if (isRoundWin == true || isRoundDraw == true)
-        {
-            float timer = 2.5f;
-            crowdCheering.Play();
-            isRoundWin = false; // Reset bool
-            isRoundDraw= false;
-            StartCoroutine(CountSeconds(timer));
-            
-        }
-
-        if (isRoundLost == true)
-        {
-            float timer = 2.5f;
-            crowdGasp.Play();
-            isRoundLost = false;
-            StartCoroutine(CountSeconds(timer));
         }
     }
 
@@ -57,4 +45,40 @@ public class GameplayMusic : MonoBehaviour
         crowdCheering.Stop();
         crowdGasp.Stop();
     }
+    public void PlayPlayerMoveSound()
+    {
+        playerMoveSound.Play(); // Play move sound effects (Ref on PlayerController).
+    }
+
+    public void PlaySpecialTileSound()
+    {
+        specialTileSound.Play(); // Ref in Tile Manager.
+    }
+
+    public void PlayRockSound()
+    {
+        chooseRock.Play(); // Ref in Game Manager.
+    }
+    public void PlayPaperSound()
+    {
+        choosePaper.Play(); // Ref in Game Manager.
+    }
+    public void PlayScissorsSound()
+    {
+        chooseScissors.Play(); // Ref in Game Manager.
+    }
+
+    public void PlayCrowdCheerSound()
+    {
+        crowdCheering.Play(); // Ref in Game Manager.
+        StartCoroutine(CountSeconds(crowdSoundEffectTimer));
+    }
+    public void PlayCrowdGaspSound()
+    {
+        crowdGasp.Play(); // Ref in Game Manager.
+        StartCoroutine(CountSeconds(crowdSoundEffectTimer));
+    }
+
+
+
 }

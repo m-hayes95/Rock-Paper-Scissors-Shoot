@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Player Wins");
         
         uiManager.gameWon = true; // Show banner on round over.
-        GameplayMusic.Insatance.isRoundWin = true; // Play round over sound effects
+        GameplayMusic.Insatance.PlayCrowdCheerSound();
         //Debug.Log(uiManager.gameWon
         HighScoreManager.Instance.AddToHighScore(winPointsRecieved); // Add points to players current points.
         playerSpawner.PlayerSpawnerOnNextLevel();
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Enemy Wins");
         
         uiManager.gameLost = true;
-        GameplayMusic.Insatance.isRoundLost = true;
+        GameplayMusic.Insatance.PlayCrowdGaspSound();
         //Debug.Log(uiManager.gameLost);
         // On lose, take health from player.
         PlayerHealth.Instance.TakePlayersHealthAfterLoss(healthLostOnPlayerLoss);
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Draw");
         
         uiManager.gameDraw = true;
-        GameplayMusic.Insatance.isRoundDraw = true;
+        GameplayMusic.Insatance.PlayCrowdCheerSound();
         //Debug.Log(uiManager.gameDraw
         HighScoreManager.Instance.AddToHighScore(drawPointsRecieved);
         playerSpawner.PlayerSpawnerOnNextLevel();
@@ -134,48 +134,57 @@ public class GameManager : MonoBehaviour
         if (tileManager.playerRock && tileManager.enemyScissors == true && isGameOverCalled == false)
         {
             GamePlayerWin();
+            GameplayMusic.Insatance.PlayRockSound();
             isGameOverCalled = true;
         }
         if (tileManager.playerPaper && tileManager.enemyRock == true && isGameOverCalled == false)
         {
             GamePlayerWin();
+            GameplayMusic.Insatance.PlayPaperSound();
             isGameOverCalled = true;
         }
         if (tileManager.playerScissors && tileManager.enemyPaper == true && isGameOverCalled == false)
         {
             GamePlayerWin();
+            GameplayMusic.Insatance.PlayScissorsSound();
             isGameOverCalled = true;
         }
         //Enemy wins
         if (tileManager.playerRock && tileManager.enemyPaper == true && isGameOverCalled == false)
         {
             GameEnemyWin();
+            GameplayMusic.Insatance.PlayRockSound();
             isGameOverCalled = true;
         }
         if (tileManager.playerPaper && tileManager.enemyScissors == true && isGameOverCalled == false)
         {
             GameEnemyWin();
+            GameplayMusic.Insatance.PlayPaperSound();
             isGameOverCalled = true;
         }
         if (tileManager.playerScissors && tileManager.enemyRock == true && isGameOverCalled == false)
         {
             GameEnemyWin();
+            GameplayMusic.Insatance.PlayScissorsSound();
             isGameOverCalled = true;
         }
         //Draws
         if (tileManager.playerRock && tileManager.enemyRock == true && isGameOverCalled == false)
         {
             GameDraw();
+            GameplayMusic.Insatance.PlayRockSound();
             isGameOverCalled = true;
         }
         if (tileManager.playerPaper && tileManager.enemyPaper == true && isGameOverCalled == false)
         {
             GameDraw();
+            GameplayMusic.Insatance.PlayPaperSound();
             isGameOverCalled = true;
         }
         if (tileManager.playerScissors && tileManager.enemyScissors == true && isGameOverCalled == false)
         {
             GameDraw();
+            GameplayMusic.Insatance.PlayScissorsSound();
             isGameOverCalled = true;
         }
     }

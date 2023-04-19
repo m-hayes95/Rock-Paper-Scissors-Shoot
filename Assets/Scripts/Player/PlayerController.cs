@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             {
                 CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
             }
-            
+            GameplayMusic.Insatance.PlayPlayerMoveSound(); // Play move sound.
             // If the input has been performed call the player move up method.
             //Debug.Log("Input PLayer Up");
             // Call the Player move up function on the player up ray cast script.
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
             {
                 CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
             }
-                
+            GameplayMusic.Insatance.PlayPlayerMoveSound();
             //Debug.Log("Input Move PLayer Left");
             playerLeftRayCast.PlayerMoveUpLeft();
             playerMoveUpLeftAvailable=false;
@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
             playerMoveUpRightAvailable == true && playersNextMoveDelayed == false
             && PauseMenu.GameIsPaused == false) // Move player up to the right.
         {
+            GameplayMusic.Insatance.PlayPlayerMoveSound();
             if (CameraShake.IsCameraShakeEnabled == true)
             {
                 CameraShake.Instance.ShakeCamera(cameraShakeIntesity, cameraShakeTimer);
