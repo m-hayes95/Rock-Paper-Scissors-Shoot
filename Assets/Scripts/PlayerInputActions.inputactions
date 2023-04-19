@@ -58,6 +58,17 @@
                 },
                 {
                     "name": "",
+                    "id": "b3c6137e-8b31-4c0f-86da-0d41e3e2ccd8",
+                    "path": "<Joystick>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a1252c00-124c-4f27-ac71-a7d9df638ea9",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -91,6 +102,17 @@
                 },
                 {
                     "name": "",
+                    "id": "4888070a-b586-445f-ae38-4af7f278af6c",
+                    "path": "<Joystick>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveUpLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d75aaa5e-dfc3-47f4-8810-b9ffba385b9f",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -115,6 +137,17 @@
                     "name": "",
                     "id": "15f79f10-5333-447e-b893-46837fbc486c",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveUpRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1121f982-0438-4fa7-b64b-616c34383455",
+                    "path": "<Joystick>/stick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -199,6 +232,17 @@
                 },
                 {
                     "name": "",
+                    "id": "ccccce8f-bfab-4532-b754-ec12df248908",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerStartsOnTile1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2f4beef6-9511-45b1-b21b-1045d6917c6d",
                     "path": "<Keyboard>/2",
                     "interactions": "",
@@ -212,6 +256,17 @@
                     "name": "",
                     "id": "305aba7b-4acd-497a-9b08-833f0b96b13d",
                     "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerStartsOnTile2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b50f485-6fd7-45ee-8490-642697e1bfa7",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -243,6 +298,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7e6d5918-7796-4f3f-a807-ae3da94a2a3a",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerStartsOnTile3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d39feaef-0e4f-4c13-9134-07e01995bd4e",
                     "path": "<Keyboard>/4",
                     "interactions": "",
@@ -265,6 +331,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d7230c51-de9a-44fb-9b2b-8afa1c010c88",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerStartsOnTile4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8a0bb924-5e48-4216-9af7-6072e7e9e3b0",
                     "path": "<Keyboard>/5",
                     "interactions": "",
@@ -278,6 +355,17 @@
                     "name": "",
                     "id": "a066416a-36c6-4c3f-9934-6c1ad31cbe69",
                     "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerStartsOnTile5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d679459c-c0ef-4732-b6ab-b21118396160",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
