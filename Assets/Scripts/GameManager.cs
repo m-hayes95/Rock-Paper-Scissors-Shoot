@@ -58,8 +58,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CountSeconds() // Add a coutdown / timer before a function is called.
     {
-            //Debug.Log( " second(s) have passed");
-            yield return new WaitForSeconds(2f);
+        //Debug.Log( " second(s) have passed");
+        yield return new WaitForSeconds(2f);
         MoveToNextLevel();
 
     }
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
         StartCoroutine(CountSeconds());
-        //MoveToNextLevel();
+        
 
     }
     public void GameEnemyWin()
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
         StartCoroutine(CountSeconds());
-        //MoveToNextLevel();
+       
     }
     public void GameDraw()
     {
@@ -104,22 +104,21 @@ public class GameManager : MonoBehaviour
         playerSpawner.PlayerSpawnerOnNextLevel();
         enemySpawner.EnemySpawnerOnNextLevel();
         StartCoroutine(CountSeconds());
-        //MoveToNextLevel();
+        
     }
 
     private void OnPlayerDeath()
     {
-        //Debug.Log("The Player Died! :'(");
-        
-        SceneManager.LoadScene(3);
+        //Debug.Log("The Player Died! 
+        // Go to game over screen.
+        int gameOverSceneIndexRef = 2;
+        SceneManager.LoadScene(gameOverSceneIndexRef);
     }
 
     private void MoveToNextLevel()
     {
-        
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-        int randomScenePicker = Random.Range(1, 3);
-        SceneManager.LoadScene(randomScenePicker);
+        //Reload scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
     }
 
     private void ResetScriptBoolOnNewScene()
@@ -180,18 +179,6 @@ public class GameManager : MonoBehaviour
             isGameOverCalled = true;
         }
     }
-    /*
-     * 
-     //public float timer = 0f;
-     //private float waitTime = 0.5f;
-     * if (timer >= waitTime)
-        {
-            RestartLevel();
-            timer = 0f;
-        }
-        else timer += Time.deltaTime;
-    */
-
     
 
 
