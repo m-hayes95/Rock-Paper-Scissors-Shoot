@@ -396,6 +396,45 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""d9461cce-6697-4262-97c5-58a9bf727304"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause Game"",
+                    ""type"": ""Button"",
+                    ""id"": ""e40c7b7c-c00c-4ccc-a3f6-eb85a5227a57"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8fe9a560-bd13-4ca7-89d4-f4c56d2ff181"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause Game"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbf1bd94-1bc4-4356-b847-69f638f9c5bc"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause Game"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -412,6 +451,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_SpawnPlayer_PlayerStartsOnTile3 = m_SpawnPlayer.FindAction("PlayerStartsOnTile3", throwIfNotFound: true);
         m_SpawnPlayer_PlayerStartsOnTile4 = m_SpawnPlayer.FindAction("PlayerStartsOnTile4", throwIfNotFound: true);
         m_SpawnPlayer_PlayerStartsOnTile5 = m_SpawnPlayer.FindAction("PlayerStartsOnTile5", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_PauseGame = m_Menu.FindAction("Pause Game", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -581,6 +623,39 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     }
     public SpawnPlayerActions @SpawnPlayer => new SpawnPlayerActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_PauseGame;
+    public struct MenuActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public MenuActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PauseGame => m_Wrapper.m_Menu_PauseGame;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @PauseGame.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnPauseGame;
+                @PauseGame.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnPauseGame;
+                @PauseGame.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnPauseGame;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface IPlayerMovementActions
     {
         void OnMoveUp(InputAction.CallbackContext context);
@@ -594,5 +669,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnPlayerStartsOnTile3(InputAction.CallbackContext context);
         void OnPlayerStartsOnTile4(InputAction.CallbackContext context);
         void OnPlayerStartsOnTile5(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnPauseGame(InputAction.CallbackContext context);
     }
 }

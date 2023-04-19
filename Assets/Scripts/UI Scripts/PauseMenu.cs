@@ -8,8 +8,18 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+
+    private PlayerInputActions playerInputActions;
+
+    private void Awake()
+    {
+        // Enable controller
+        //playerInputActions = new PlayerInputActions();
+        //playerInputActions.Menu.Enable();
+    }
     private void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
