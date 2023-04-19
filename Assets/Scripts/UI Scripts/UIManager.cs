@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     private PlayerController playerController;
     private GameObject player;
     [SerializeField]
-    private GameObject choosingStartingTileGroup;
+    private GameObject choosingStartingTileInfo;
     
     private const string PLAYER = "Player";
     private Color transparentBlueColour = new Color(0, 0, 1, 0.5f);
@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag(PLAYER);
             playerController = player.GetComponent<PlayerController>();
-            choosingStartingTileGroup.SetActive(false);
+            choosingStartingTileInfo.SetActive(false);
         }
         else return;
 
