@@ -34,10 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
         }
     }
-    private void Start()
-    {
-        
-    }
+
     public int TakePlayersHealthAfterLoss (int healthLost)
     {
         health -= healthLost; // Reduce health by an incominng int value.

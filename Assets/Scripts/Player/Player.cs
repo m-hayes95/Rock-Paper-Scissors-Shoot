@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         playerController.playerMoveUpAvailable = true;
         playerController.playerMoveUpLeftAvailable = true;
         playerController.playerMoveUpRightAvailable = true;
-        Debug.Log("Player's available moves have been reset");
+        //Debug.Log("Player's available moves have been reset");
     }
     
     

@@ -380,7 +380,7 @@
             "id": "d9461cce-6697-4262-97c5-58a9bf727304",
             "actions": [
                 {
-                    "name": "Pause Game",
+                    "name": "PauseGame",
                     "type": "Button",
                     "id": "e40c7b7c-c00c-4ccc-a3f6-eb85a5227a57",
                     "expectedControlType": "Button",
@@ -397,7 +397,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause Game",
+                    "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -408,7 +408,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause Game",
+                    "action": "PauseGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

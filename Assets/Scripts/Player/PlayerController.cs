@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// Ref CodeMonkey "How to use NEW Input System Package! (Unity Tutorial - Keyboard, Mouse, Touch, Gamepad)"
+// https://www.youtube.com/watch?v=Yjee_e4fICc&t=1044s
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,17 +25,19 @@ public class PlayerController : MonoBehaviour
     public float cameraShakeIntesity = 3f;
     private float cameraShakeTimer = .1f;
 
+    private PlayerInputActions playerInputActions;
+
     private void Awake()
-    { 
+    {
         // Construct input system.
-        PlayerInputActions playerInputActions = new PlayerInputActions();
+        playerInputActions = new PlayerInputActions();
         // Enable the Player action maps within the input system.
-        playerInputActions.PlayerMovement.Enable();
+        //playerInputActions.PlayerMovement.Enable();
+        
         // Subscribe to the Player movement actions in the input system.
         playerInputActions.PlayerMovement.MoveUp.performed += MoveUp_Input;
         playerInputActions.PlayerMovement.MoveUpLeft.performed += MoveUpLeft_Input;
         playerInputActions.PlayerMovement.MoveUpRight.performed += MoveUpRight_Input;
-        
     }
 
     private void Update()
@@ -46,7 +50,7 @@ public class PlayerController : MonoBehaviour
                 playersNextMoveDelayed = false;
             }
             else timer += Time.deltaTime;
-        } 
+        }
     }
 
     public void MoveUp_Input(InputAction.CallbackContext context)
@@ -111,9 +115,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
-
-
-
-
+    private void OnEnable()
+    {
+        playerInputActions.PlayerMovement.Enable();
+    }
+    private void OnDisable()
+    {
+        playerInputActions.PlayerMovement.Disable();
+    }
 }

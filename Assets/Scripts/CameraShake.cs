@@ -38,7 +38,7 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Camera shake is " + IsCameraShakeEnabled);
+        //Debug.Log("Camera shake is " + IsCameraShakeEnabled);
         // Turn camera shake off after timer.
         if (shakeTimer > 0)
         {

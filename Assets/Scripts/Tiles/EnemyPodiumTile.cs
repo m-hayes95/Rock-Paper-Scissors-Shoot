@@ -39,7 +39,7 @@ public class EnemyPodiumTile : MonoBehaviour
         if (tileManager.enemySpecial == true)
         {
             //Do not need the podium to change to special tile colour
-            Debug.Log("Last Enemy tile was a special tile");
+            //Debug.Log("Last Enemy tile was a special tile");
         }
 
     }

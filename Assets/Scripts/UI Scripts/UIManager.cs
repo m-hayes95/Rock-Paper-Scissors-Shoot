@@ -37,6 +37,10 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log("Game won " + gameWon);
+        Debug.Log("Game draw " + gameDraw);
+        Debug.Log("Game lost " + gameLost);
+
         ShowRoundOverBanner();
         // Display players current high score.
         highScoreCounter.text = HighScoreManager.Instance.playersHighScore.ToString();
@@ -68,28 +72,40 @@ public class UIManager : MonoBehaviour
         }
         else rightPlayerMoveImage.color = Color.white;
 
-        
 
-
+    
     }
-
     private void ShowRoundOverBanner()
     {
         // Display game win, draw, loss banner on round over. Set in game manager script.
         if (gameWon == true)
         {
             playerWonRoundImage.SetActive(true);
-            Debug.Log(gameWon);
+            //Debug.Log(gameWon);
+        } else
+        {
+            playerWonRoundImage.SetActive(false);
         }
+
         if (gameDraw == true)
         {
             playerDrawRoundImage.SetActive(true);
-            Debug.Log(gameDraw);
+            //Debug.Log(gameDraw);
+        } else
+        {
+            playerDrawRoundImage.SetActive(false);
         }
+
         if (gameLost == true)
         {
             playerLostRoundImage.SetActive(true);
-            Debug.Log(gameLost);
+            //Debug.Log(gameLost);
+        } else
+        {
+            playerLostRoundImage.SetActive(false);
         }
+
+
     }
+    
 }

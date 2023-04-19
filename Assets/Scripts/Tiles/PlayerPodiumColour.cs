@@ -40,7 +40,7 @@ public class PlayerPodiumColour : MonoBehaviour
         if (tileManager.playerSpecial == true)
         {
             //Do not need the podium to change to special tile colour
-            Debug.Log("Last player tile was a special tile");
+            //Debug.Log("Last player tile was a special tile");
         }
 
     }

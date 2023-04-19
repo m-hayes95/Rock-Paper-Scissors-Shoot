@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
     {
         // Create a float value for the new vector which choses a random start tile.
         float enemyRandomStartTile = Random.Range(0, startTileLocation.Length);
-        Debug.Log("Enemy Started on tile " + enemyRandomStartTile);
+        //Debug.Log("Enemy Started on tile " + enemyRandomStartTile);
 
         float offsetForEnemyHeight = 1.5f; // Enemy height offset, so they spawn above the grid.
         // New vector transform coord for enemy spawn, using start tile from enemy generated grid.
