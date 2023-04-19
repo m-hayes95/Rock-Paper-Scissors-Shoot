@@ -63,7 +63,7 @@ public class RandomTileGenerator : MonoBehaviour
                 for (int z = 0; z < tileHeightWithSpecial; z++)
                 {
                     // Random generator for a chance to spawn special tile
-                    float randomValue = Random.Range(1, 12);
+                    float randomValue = Random.Range(1, 11);
                     bool allowSpecialTilesSpawn = false;
                     if (randomValue == 3)
                     {
@@ -114,7 +114,7 @@ public class RandomTileGenerator : MonoBehaviour
             {
                 for (int z = 0; z < tileHeightWithSpecial; z++)
                 {
-                    float randomValue = Random.Range(1, 12);
+                    float randomValue = Random.Range(1, 11);
                     bool allowSpecialTilesSpawn = false;
                     if (randomValue == 3)
                     {

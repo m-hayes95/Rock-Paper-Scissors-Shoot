@@ -25,12 +25,14 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        // Set time scale to default.
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     private void Pause()
     {
         pauseMenuUI.SetActive(true);
+        // Stop time with time scale.
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
