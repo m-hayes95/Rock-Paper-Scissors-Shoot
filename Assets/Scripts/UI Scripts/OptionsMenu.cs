@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+
 // Code ref from Brackeys "SETTINGS MENU in Unity" (Youtube)
 //https://www.youtube.com/watch?v=YOaYQrN1oYQ
 
@@ -18,6 +19,8 @@ public class OptionsMenu : MonoBehaviour
     private Resolution[] resolutions;
 
     private const string MASTER_VOLUME = "MasterVolume";
+
+    
 
     private void Start()
     {
