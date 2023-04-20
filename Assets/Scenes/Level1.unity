@@ -2589,8 +2589,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard5
         m_Mode: 1
         m_Arguments:
@@ -4509,8 +4509,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard6
         m_Mode: 1
         m_Arguments:
@@ -6118,8 +6118,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard10
         m_Mode: 1
         m_Arguments:
@@ -6379,7 +6379,7 @@ RectTransform:
   m_GameObject: {fileID: 614727047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.46716, y: 0.46716, z: 0.46716}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1502195026}
@@ -6387,7 +6387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 483.5}
+  m_AnchoredPosition: {x: 0, y: 422}
   m_SizeDelta: {x: 2787.666, y: 2103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614727049
@@ -7042,8 +7042,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard6
         m_Mode: 1
         m_Arguments:
@@ -7671,8 +7671,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard7
         m_Mode: 1
         m_Arguments:
@@ -9690,8 +9690,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard3
         m_Mode: 1
         m_Arguments:
@@ -9996,8 +9996,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard10
         m_Mode: 1
         m_Arguments:
@@ -10173,8 +10173,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard9
         m_Mode: 1
         m_Arguments:
@@ -10540,8 +10540,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard1
         m_Mode: 1
         m_Arguments:
@@ -11648,8 +11648,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard4
         m_Mode: 1
         m_Arguments:
@@ -12077,8 +12077,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard5
         m_Mode: 1
         m_Arguments:
@@ -13186,8 +13186,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard3
         m_Mode: 1
         m_Arguments:
@@ -14003,7 +14003,7 @@ RectTransform:
   m_GameObject: {fileID: 1360881474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.46716, y: 0.46716, z: 0.46716}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1502195026}
@@ -14011,7 +14011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 483.5}
+  m_AnchoredPosition: {x: 0, y: 422.00003}
   m_SizeDelta: {x: 2787.666, y: 2103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360881476
@@ -14323,8 +14323,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard2
         m_Mode: 1
         m_Arguments:
@@ -14551,8 +14551,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard9
         m_Mode: 1
         m_Arguments:
@@ -16261,8 +16261,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard7
         m_Mode: 1
         m_Arguments:
@@ -16530,8 +16530,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard1
         m_Mode: 1
         m_Arguments:
@@ -16907,8 +16907,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard4
         m_Mode: 1
         m_Arguments:
@@ -17129,7 +17129,7 @@ RectTransform:
   m_GameObject: {fileID: 1694908749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.46716, y: 0.46716, z: 0.46716}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1502195026}
@@ -17137,7 +17137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 484}
+  m_AnchoredPosition: {x: 0, y: 422.58005}
   m_SizeDelta: {x: 2787.666, y: 2103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1694908751
@@ -19500,9 +19500,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2063361334}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: GoToCard2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20421,8 +20421,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard8
         m_Mode: 1
         m_Arguments:
@@ -21023,8 +21023,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartUIManager, Assembly-CSharp
+      - m_Target: {fileID: 2063361340}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: GoToCard8
         m_Mode: 1
         m_Arguments:
