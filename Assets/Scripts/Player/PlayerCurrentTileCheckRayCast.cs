@@ -40,21 +40,18 @@ public class PlayerCurrentTileCheckRayCast : MonoBehaviour
             tileManager.PlayerOnRockTile();
         }
 
-        //set paper tile bool to true if on correct tile. Check tile with layer mask
         if (Physics.Raycast(transform.position, tileCheckRayCast, out tileCheckHit, maxDistance, paperTileLayerMask))
         {
             //Debug.Log("Player current tile is " + tileCheckHit.collider.gameObject.tag);
             tileManager.PlayerOnPaperTile();
         }
 
-        //set scissors tile bool to true if on correct tile. Check tile with layer mask
         if (Physics.Raycast(transform.position, tileCheckRayCast, out tileCheckHit, maxDistance, scissorsTileLayerMask))
         {
             //Debug.Log("Player current tile is " + tileCheckHit.collider.gameObject.tag);
             tileManager.PlayerOnScissorsTile();
         }
 
-        //set special tile bool to true if on correct tile. Check tile with layer mask
         if (Physics.Raycast(transform.position, tileCheckRayCast, out tileCheckHit, maxDistance, specialTileLayerMask))
         {
             //Debug.Log("Player current tile is " + tileCheckHit.collider.gameObject.tag);

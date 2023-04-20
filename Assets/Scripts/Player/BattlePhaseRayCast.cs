@@ -7,9 +7,8 @@ public class BattlePhaseRayCast : MonoBehaviour
     private const string PRE_BATTLE_PHASE_TILE = "PreBattleTile";
     private const string PLAYER_BATTLE_PODIUM = "PlayerBattleTile";
     private const string PLAYER = "Player";
-    //Ref to player and battle podium game object
+
     [SerializeField] private GameObject player, playerBattlePodium;
-    //Ref to check if battle phase has been entered yet
     [SerializeField] private bool playerHasEnteredBP = false;
 
     private void Start()

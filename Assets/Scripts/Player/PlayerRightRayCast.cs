@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerRightRayCast : MonoBehaviour
 {
     [SerializeField] private Player player;
-    //use const string, less error prone
     private const string MOVEABLE_TILE = "MoveableTile";
 
     public void PlayerMoveUpRight()
