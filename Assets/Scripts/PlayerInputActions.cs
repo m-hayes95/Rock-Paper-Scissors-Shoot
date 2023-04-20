@@ -81,7 +81,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b3c6137e-8b31-4c0f-86da-0d41e3e2ccd8"",
-                    ""path"": ""<Joystick>/stick/up"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5550c5f-0e75-4819-95ad-1d947186b56f"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -125,7 +136,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4888070a-b586-445f-ae38-4af7f278af6c"",
-                    ""path"": ""<Joystick>/stick/left"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUpLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63a496df-c3e4-43f3-a5f9-e9a4ec0eec5e"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -169,7 +191,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1121f982-0438-4fa7-b64b-616c34383455"",
-                    ""path"": ""<Joystick>/stick/right"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUpRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af6866a8-9961-479b-b908-05a58229ef73"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -402,9 +435,18 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
             ""id"": ""d9461cce-6697-4262-97c5-58a9bf727304"",
             ""actions"": [
                 {
-                    ""name"": ""Pause Game"",
+                    ""name"": ""PauseGame"",
                     ""type"": ""Button"",
                     ""id"": ""e40c7b7c-c00c-4ccc-a3f6-eb85a5227a57"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ResumeGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""708794b7-cf15-4815-8ab2-a5a9c044f32b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -419,7 +461,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause Game"",
+                    ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -430,7 +472,51 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause Game"",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c537db7d-74e8-40c3-8343-82af76a4ba81"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResumeGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b846706e-aea6-4d78-a7cf-29ab5d54efa1"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResumeGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""95a2b494-75f7-4452-9fad-c7d3060f17cb"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResumeGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""729c4ef5-d2fb-4767-838d-93ac70c007d9"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResumeGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -453,7 +539,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_SpawnPlayer_PlayerStartsOnTile5 = m_SpawnPlayer.FindAction("PlayerStartsOnTile5", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-        m_Menu_PauseGame = m_Menu.FindAction("Pause Game", throwIfNotFound: true);
+        m_Menu_PauseGame = m_Menu.FindAction("PauseGame", throwIfNotFound: true);
+        m_Menu_ResumeGame = m_Menu.FindAction("ResumeGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -628,11 +715,13 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Menu;
     private IMenuActions m_MenuActionsCallbackInterface;
     private readonly InputAction m_Menu_PauseGame;
+    private readonly InputAction m_Menu_ResumeGame;
     public struct MenuActions
     {
         private @PlayerInputActions m_Wrapper;
         public MenuActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @PauseGame => m_Wrapper.m_Menu_PauseGame;
+        public InputAction @ResumeGame => m_Wrapper.m_Menu_ResumeGame;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -645,6 +734,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @PauseGame.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnPauseGame;
                 @PauseGame.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnPauseGame;
                 @PauseGame.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnPauseGame;
+                @ResumeGame.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnResumeGame;
+                @ResumeGame.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnResumeGame;
+                @ResumeGame.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnResumeGame;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -652,6 +744,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @PauseGame.started += instance.OnPauseGame;
                 @PauseGame.performed += instance.OnPauseGame;
                 @PauseGame.canceled += instance.OnPauseGame;
+                @ResumeGame.started += instance.OnResumeGame;
+                @ResumeGame.performed += instance.OnResumeGame;
+                @ResumeGame.canceled += instance.OnResumeGame;
             }
         }
     }
@@ -673,5 +768,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     public interface IMenuActions
     {
         void OnPauseGame(InputAction.CallbackContext context);
+        void OnResumeGame(InputAction.CallbackContext context);
     }
 }

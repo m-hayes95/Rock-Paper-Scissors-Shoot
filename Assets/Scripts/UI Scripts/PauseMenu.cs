@@ -15,9 +15,9 @@ public class PauseMenu : MonoBehaviour
 
         //Enable controller & subscribe to pause action on performed.
         playerInputActions = new PlayerInputActions();
-        //playerInputActions.Menu.Enable();
         // Ignore action context (Ref Brackeys "CONTROLLER INPUT in Unity!" @ https://www.youtube.com/watch?v=p-3S73MaDP8)
         playerInputActions.Menu.PauseGame.performed += ctx => Pause();
+        playerInputActions.Menu.ResumeGame.performed += ctx => Resume();
     }
 
     private void Update()
