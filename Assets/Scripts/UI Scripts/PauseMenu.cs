@@ -50,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         //Debug.Log("Loading Menu...");
+        GameManager.PlayerIsDead = true;
         SceneManager.LoadScene(0);
     }
     // Used to select the first option of a menu when called.
@@ -69,7 +70,10 @@ public class PauseMenu : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(pauseMenuFirstButton);
     }
-
+    public void PauseQuitGame()
+    {
+        Application.Quit();
+    }
     private void OnEnable()
     {
         playerInputActions.Menu.Enable();

@@ -26,7 +26,7 @@ public class GameOverMenuUIManager : MonoBehaviour
     {
         Debug.Log("Quit Game");
         // Destroy high score when player quits game.
-        HighScoreManager.Instance.gameHasResetHighScore = true;
+        GameManager.PlayerIsDead = true;
 
         Application.Quit();
     }

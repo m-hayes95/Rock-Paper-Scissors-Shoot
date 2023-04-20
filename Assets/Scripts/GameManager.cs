@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool PlayerIsDead = false;
+    public static bool PlayerIsDead = false; // Called in pause menu & Game Over Menu UI Manager
 
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private EnemySpawner enemySpawner;

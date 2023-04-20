@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 0)
+        if (GameManager.PlayerIsDead == true)
         {
             Destroy(gameObject);
 
