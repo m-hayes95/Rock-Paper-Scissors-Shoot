@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class StartUIManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject mainMenuFirstButton, howToPlayMenuFirstButton, optionsMenuFirstButton;
+    private GameObject mainMenuFirstButton, howToPlayMenuFirstButton, optionsMenuFirstButton, tutorialMenuFirstButton;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class StartUIManager : MonoBehaviour
         Debug.Log("Quit Game");
         Application.Quit();
     }
-
+    // Select first button in menus for controller.
     public void SelectMainMenuFirstButton()
     {
         EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
@@ -39,5 +39,9 @@ public class StartUIManager : MonoBehaviour
     public void SelectOptionsMenuFirstButton()
     {
         EventSystem.current.SetSelectedGameObject(optionsMenuFirstButton);
+    }
+    public void SelectTutorialMenuFirstButton()
+    {
+        EventSystem.current.SetSelectedGameObject(tutorialMenuFirstButton);
     }
 }
